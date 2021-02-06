@@ -38,7 +38,7 @@ public class Fenetre_de_demarage extends javax.swing.JFrame {
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jButton1.setText("Modifier le profil");
-        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 190, -1, -1));
+        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 190, 150, -1));
 
         jButton2.setText("ajouter un objectif");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
@@ -46,7 +46,7 @@ public class Fenetre_de_demarage extends javax.swing.JFrame {
                 jButton2ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 190, -1, -1));
+        getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 190, 150, -1));
 
         btn_historique.setText("Mon  Historique");
         btn_historique.addActionListener(new java.awt.event.ActionListener() {
@@ -54,7 +54,7 @@ public class Fenetre_de_demarage extends javax.swing.JFrame {
                 btn_historiqueActionPerformed(evt);
             }
         });
-        getContentPane().add(btn_historique, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 380, 150, -1));
+        getContentPane().add(btn_historique, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 380, 150, -1));
 
         jButton4.setText("Completer le profil");
         getContentPane().add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 380, 150, -1));

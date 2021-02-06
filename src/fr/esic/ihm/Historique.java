@@ -95,11 +95,12 @@ public class Historique extends javax.swing.JFrame {
        model.addColumn("regime");
        model.addColumn("Poids Initial");
        model.addColumn("Poids Final");
-     //  model.addColumn("date d'inscription");
-                 
-      /* try{
+     model.addColumn("date d'inscription");
+            /*     
+      try{
       // List<User>membres=UserDao.getAll();
        //for (User membre:membres){
+          
        
        model.addRow(new Object[]
                
@@ -115,7 +116,7 @@ public class Historique extends javax.swing.JFrame {
        }catch(Exception e){
        JOptionPane.showMessageDialog(rootPane, "err"+e.getMessage());
        } */
-     
+
         
         
     }//GEN-LAST:event_formWindowOpened

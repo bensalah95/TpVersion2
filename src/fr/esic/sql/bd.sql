@@ -6,46 +6,26 @@
 drop schema IF EXISTS obesite;
 create schema IF not EXISTS obesite;
 
---
--- Table structure for table `avancement_du_poids`
---
 
-DROP TABLE IF EXISTS `avancement_du_poids`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `avancement_du_poids` (
-  `poids_initial` double NOT NULL,
-  `poids_final` double NOT NULL,
-  `nom` varchar(45) NOT NULL,
-  `taille` int(11) NOT NULL
+DROP TABLE IF EXISTS `regimeperdrepoids`;
+ALTER TABLE `obesite`.`regimeperdrepoids` 
+CHANGE COLUMN `poids_actuel` `poids_actuel` DOUBLE NULL ,
+CHANGE COLUMN `poids_final` `poids_final` DOUBLE NULL ,
+CHANGE COLUMN `Nombre_kilo` `Nombre_kilo` INT(11) NULL ,
+CHANGE COLUMN `periode_regime` `periode_regime` INT(11) NULL ,
+CHANGE COLUMN `cadence` `cadence` VARCHAR(45) NULL ,
+CHANGE COLUMN `type_activité` `type_activité` VARCHAR(45) NULL ,
+CHANGE COLUMN `nbre_heure` `nbre_heure` INT(11) NULL ;
+
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `avancement_du_poids`
---
-
-LOCK TABLES `avancement_du_poids` WRITE;
-/*!40000 ALTER TABLE `avancement_du_poids` DISABLE KEYS */;
-/*!40000 ALTER TABLE `avancement_du_poids` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
--- Table structure for table `imc`
---
 
 DROP TABLE IF EXISTS `imc`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
+
 CREATE TABLE `imc` (
   `poids` double NOT NULL,
   `taille` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-/*!40101 SET character_set_client = @saved_cs_client */;
 
---
--- Dumping data for table `imc`
---
 
 LOCK TABLES `imc` WRITE;
 /*!40000 ALTER TABLE `imc` DISABLE KEYS */;

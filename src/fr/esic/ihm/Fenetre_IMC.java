@@ -128,7 +128,6 @@ public class Fenetre_IMC extends javax.swing.JFrame {
         btn_maintien_poids.setFont(new java.awt.Font("Comic Sans MS", 1, 14)); // NOI18N
         btn_maintien_poids.setForeground(new java.awt.Color(255, 255, 255));
         btn_maintien_poids.setText("Maintien Poids");
-        btn_maintien_poids.setActionCommand("Maintien Poids");
         jPanel1.add(btn_maintien_poids, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 570, 140, 40));
 
         img.setBackground(new java.awt.Color(255, 255, 255));

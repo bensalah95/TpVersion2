@@ -29,7 +29,22 @@ public class RegimePerdrePoids extends javax.swing.JFrame {
 
         jPanel1 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
+        nbre_kg = new javax.swing.JTextField();
+        lb_date_start_regime = new javax.swing.JLabel();
         jTextField1 = new javax.swing.JTextField();
+        jLabel1 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        txt_poids_actuel = new javax.swing.JTextField();
+        jLabel4 = new javax.swing.JLabel();
+        txt_poids_souhaité = new javax.swing.JTextField();
+        jLabel5 = new javax.swing.JLabel();
+        jComboBox1 = new javax.swing.JComboBox();
+        jLabel6 = new javax.swing.JLabel();
+        jCheckBox1 = new javax.swing.JCheckBox();
+        jCheckBox2 = new javax.swing.JCheckBox();
+        jLabel7 = new javax.swing.JLabel();
+        jTextField2 = new javax.swing.JTextField();
+        jButton1 = new javax.swing.JButton();
         img = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -38,10 +53,50 @@ public class RegimePerdrePoids extends javax.swing.JFrame {
 
         jLabel2.setText("Nombre de Kilogramme a perdre :");
         jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 70, -1, 50));
-        jPanel1.add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 80, 80, 30));
+        jPanel1.add(nbre_kg, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 70, 80, 50));
+        jPanel1.add(lb_date_start_regime, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 20, 280, 40));
+        jPanel1.add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 140, 80, 50));
+
+        jLabel1.setText("Periode de régime");
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 140, 220, 50));
+
+        jLabel3.setText("poids actuel");
+        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 410, 100, 50));
+        jPanel1.add(txt_poids_actuel, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 410, 100, 50));
+
+        jLabel4.setText("Poids souhaité:");
+        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 490, 100, 50));
+        jPanel1.add(txt_poids_souhaité, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 490, 100, 50));
+
+        jLabel5.setText("Cadence de régime :");
+        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 80, 140, 40));
+
+        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Journaliére", "Hebdomadaire" }));
+        jComboBox1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jComboBox1ActionPerformed(evt);
+            }
+        });
+        jPanel1.add(jComboBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 80, 140, 40));
+
+        jLabel6.setText("Type d'activité : ");
+        jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 180, 140, 40));
+
+        jCheckBox1.setText("MARCHE");
+        jPanel1.add(jCheckBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(730, 190, -1, -1));
+
+        jCheckBox2.setText("COURSE");
+        jPanel1.add(jCheckBox2, new org.netbeans.lib.awtextra.AbsoluteConstraints(830, 190, -1, -1));
+
+        jLabel7.setText("Nombre des Heures");
+        jPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 280, 140, 40));
+        jPanel1.add(jTextField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(750, 280, 140, 40));
+
+        jButton1.setText("Valider Régime");
+        jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 450, 130, 40));
 
         img.setIcon(new javax.swing.ImageIcon(getClass().getResource("/fr/esic/img/perdre poids.jpg"))); // NOI18N
-        jPanel1.add(img, new org.netbeans.lib.awtextra.AbsoluteConstraints(-2, 0, 800, 560));
+        jPanel1.add(img, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, 560));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -56,6 +111,10 @@ public class RegimePerdrePoids extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jComboBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jComboBox1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -94,8 +153,23 @@ public class RegimePerdrePoids extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel img;
+    private javax.swing.JButton jButton1;
+    private javax.swing.JCheckBox jCheckBox1;
+    private javax.swing.JCheckBox jCheckBox2;
+    private javax.swing.JComboBox jComboBox1;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JTextField jTextField1;
+    private javax.swing.JTextField jTextField2;
+    private javax.swing.JLabel lb_date_start_regime;
+    private javax.swing.JTextField nbre_kg;
+    private javax.swing.JTextField txt_poids_actuel;
+    private javax.swing.JTextField txt_poids_souhaité;
     // End of variables declaration//GEN-END:variables
 }

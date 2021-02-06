@@ -163,29 +163,29 @@ public class Inscription extends javax.swing.JFrame {
         getContentPane().add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 290, 60, -1));
         getContentPane().add(txt_poids, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 220, 150, -1));
 
-        rb_f.setBackground(new java.awt.Color(255, 255, 255));
+        rb_f.setBackground(new java.awt.Color(204, 255, 255));
         buttonGroup1.add(rb_f);
         rb_f.setFont(new java.awt.Font("Comic Sans MS", 3, 14)); // NOI18N
-        rb_f.setForeground(new java.awt.Color(0, 58, 111));
+        rb_f.setForeground(new java.awt.Color(0, 0, 153));
         rb_f.setText("Féminin");
         rb_f.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 rb_fActionPerformed(evt);
             }
         });
-        getContentPane().add(rb_f, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 290, -1, -1));
+        getContentPane().add(rb_f, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 290, -1, -1));
 
-        rb_m.setBackground(new java.awt.Color(255, 255, 255));
+        rb_m.setBackground(new java.awt.Color(204, 255, 255));
         buttonGroup1.add(rb_m);
         rb_m.setFont(new java.awt.Font("Comic Sans MS", 3, 14)); // NOI18N
-        rb_m.setForeground(new java.awt.Color(0, 58, 111));
+        rb_m.setForeground(new java.awt.Color(0, 0, 153));
         rb_m.setText("Masculin");
         rb_m.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 rb_mActionPerformed(evt);
             }
         });
-        getContentPane().add(rb_m, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 290, -1, -1));
+        getContentPane().add(rb_m, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 290, -1, -1));
         getContentPane().add(txt_mdp1, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 440, 160, -1));
 
         jLabel8.setBackground(new java.awt.Color(255, 255, 255));
