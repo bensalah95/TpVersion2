@@ -89,30 +89,33 @@ public class Historique extends javax.swing.JFrame {
         /*PropertiesGlobal.USER_CONNECT.getNom()*/
         
         DefaultTableModel model=new DefaultTableModel();
-       model.addColumn("id");
+      
        model.addColumn("nom");
        model.addColumn("prenom");
-       model.addColumn("login");
+       model.addColumn("regime");
+       model.addColumn("Poids Initial");
+       model.addColumn("Poids Final");
+     //  model.addColumn("date d'inscription");
                  
-       try{
-       List<User>membres=UserDao.getAll();
-       for (User membre:membres){
+      /* try{
+      // List<User>membres=UserDao.getAll();
+       //for (User membre:membres){
        
        model.addRow(new Object[]
                
        {
-           membre.getId(),
-           membre.getNom(),
-           membre.getPrenom(),
-           membre.getLogin()
+          // membre.getId(),
+           //membre.getNom(),
+           //membre.getPrenom(),
+           //membre.getLogin()
        
        });
        
        } 
        }catch(Exception e){
        JOptionPane.showMessageDialog(rootPane, "err"+e.getMessage());
-       } 
-       t_member.setModel(model);
+       } */
+     
         
         
     }//GEN-LAST:event_formWindowOpened
