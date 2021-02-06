@@ -47,7 +47,6 @@ public class Fenetre_IMC extends javax.swing.JFrame {
         txt_poids = new javax.swing.JTextField();
         btn_imc = new javax.swing.JButton();
         btn_maintien_poids = new javax.swing.JButton();
-        img = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         addWindowListener(new java.awt.event.WindowAdapter() {
@@ -129,12 +128,6 @@ public class Fenetre_IMC extends javax.swing.JFrame {
         btn_maintien_poids.setForeground(new java.awt.Color(255, 255, 255));
         btn_maintien_poids.setText("Maintien Poids");
         jPanel1.add(btn_maintien_poids, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 570, 140, 40));
-
-        img.setBackground(new java.awt.Color(255, 255, 255));
-        img.setFont(new java.awt.Font("Comic Sans MS", 1, 18)); // NOI18N
-        img.setForeground(new java.awt.Color(0, 58, 111));
-        img.setIcon(new javax.swing.ImageIcon(getClass().getResource("/fr/esic/img/imc.jpg"))); // NOI18N
-        jPanel1.add(img, new org.netbeans.lib.awtextra.AbsoluteConstraints(1, 0, 960, 680));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -296,7 +289,6 @@ double res_imc;
     private javax.swing.JButton btn_maintien_poids;
     private javax.swing.JLabel conseil;
     private javax.swing.JLabel imc;
-    private javax.swing.JLabel img;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JLabel lb_conseil;
     private javax.swing.JLabel lb_res_imc;

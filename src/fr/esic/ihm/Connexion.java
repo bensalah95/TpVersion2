@@ -36,7 +36,6 @@ public class Connexion extends javax.swing.JFrame {
         bt_connexion = new javax.swing.JButton();
         bt_inscription = new javax.swing.JButton();
         lb_msg = new javax.swing.JLabel();
-        img = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -82,9 +81,6 @@ public class Connexion extends javax.swing.JFrame {
         lb_msg.setFont(new java.awt.Font("Comic Sans MS", 2, 12)); // NOI18N
         lb_msg.setForeground(new java.awt.Color(255, 0, 0));
         getContentPane().add(lb_msg, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 270, 232, 38));
-
-        img.setIcon(new javax.swing.ImageIcon(getClass().getResource("/fr/esic/img/cnx_img.jpg"))); // NOI18N
-        getContentPane().add(img, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, -1, 530, 400));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -176,7 +172,6 @@ date.setText(f.format(thisDate));
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton bt_connexion;
     private javax.swing.JButton bt_inscription;
-    private javax.swing.JLabel img;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel lb_msg;

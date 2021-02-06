@@ -32,7 +32,6 @@ public class Fenetre_de_demarage extends javax.swing.JFrame {
         btn_historique = new javax.swing.JButton();
         jButton4 = new javax.swing.JButton();
         date = new javax.swing.JLabel();
-        img = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -59,9 +58,6 @@ public class Fenetre_de_demarage extends javax.swing.JFrame {
         jButton4.setText("Completer le profil");
         getContentPane().add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 380, 150, -1));
         getContentPane().add(date, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 20, 90, 24));
-
-        img.setIcon(new javax.swing.ImageIcon(getClass().getResource("/fr/esic/img/inscription.jpg"))); // NOI18N
-        getContentPane().add(img, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 850, 610));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -116,7 +112,6 @@ public class Fenetre_de_demarage extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btn_historique;
     private javax.swing.JLabel date;
-    private javax.swing.JLabel img;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton4;

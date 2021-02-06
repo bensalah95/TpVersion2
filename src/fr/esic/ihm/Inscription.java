@@ -69,13 +69,12 @@ public class Inscription extends javax.swing.JFrame {
         jLabel8 = new javax.swing.JLabel();
         txt_mdp = new javax.swing.JPasswordField();
         date = new javax.swing.JLabel();
-        img = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel1.setText("INSCRIPTION ");
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 10, 240, 25));
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 10, 240, 25));
 
         jLabel2.setBackground(new java.awt.Color(255, 255, 255));
         jLabel2.setFont(new java.awt.Font("Comic Sans MS", 1, 18)); // NOI18N
@@ -205,9 +204,6 @@ public class Inscription extends javax.swing.JFrame {
         date.setFont(new java.awt.Font("Comic Sans MS", 1, 14)); // NOI18N
         getContentPane().add(date, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 70, 180, 30));
 
-        img.setIcon(new javax.swing.ImageIcon(getClass().getResource("/fr/esic/img/inscri.jpg"))); // NOI18N
-        getContentPane().add(img, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 730, 590));
-
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
@@ -303,7 +299,6 @@ public class Inscription extends javax.swing.JFrame {
     private javax.swing.JButton bt_valider;
     private javax.swing.ButtonGroup buttonGroup1;
     private javax.swing.JLabel date;
-    private javax.swing.JLabel img;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
