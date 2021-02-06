@@ -5,6 +5,14 @@
  */
 package fr.esic.ihm;
 
+import de.esic.dao.ConnexionBd;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author marye
@@ -27,6 +35,7 @@ public class RegimePerdrePoids extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        type_activite = new javax.swing.ButtonGroup();
         jPanel1 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
         txt_nbre_kg = new javax.swing.JTextField();
@@ -40,14 +49,14 @@ public class RegimePerdrePoids extends javax.swing.JFrame {
         jLabel5 = new javax.swing.JLabel();
         combox_cadence = new javax.swing.JComboBox();
         jLabel6 = new javax.swing.JLabel();
-        CheckBox_marche = new javax.swing.JCheckBox();
-        CheckBox_course = new javax.swing.JCheckBox();
         jLabel7 = new javax.swing.JLabel();
         txt_nbre_heure = new javax.swing.JTextField();
         btn_valider_regime = new javax.swing.JButton();
         btn_commencer_regime = new javax.swing.JButton();
         btn_acceeuil = new javax.swing.JButton();
         btn_quitter = new javax.swing.JButton();
+        com_box_type = new javax.swing.JComboBox();
+        img = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -55,23 +64,23 @@ public class RegimePerdrePoids extends javax.swing.JFrame {
 
         jLabel2.setFont(new java.awt.Font("Comic Sans MS", 3, 14)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(0, 58, 111));
-        jLabel2.setText("Nombre de  Kilogramme a perdre :");
+        jLabel2.setText("Nombre de  Kilogramme a parcourir :");
         jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 70, -1, 50));
 
         txt_nbre_kg.setFont(new java.awt.Font("Comic Sans MS", 3, 14)); // NOI18N
         txt_nbre_kg.setForeground(new java.awt.Color(0, 58, 111));
-        jPanel1.add(txt_nbre_kg, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 70, 80, 50));
+        jPanel1.add(txt_nbre_kg, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 70, 80, 50));
 
         lb_date_start_regime.setBackground(new java.awt.Color(255, 168, 138));
         jPanel1.add(lb_date_start_regime, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 20, 280, 40));
 
         txt_periode_regime.setFont(new java.awt.Font("Comic Sans MS", 3, 14)); // NOI18N
         txt_periode_regime.setForeground(new java.awt.Color(0, 58, 111));
-        jPanel1.add(txt_periode_regime, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 140, 80, 50));
+        jPanel1.add(txt_periode_regime, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 140, 80, 50));
 
         jLabel1.setFont(new java.awt.Font("Comic Sans MS", 3, 14)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(0, 58, 111));
-        jLabel1.setText("Periode de régime");
+        jLabel1.setText("Periode de régime (en mois)");
         jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 140, 220, 50));
 
         jLabel3.setFont(new java.awt.Font("Comic Sans MS", 3, 14)); // NOI18N
@@ -112,16 +121,6 @@ public class RegimePerdrePoids extends javax.swing.JFrame {
         jLabel6.setText("Type d'activité : ");
         jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 140, 140, 40));
 
-        CheckBox_marche.setFont(new java.awt.Font("Comic Sans MS", 3, 14)); // NOI18N
-        CheckBox_marche.setForeground(new java.awt.Color(0, 58, 111));
-        CheckBox_marche.setText("MARCHE");
-        jPanel1.add(CheckBox_marche, new org.netbeans.lib.awtextra.AbsoluteConstraints(730, 150, -1, -1));
-
-        CheckBox_course.setFont(new java.awt.Font("Comic Sans MS", 3, 14)); // NOI18N
-        CheckBox_course.setForeground(new java.awt.Color(0, 58, 111));
-        CheckBox_course.setText("COURSE");
-        jPanel1.add(CheckBox_course, new org.netbeans.lib.awtextra.AbsoluteConstraints(830, 150, -1, -1));
-
         jLabel7.setFont(new java.awt.Font("Comic Sans MS", 3, 14)); // NOI18N
         jLabel7.setForeground(new java.awt.Color(0, 58, 111));
         jLabel7.setText("Nombre des Heures");
@@ -160,6 +159,19 @@ public class RegimePerdrePoids extends javax.swing.JFrame {
         btn_quitter.setText("Quitter");
         jPanel1.add(btn_quitter, new org.netbeans.lib.awtextra.AbsoluteConstraints(760, 480, 150, 40));
 
+        com_box_type.setFont(new java.awt.Font("Comic Sans MS", 3, 14)); // NOI18N
+        com_box_type.setForeground(new java.awt.Color(0, 58, 111));
+        com_box_type.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Marche", "Course" }));
+        com_box_type.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                com_box_typeActionPerformed(evt);
+            }
+        });
+        jPanel1.add(com_box_type, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 140, 140, 40));
+
+        img.setIcon(new javax.swing.ImageIcon(getClass().getResource("/fr/esic/img/perdre poids.jpg"))); // NOI18N
+        jPanel1.add(img, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, 560));
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -182,18 +194,45 @@ public class RegimePerdrePoids extends javax.swing.JFrame {
         
         int nbre_kilo=Integer.parseInt(txt_nbre_kg.getText());
         int periode=Integer.parseInt(txt_periode_regime.getText());
-       double poids_initial=Double.parseDouble(txt_poids_actuel.getText());
-         double poids_souhaité=Double.parseDouble(txt_poids_souhaité.getText());
-         String cadence=combox_cadence.  getSelectedItem().toString();
+        double poids_initial=Double.parseDouble(txt_poids_actuel.getText());
+        double poids_souhaite=Double.parseDouble(txt_poids_souhaité.getText());
+        String cadence=combox_cadence.  getSelectedItem().toString();  
+        int nbre_heure=Integer.parseInt(txt_nbre_heure.getText());
+       String type_activité=com_box_type.  getSelectedItem().toString();  
         
-        String marche=CheckBox_marche.getSelectedIcon().toString();
-        System.out.println(marche +""+cadence);
+           String sql ="insert into regime_perdre_poids (nbre_kilo,periode,poids_initial,poids_souhaite,cadence,nbre_heure,type_activité) values(?,?,?,?,?,?,?)";
+   
+   
+        try {
+            
+            Connection connexion=ConnexionBd.getConnection();
+            PreparedStatement prepare;
+            prepare = connexion.prepareCall(sql);
+            prepare.setInt(1, nbre_kilo);
+            prepare.setInt(2, periode);
+            prepare.setDouble(3, poids_initial);
+            prepare.setDouble(4, poids_souhaite);
+            prepare.setString(5, cadence);
+            prepare.setInt(6, nbre_heure);
+       
+            prepare.setString(7, type_activité);
+            
+             prepare.execute();
+            
+                         JOptionPane.showMessageDialog(rootPane, "Regime Ajouté !!");
+
+             
+        } catch (SQLException ex) {
+            Logger.getLogger(Fenetre_IMC.class.getName()).log(Level.SEVERE, null, ex);
+        }
+           
         
     }//GEN-LAST:event_btn_valider_regimeActionPerformed
 
-    /**
-     * @param args the command line arguments
-     */
+    private void com_box_typeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_com_box_typeActionPerformed
+    }//GEN-LAST:event_com_box_typeActionPerformed
+
+    
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
@@ -227,13 +266,13 @@ public class RegimePerdrePoids extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JCheckBox CheckBox_course;
-    private javax.swing.JCheckBox CheckBox_marche;
     private javax.swing.JButton btn_acceeuil;
     private javax.swing.JButton btn_commencer_regime;
     private javax.swing.JButton btn_quitter;
     private javax.swing.JButton btn_valider_regime;
+    private javax.swing.JComboBox com_box_type;
     private javax.swing.JComboBox combox_cadence;
+    private javax.swing.JLabel img;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -248,5 +287,8 @@ public class RegimePerdrePoids extends javax.swing.JFrame {
     private javax.swing.JTextField txt_periode_regime;
     private javax.swing.JTextField txt_poids_actuel;
     private javax.swing.JTextField txt_poids_souhaité;
+    private javax.swing.ButtonGroup type_activite;
     // End of variables declaration//GEN-END:variables
+
+
 }

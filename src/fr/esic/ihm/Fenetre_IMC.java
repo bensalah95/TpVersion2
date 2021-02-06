@@ -47,6 +47,7 @@ public class Fenetre_IMC extends javax.swing.JFrame {
         txt_poids = new javax.swing.JTextField();
         btn_imc = new javax.swing.JButton();
         btn_maintien_poids = new javax.swing.JButton();
+        img = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         addWindowListener(new java.awt.event.WindowAdapter() {
@@ -57,33 +58,34 @@ public class Fenetre_IMC extends javax.swing.JFrame {
 
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        titre.setText("Gagner ... OU Perdre du Poids!!! ");
-        jPanel1.add(titre, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, -1, -1));
+        titre.setFont(new java.awt.Font("Comic Sans MS", 3, 18)); // NOI18N
+        titre.setText("Gagner ... Maintien ....Ou Perdre du Poids!!! ");
+        jPanel1.add(titre, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 10, 520, -1));
 
         poids.setFont(new java.awt.Font("Comic Sans MS", 3, 18)); // NOI18N
         poids.setForeground(new java.awt.Color(0, 58, 111));
         poids.setText("POIDS (Kg)");
-        jPanel1.add(poids, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 70, 140, 40));
+        jPanel1.add(poids, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 60, 140, 40));
 
         taille.setFont(new java.awt.Font("Comic Sans MS", 3, 18)); // NOI18N
         taille.setForeground(new java.awt.Color(0, 58, 111));
         taille.setText("TAILLE(cm)");
-        jPanel1.add(taille, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 130, 140, 40));
+        jPanel1.add(taille, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 120, 140, 40));
 
         imc.setFont(new java.awt.Font("Comic Sans MS", 3, 18)); // NOI18N
         imc.setForeground(new java.awt.Color(0, 58, 111));
         imc.setText("IMC: ");
-        jPanel1.add(imc, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 230, 140, 40));
+        jPanel1.add(imc, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 290, 140, 40));
 
         status.setFont(new java.awt.Font("Comic Sans MS", 3, 18)); // NOI18N
         status.setForeground(new java.awt.Color(0, 58, 111));
         status.setText("Status :");
-        jPanel1.add(status, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 310, 140, 40));
+        jPanel1.add(status, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 370, 140, 40));
 
         conseil.setFont(new java.awt.Font("Comic Sans MS", 3, 18)); // NOI18N
         conseil.setForeground(new java.awt.Color(0, 58, 111));
         conseil.setText("Conseil");
-        jPanel1.add(conseil, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 390, 140, 40));
+        jPanel1.add(conseil, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 450, 140, 40));
 
         btn_maigrir.setBackground(new java.awt.Color(255, 0, 0));
         btn_maigrir.setFont(new java.awt.Font("Comic Sans MS", 1, 14)); // NOI18N
@@ -103,15 +105,15 @@ public class Fenetre_IMC extends javax.swing.JFrame {
         jPanel1.add(btn_getpoids, new org.netbeans.lib.awtextra.AbsoluteConstraints(800, 620, 140, 40));
 
         lb_conseil.setFont(new java.awt.Font("Comic Sans MS", 3, 14)); // NOI18N
-        jPanel1.add(lb_conseil, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 280, 800, 270));
+        jPanel1.add(lb_conseil, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 450, 670, 40));
 
         lb_statut.setFont(new java.awt.Font("Comic Sans MS", 3, 36)); // NOI18N
-        jPanel1.add(lb_statut, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 310, 670, 40));
+        jPanel1.add(lb_statut, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 370, 670, 40));
 
         lb_res_imc.setFont(new java.awt.Font("Comic Sans MS", 3, 24)); // NOI18N
-        jPanel1.add(lb_res_imc, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 230, 530, 40));
-        jPanel1.add(txt_taille, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 130, 140, 40));
-        jPanel1.add(txt_poids, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 70, 140, 40));
+        jPanel1.add(lb_res_imc, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 290, 530, 40));
+        jPanel1.add(txt_taille, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 120, 140, 40));
+        jPanel1.add(txt_poids, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 60, 140, 40));
 
         btn_imc.setFont(new java.awt.Font("Comic Sans MS", 1, 14)); // NOI18N
         btn_imc.setForeground(new java.awt.Color(0, 58, 111));
@@ -121,13 +123,19 @@ public class Fenetre_IMC extends javax.swing.JFrame {
                 btn_imcActionPerformed(evt);
             }
         });
-        jPanel1.add(btn_imc, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 90, 140, 40));
+        jPanel1.add(btn_imc, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 190, 140, 40));
 
         btn_maintien_poids.setBackground(new java.awt.Color(0, 153, 0));
         btn_maintien_poids.setFont(new java.awt.Font("Comic Sans MS", 1, 14)); // NOI18N
         btn_maintien_poids.setForeground(new java.awt.Color(255, 255, 255));
         btn_maintien_poids.setText("Maintien Poids");
         jPanel1.add(btn_maintien_poids, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 570, 140, 40));
+
+        img.setBackground(new java.awt.Color(255, 255, 255));
+        img.setFont(new java.awt.Font("Comic Sans MS", 1, 18)); // NOI18N
+        img.setForeground(new java.awt.Color(0, 58, 111));
+        img.setIcon(new javax.swing.ImageIcon(getClass().getResource("/fr/esic/img/imc.jpg"))); // NOI18N
+        jPanel1.add(img, new org.netbeans.lib.awtextra.AbsoluteConstraints(1, 0, 960, 680));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -153,10 +161,12 @@ double res_imc;
         if(res_imc<18.5)
             
         {
-            lb_statut.setText("Insuffisance pondérale maigreur");
+        lb_statut.setText("Insuffisance pondérale maigreur");
         lb_statut.setForeground(Color.red );
-         btn_getpoids.setEnabled(true);
-         lb_conseil.setText("Votre poids apparaît trop faible par rapport à votre taille. ");
+        btn_getpoids.setEnabled(true);
+        btn_maigrir.setEnabled(false);
+        btn_maintien_poids.setEnabled(false);
+        lb_conseil.setText("Votre poids apparaît trop faible par rapport à votre taille. ");
         }
         
         
@@ -164,7 +174,10 @@ double res_imc;
             
         {
         lb_statut.setText("Corpulence normale");
-         lb_statut.setForeground(Color.green );
+        lb_statut.setForeground(Color.green );
+         btn_getpoids.setEnabled(false);
+        btn_maigrir.setEnabled(false);
+        btn_maintien_poids.setEnabled(true);
         lb_conseil.setText("Votre poids est adapté à votre taille. "
                 + "Gardez vos habitudes alimentaires pour conserver");
          
@@ -174,6 +187,7 @@ double res_imc;
         {
         lb_statut.setText("Surpoids");
          lb_statut.setForeground(Color.yellow);
+             btn_maintien_poids.setEnabled(false);
          btn_getpoids.setEnabled(false);
          btn_maigrir.setEnabled(true);
          lb_conseil.setText("Votre poids commence à devenir élevé par rapport à votre taille. ");
@@ -184,6 +198,7 @@ double res_imc;
         {
         lb_statut.setText("Obésité modérée");
          lb_statut.setForeground(Color.red );
+           btn_maintien_poids.setEnabled(false);
          btn_getpoids.setEnabled(false);
          btn_maigrir.setEnabled(true);
          lb_conseil.setText("Votre poids est trop élevé par rapport à votre taille. ");
@@ -193,6 +208,7 @@ double res_imc;
         {
         lb_statut.setText("Obésité sévere");
          lb_statut.setForeground(Color.red );
+            btn_maintien_poids.setEnabled(false);
          btn_getpoids.setEnabled(false);
          btn_maigrir.setEnabled(true);
          lb_conseil.setText("Votre poids est trop élevé par rapport à votre taille. ");
@@ -204,6 +220,7 @@ double res_imc;
         {
         lb_statut.setText("Obésité morbide");
          lb_statut.setForeground(Color.red );
+           btn_maintien_poids.setEnabled(false);
          btn_getpoids.setEnabled(false);
          btn_maigrir.setEnabled(true);
          lb_conseil.setText("Votre poids est trop élevé par rapport à votre taille. ");
@@ -244,10 +261,16 @@ double res_imc;
     private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
        btn_getpoids.setEnabled(false);
        btn_maigrir.setEnabled(false);
+        btn_maintien_poids.setEnabled(false);
     }//GEN-LAST:event_formWindowOpened
 
     private void btn_maigrirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_maigrirActionPerformed
-        // TODO add your handling code here:
+RegimePerdrePoids perdre_poids =new RegimePerdrePoids();
+perdre_poids.setVisible(true);
+this.hide();
+        
+
+// TODO add your handling code here:
     }//GEN-LAST:event_btn_maigrirActionPerformed
 
     public static void main(String args[]) {
@@ -289,6 +312,7 @@ double res_imc;
     private javax.swing.JButton btn_maintien_poids;
     private javax.swing.JLabel conseil;
     private javax.swing.JLabel imc;
+    private javax.swing.JLabel img;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JLabel lb_conseil;
     private javax.swing.JLabel lb_res_imc;

@@ -1,21 +1,19 @@
 -- MySQL dump 10.13  Distrib 8.0.22, for Win64 (x86_64)
 --
--- Host: localhost    Database: obesite
--- ------------------------------------------------------
--- Server version	5.6.10
+
 drop schema IF EXISTS obesite;
 create schema IF not EXISTS obesite;
 
 
-DROP TABLE IF EXISTS `regimeperdrepoids`;
-ALTER TABLE `obesite`.`regimeperdrepoids` 
-CHANGE COLUMN `poids_actuel` `poids_actuel` DOUBLE NULL ,
-CHANGE COLUMN `poids_final` `poids_final` DOUBLE NULL ,
-CHANGE COLUMN `Nombre_kilo` `Nombre_kilo` INT(11) NULL ,
-CHANGE COLUMN `periode_regime` `periode_regime` INT(11) NULL ,
-CHANGE COLUMN `cadence` `cadence` VARCHAR(45) NULL ,
-CHANGE COLUMN `type_activité` `type_activité` VARCHAR(45) NULL ,
-CHANGE COLUMN `nbre_heure` `nbre_heure` INT(11) NULL ;
+DROP TABLE IF EXISTS `regime_perdre_poids`;
+create  TABLE `obesite`.`regime_perdre_poids` 
+ `poids_actuel` DOUBLE NULL ,
+`poids_final` DOUBLE NULL ,
+ `Nombre_kilo` INT(11) NULL ,
+ `periode_regime` INT(11) NULL ,
+ `cadence` VARCHAR(45) NULL ,
+ `type_activité` VARCHAR(45) NULL ,
+ `nbre_heure` INT(11) NULL 
 
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
@@ -28,18 +26,15 @@ CREATE TABLE `imc` (
 
 
 LOCK TABLES `imc` WRITE;
-/*!40000 ALTER TABLE `imc` DISABLE KEYS */;
+
 INSERT INTO `imc` VALUES (0,0),(60,163);
-/*!40000 ALTER TABLE `imc` ENABLE KEYS */;
+
 UNLOCK TABLES;
 
---
--- Table structure for table `sportif`
---
+
 
 DROP TABLE IF EXISTS `sportif`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
+
 CREATE TABLE `sportif` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `nom` varchar(45) NOT NULL,
@@ -56,26 +51,9 @@ CREATE TABLE `sportif` (
   UNIQUE KEY `id_UNIQUE` (`id`),
   UNIQUE KEY `mail_UNIQUE` (`login`)
 ) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `sportif`
---
 
 LOCK TABLES `sportif` WRITE;
-/*!40000 ALTER TABLE `sportif` DISABLE KEYS */;
+;
 INSERT INTO `sportif` VALUES (1,'bensalah','mariem','feminin','bensalah','mariem','mariem',25,19,NULL,NULL),(2,'aaa','aaaaaa','feminin','azaz','azaz','azaz',77,14,NULL,NULL),(3,'aaa','aaa','feminin','aa','zaz','zaz',12,4447,NULL,NULL);
-/*!40000 ALTER TABLE `sportif` ENABLE KEYS */;
+;
 UNLOCK TABLES;
-/*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
-
-/*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
-/*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
-/*!40014 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS */;
-/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
-/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
-/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
-/*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
-
--- Dump completed on 2021-02-06  6:25:04
-

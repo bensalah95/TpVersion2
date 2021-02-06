@@ -27,25 +27,26 @@ public class Fenetre_de_demarage extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
+        btn_modifie_profil = new javax.swing.JButton();
+        btn_ajouter_objectif = new javax.swing.JButton();
         btn_historique = new javax.swing.JButton();
         jButton4 = new javax.swing.JButton();
         date = new javax.swing.JLabel();
+        img = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jButton1.setText("Modifier le profil");
-        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 190, 150, -1));
+        btn_modifie_profil.setText("Modifier le profil");
+        getContentPane().add(btn_modifie_profil, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 190, 150, -1));
 
-        jButton2.setText("ajouter un objectif");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+        btn_ajouter_objectif.setText("ajouter un objectif");
+        btn_ajouter_objectif.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                btn_ajouter_objectifActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 190, 150, -1));
+        getContentPane().add(btn_ajouter_objectif, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 190, 150, -1));
 
         btn_historique.setText("Mon  Historique");
         btn_historique.addActionListener(new java.awt.event.ActionListener() {
@@ -59,6 +60,9 @@ public class Fenetre_de_demarage extends javax.swing.JFrame {
         getContentPane().add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 380, 150, -1));
         getContentPane().add(date, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 20, 90, 24));
 
+        img.setIcon(new javax.swing.ImageIcon(getClass().getResource("/fr/esic/img/inscription.jpg"))); // NOI18N
+        getContentPane().add(img, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 850, 610));
+
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
@@ -68,11 +72,11 @@ public class Fenetre_de_demarage extends javax.swing.JFrame {
        this.hide();
     }//GEN-LAST:event_btn_historiqueActionPerformed
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+    private void btn_ajouter_objectifActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_ajouter_objectifActionPerformed
        Fenetre_IMC imc=new Fenetre_IMC();
        imc.setVisible(true);
        this.hide();
-    }//GEN-LAST:event_jButton2ActionPerformed
+    }//GEN-LAST:event_btn_ajouter_objectifActionPerformed
 
     /**
      * @param args the command line arguments
@@ -110,10 +114,11 @@ public class Fenetre_de_demarage extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btn_ajouter_objectif;
     private javax.swing.JButton btn_historique;
+    private javax.swing.JButton btn_modifie_profil;
     private javax.swing.JLabel date;
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
+    private javax.swing.JLabel img;
     private javax.swing.JButton jButton4;
     // End of variables declaration//GEN-END:variables
 }
