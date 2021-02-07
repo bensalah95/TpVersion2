@@ -47,6 +47,8 @@ public class Fenetre_IMC extends javax.swing.JFrame {
         txt_poids = new javax.swing.JTextField();
         btn_imc = new javax.swing.JButton();
         btn_maintien_poids = new javax.swing.JButton();
+        titre1 = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
         img = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -59,18 +61,19 @@ public class Fenetre_IMC extends javax.swing.JFrame {
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         titre.setFont(new java.awt.Font("Comic Sans MS", 3, 18)); // NOI18N
-        titre.setText("Gagner ... Maintien ....Ou Perdre du Poids!!! ");
-        jPanel1.add(titre, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 10, 520, -1));
+        titre.setForeground(new java.awt.Color(255, 105, 58));
+        titre.setText("Gagner ... ");
+        jPanel1.add(titre, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 10, 90, -1));
 
         poids.setFont(new java.awt.Font("Comic Sans MS", 3, 18)); // NOI18N
         poids.setForeground(new java.awt.Color(0, 58, 111));
         poids.setText("POIDS (Kg)");
-        jPanel1.add(poids, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 60, 140, 40));
+        jPanel1.add(poids, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 80, 140, 40));
 
         taille.setFont(new java.awt.Font("Comic Sans MS", 3, 18)); // NOI18N
         taille.setForeground(new java.awt.Color(0, 58, 111));
         taille.setText("TAILLE(cm)");
-        jPanel1.add(taille, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 120, 140, 40));
+        jPanel1.add(taille, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 140, 140, 40));
 
         imc.setFont(new java.awt.Font("Comic Sans MS", 3, 18)); // NOI18N
         imc.setForeground(new java.awt.Color(0, 58, 111));
@@ -102,6 +105,11 @@ public class Fenetre_IMC extends javax.swing.JFrame {
         btn_getpoids.setFont(new java.awt.Font("Comic Sans MS", 1, 14)); // NOI18N
         btn_getpoids.setForeground(new java.awt.Color(255, 255, 255));
         btn_getpoids.setText("Gangner Poids");
+        btn_getpoids.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_getpoidsActionPerformed(evt);
+            }
+        });
         jPanel1.add(btn_getpoids, new org.netbeans.lib.awtextra.AbsoluteConstraints(800, 620, 140, 40));
 
         lb_conseil.setFont(new java.awt.Font("Comic Sans MS", 3, 14)); // NOI18N
@@ -112,8 +120,8 @@ public class Fenetre_IMC extends javax.swing.JFrame {
 
         lb_res_imc.setFont(new java.awt.Font("Comic Sans MS", 3, 24)); // NOI18N
         jPanel1.add(lb_res_imc, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 290, 530, 40));
-        jPanel1.add(txt_taille, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 120, 140, 40));
-        jPanel1.add(txt_poids, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 60, 140, 40));
+        jPanel1.add(txt_taille, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 140, 140, 40));
+        jPanel1.add(txt_poids, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 80, 140, 40));
 
         btn_imc.setFont(new java.awt.Font("Comic Sans MS", 1, 14)); // NOI18N
         btn_imc.setForeground(new java.awt.Color(0, 58, 111));
@@ -123,13 +131,23 @@ public class Fenetre_IMC extends javax.swing.JFrame {
                 btn_imcActionPerformed(evt);
             }
         });
-        jPanel1.add(btn_imc, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 190, 140, 40));
+        jPanel1.add(btn_imc, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 210, 140, 40));
 
         btn_maintien_poids.setBackground(new java.awt.Color(0, 153, 0));
         btn_maintien_poids.setFont(new java.awt.Font("Comic Sans MS", 1, 14)); // NOI18N
         btn_maintien_poids.setForeground(new java.awt.Color(255, 255, 255));
         btn_maintien_poids.setText("Maintien Poids");
         jPanel1.add(btn_maintien_poids, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 570, 140, 40));
+
+        titre1.setFont(new java.awt.Font("Comic Sans MS", 3, 18)); // NOI18N
+        titre1.setForeground(new java.awt.Color(153, 170, 247));
+        titre1.setText("Maintien ....");
+        jPanel1.add(titre1, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 30, 130, -1));
+
+        jLabel1.setFont(new java.awt.Font("Comic Sans MS", 3, 18)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(0, 156, 83));
+        jLabel1.setText("Ou Perdre du Poids!!! ");
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 50, -1, -1));
 
         img.setBackground(new java.awt.Color(255, 255, 255));
         img.setFont(new java.awt.Font("Comic Sans MS", 1, 18)); // NOI18N
@@ -273,6 +291,12 @@ this.hide();
 // TODO add your handling code here:
     }//GEN-LAST:event_btn_maigrirActionPerformed
 
+    private void btn_getpoidsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_getpoidsActionPerformed
+RegimePerdrePoids perdre_poids =new RegimePerdrePoids();
+perdre_poids.setVisible(true);
+this.hide();
+            }//GEN-LAST:event_btn_getpoidsActionPerformed
+
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
@@ -313,6 +337,7 @@ this.hide();
     private javax.swing.JLabel conseil;
     private javax.swing.JLabel imc;
     private javax.swing.JLabel img;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JLabel lb_conseil;
     private javax.swing.JLabel lb_res_imc;
@@ -321,6 +346,7 @@ this.hide();
     private javax.swing.JLabel status;
     private javax.swing.JLabel taille;
     private javax.swing.JLabel titre;
+    private javax.swing.JLabel titre1;
     private javax.swing.JTextField txt_poids;
     private javax.swing.JTextField txt_taille;
     // End of variables declaration//GEN-END:variables

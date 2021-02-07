@@ -32,36 +32,60 @@ public class Fenetre_de_demarage extends javax.swing.JFrame {
         btn_historique = new javax.swing.JButton();
         jButton4 = new javax.swing.JButton();
         date = new javax.swing.JLabel();
+        btn_quitter = new javax.swing.JButton();
         img = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        btn_modifie_profil.setBackground(new java.awt.Color(255, 255, 255));
+        btn_modifie_profil.setFont(new java.awt.Font("Comic Sans MS", 3, 14)); // NOI18N
+        btn_modifie_profil.setForeground(new java.awt.Color(176, 151, 178));
         btn_modifie_profil.setText("Modifier le profil");
-        getContentPane().add(btn_modifie_profil, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 190, 150, -1));
+        getContentPane().add(btn_modifie_profil, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 190, 180, 40));
 
+        btn_ajouter_objectif.setBackground(new java.awt.Color(255, 255, 255));
+        btn_ajouter_objectif.setFont(new java.awt.Font("Comic Sans MS", 3, 14)); // NOI18N
+        btn_ajouter_objectif.setForeground(new java.awt.Color(176, 151, 178));
         btn_ajouter_objectif.setText("ajouter un objectif");
         btn_ajouter_objectif.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btn_ajouter_objectifActionPerformed(evt);
             }
         });
-        getContentPane().add(btn_ajouter_objectif, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 190, 150, -1));
+        getContentPane().add(btn_ajouter_objectif, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 190, 180, 40));
 
+        btn_historique.setBackground(new java.awt.Color(255, 255, 255));
+        btn_historique.setFont(new java.awt.Font("Comic Sans MS", 3, 14)); // NOI18N
+        btn_historique.setForeground(new java.awt.Color(176, 151, 178));
         btn_historique.setText("Mon  Historique");
         btn_historique.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btn_historiqueActionPerformed(evt);
             }
         });
-        getContentPane().add(btn_historique, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 380, 150, -1));
+        getContentPane().add(btn_historique, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 340, 180, 40));
 
+        jButton4.setBackground(new java.awt.Color(255, 255, 255));
+        jButton4.setFont(new java.awt.Font("Comic Sans MS", 3, 14)); // NOI18N
+        jButton4.setForeground(new java.awt.Color(176, 151, 178));
         jButton4.setText("Completer le profil");
-        getContentPane().add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 380, 150, -1));
+        getContentPane().add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 340, 180, 40));
         getContentPane().add(date, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 20, 90, 24));
 
+        btn_quitter.setBackground(new java.awt.Color(255, 0, 0));
+        btn_quitter.setFont(new java.awt.Font("Comic Sans MS", 3, 14)); // NOI18N
+        btn_quitter.setForeground(new java.awt.Color(255, 255, 255));
+        btn_quitter.setText("Deconnexion");
+        btn_quitter.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_quitterActionPerformed(evt);
+            }
+        });
+        getContentPane().add(btn_quitter, new org.netbeans.lib.awtextra.AbsoluteConstraints(780, 550, 150, 40));
+
         img.setIcon(new javax.swing.ImageIcon(getClass().getResource("/fr/esic/img/inscription.jpg"))); // NOI18N
-        getContentPane().add(img, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 850, 610));
+        getContentPane().add(img, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 970, 610));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -77,6 +101,12 @@ public class Fenetre_de_demarage extends javax.swing.JFrame {
        imc.setVisible(true);
        this.hide();
     }//GEN-LAST:event_btn_ajouter_objectifActionPerformed
+
+    private void btn_quitterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_quitterActionPerformed
+        Connexion cnx=new Connexion();
+        cnx.setVisible(true);
+        this.hide();
+    }//GEN-LAST:event_btn_quitterActionPerformed
 
     /**
      * @param args the command line arguments
@@ -117,6 +147,7 @@ public class Fenetre_de_demarage extends javax.swing.JFrame {
     private javax.swing.JButton btn_ajouter_objectif;
     private javax.swing.JButton btn_historique;
     private javax.swing.JButton btn_modifie_profil;
+    private javax.swing.JButton btn_quitter;
     private javax.swing.JLabel date;
     private javax.swing.JLabel img;
     private javax.swing.JButton jButton4;

@@ -50,10 +50,15 @@ CREATE TABLE `sportif` (
   PRIMARY KEY (`id`),
   UNIQUE KEY `id_UNIQUE` (`id`),
   UNIQUE KEY `mail_UNIQUE` (`login`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
+) ;
 
-LOCK TABLES `sportif` WRITE;
+
 ;
 INSERT INTO `sportif` VALUES (1,'bensalah','mariem','feminin','bensalah','mariem','mariem',25,19,NULL,NULL),(2,'aaa','aaaaaa','feminin','azaz','azaz','azaz',77,14,NULL,NULL),(3,'aaa','aaa','feminin','aa','zaz','zaz',12,4447,NULL,NULL);
 ;
-UNLOCK TABLES;
+
+CREATE TABLE `obesite`.`historique_cnx_dec` (
+
+  `login` VARCHAR(45) NULL,
+  `date_cnx` DATE NULL,
+  PRIMARY KEY (`id`));

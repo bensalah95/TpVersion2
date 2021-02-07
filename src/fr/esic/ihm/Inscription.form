@@ -31,11 +31,17 @@
   <SubComponents>
     <Component class="javax.swing.JLabel" name="jLabel1">
       <Properties>
-        <Property name="text" type="java.lang.String" value="INSCRIPTION "/>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Comic Sans MS" size="18" style="3"/>
+        </Property>
+        <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="ed" green="a8" red="99" type="rgb"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="INSC "/>
       </Properties>
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-          <AbsoluteConstraints x="230" y="10" width="240" height="25"/>
+          <AbsoluteConstraints x="230" y="10" width="70" height="30"/>
         </Constraint>
       </Constraints>
     </Component>
@@ -374,6 +380,41 @@
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
           <AbsoluteConstraints x="510" y="70" width="180" height="30"/>
+        </Constraint>
+      </Constraints>
+    </Component>
+    <Component class="javax.swing.JLabel" name="jLabel10">
+      <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Comic Sans MS" size="18" style="3"/>
+        </Property>
+        <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="cd" green="85" red="99" type="rgb"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="RIP"/>
+      </Properties>
+      <Constraints>
+        <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
+          <AbsoluteConstraints x="280" y="10" width="60" height="30"/>
+        </Constraint>
+      </Constraints>
+    </Component>
+    <Component class="javax.swing.JLabel" name="jLabel11">
+      <Properties>
+        <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="ff" green="ff" red="ff" type="rgb"/>
+        </Property>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Comic Sans MS" size="18" style="3"/>
+        </Property>
+        <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="c1" green="71" red="ac" type="rgb"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="TION"/>
+      </Properties>
+      <Constraints>
+        <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
+          <AbsoluteConstraints x="311" y="10" width="70" height="30"/>
         </Constraint>
       </Constraints>
     </Component>

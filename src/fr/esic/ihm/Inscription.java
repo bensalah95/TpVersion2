@@ -59,13 +59,17 @@ public class Inscription extends javax.swing.JFrame {
         jLabel8 = new javax.swing.JLabel();
         txt_mdp = new javax.swing.JPasswordField();
         date = new javax.swing.JLabel();
+        jLabel10 = new javax.swing.JLabel();
+        jLabel11 = new javax.swing.JLabel();
         img = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel1.setText("INSCRIPTION ");
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 10, 240, 25));
+        jLabel1.setFont(new java.awt.Font("Comic Sans MS", 3, 18)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(153, 168, 237));
+        jLabel1.setText("INSC ");
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 10, 70, 30));
 
         jLabel2.setBackground(new java.awt.Color(255, 255, 255));
         jLabel2.setFont(new java.awt.Font("Comic Sans MS", 1, 18)); // NOI18N
@@ -195,6 +199,17 @@ public class Inscription extends javax.swing.JFrame {
         date.setFont(new java.awt.Font("Comic Sans MS", 1, 14)); // NOI18N
         getContentPane().add(date, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 70, 180, 30));
 
+        jLabel10.setFont(new java.awt.Font("Comic Sans MS", 3, 18)); // NOI18N
+        jLabel10.setForeground(new java.awt.Color(153, 133, 205));
+        jLabel10.setText("RIP");
+        getContentPane().add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 10, 60, 30));
+
+        jLabel11.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel11.setFont(new java.awt.Font("Comic Sans MS", 3, 18)); // NOI18N
+        jLabel11.setForeground(new java.awt.Color(172, 113, 193));
+        jLabel11.setText("TION");
+        getContentPane().add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(311, 10, 70, 30));
+
         img.setIcon(new javax.swing.ImageIcon(getClass().getResource("/fr/esic/img/inscri.jpg"))); // NOI18N
         getContentPane().add(img, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 730, 590));
 
@@ -295,6 +310,8 @@ public class Inscription extends javax.swing.JFrame {
     private javax.swing.JLabel date;
     private javax.swing.JLabel img;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
