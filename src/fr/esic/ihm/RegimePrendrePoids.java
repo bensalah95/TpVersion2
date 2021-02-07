@@ -5,6 +5,14 @@
  */
 package fr.esic.ihm;
 
+import de.esic.dao.ConnexionBd;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author marye
@@ -27,21 +35,335 @@ public class RegimePrendrePoids extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jLabel2 = new javax.swing.JLabel();
+        txt_nbre_kg = new javax.swing.JTextField();
+        lb_date_start_regime = new javax.swing.JLabel();
+        txt_periode_regime = new javax.swing.JTextField();
+        jLabel1 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        txt_poids_actuel = new javax.swing.JTextField();
+        jLabel4 = new javax.swing.JLabel();
+        txt_poids_souhaité = new javax.swing.JTextField();
+        jLabel5 = new javax.swing.JLabel();
+        combox_cadence = new javax.swing.JComboBox();
+        jLabel6 = new javax.swing.JLabel();
+        jLabel7 = new javax.swing.JLabel();
+        txt_nbre_heure = new javax.swing.JTextField();
+        btn_valider_regime = new javax.swing.JButton();
+        btn_commencer_regime = new javax.swing.JButton();
+        btn_acceeuil = new javax.swing.JButton();
+        btn_quitter = new javax.swing.JButton();
+        com_box_type = new javax.swing.JComboBox();
+        btn_commencer_regime1 = new javax.swing.JButton();
+        img = new javax.swing.JLabel();
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
+        jLabel2.setFont(new java.awt.Font("Comic Sans MS", 3, 14)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(0, 58, 111));
+        jLabel2.setText("Nombre de  Kilogramme a parcourir :");
+
+        txt_nbre_kg.setFont(new java.awt.Font("Comic Sans MS", 3, 14)); // NOI18N
+        txt_nbre_kg.setForeground(new java.awt.Color(0, 58, 111));
+
+        lb_date_start_regime.setBackground(new java.awt.Color(255, 168, 138));
+
+        txt_periode_regime.setFont(new java.awt.Font("Comic Sans MS", 3, 14)); // NOI18N
+        txt_periode_regime.setForeground(new java.awt.Color(0, 58, 111));
+
+        jLabel1.setFont(new java.awt.Font("Comic Sans MS", 3, 14)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(0, 58, 111));
+        jLabel1.setText("Periode de régime (en mois) :");
+
+        jLabel3.setFont(new java.awt.Font("Comic Sans MS", 3, 14)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(0, 58, 111));
+        jLabel3.setText("Poids actuel :");
+
+        txt_poids_actuel.setFont(new java.awt.Font("Comic Sans MS", 3, 14)); // NOI18N
+        txt_poids_actuel.setForeground(new java.awt.Color(0, 58, 111));
+
+        jLabel4.setFont(new java.awt.Font("Comic Sans MS", 3, 14)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(0, 58, 111));
+        jLabel4.setText("Poids souhaité:");
+
+        txt_poids_souhaité.setFont(new java.awt.Font("Comic Sans MS", 3, 14)); // NOI18N
+        txt_poids_souhaité.setForeground(new java.awt.Color(0, 58, 111));
+
+        jLabel5.setFont(new java.awt.Font("Comic Sans MS", 3, 14)); // NOI18N
+        jLabel5.setForeground(new java.awt.Color(0, 58, 111));
+        jLabel5.setText("Cadence de régime :");
+
+        combox_cadence.setFont(new java.awt.Font("Comic Sans MS", 3, 14)); // NOI18N
+        combox_cadence.setForeground(new java.awt.Color(0, 58, 111));
+        combox_cadence.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Journaliére", "Hebdomadaire" }));
+        combox_cadence.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                combox_cadenceActionPerformed(evt);
+            }
+        });
+
+        jLabel6.setFont(new java.awt.Font("Comic Sans MS", 3, 14)); // NOI18N
+        jLabel6.setForeground(new java.awt.Color(0, 58, 111));
+        jLabel6.setText("Type d'activité : ");
+
+        jLabel7.setFont(new java.awt.Font("Comic Sans MS", 3, 14)); // NOI18N
+        jLabel7.setForeground(new java.awt.Color(0, 58, 111));
+        jLabel7.setText("Nombre des Heures :");
+
+        txt_nbre_heure.setFont(new java.awt.Font("Comic Sans MS", 3, 14)); // NOI18N
+        txt_nbre_heure.setForeground(new java.awt.Color(0, 58, 111));
+
+        btn_valider_regime.setBackground(new java.awt.Color(0, 58, 111));
+        btn_valider_regime.setFont(new java.awt.Font("Comic Sans MS", 3, 14)); // NOI18N
+        btn_valider_regime.setForeground(new java.awt.Color(255, 255, 255));
+        btn_valider_regime.setText("Valider Régime");
+        btn_valider_regime.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_valider_regimeActionPerformed(evt);
+            }
+        });
+
+        btn_commencer_regime.setBackground(new java.awt.Color(0, 153, 0));
+        btn_commencer_regime.setFont(new java.awt.Font("Comic Sans MS", 3, 14)); // NOI18N
+        btn_commencer_regime.setText("Commencer");
+        btn_commencer_regime.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_commencer_regimeActionPerformed(evt);
+            }
+        });
+
+        btn_acceeuil.setBackground(new java.awt.Color(255, 168, 138));
+        btn_acceeuil.setFont(new java.awt.Font("Comic Sans MS", 3, 14)); // NOI18N
+        btn_acceeuil.setForeground(new java.awt.Color(255, 255, 255));
+        btn_acceeuil.setText("Acceuil");
+        btn_acceeuil.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_acceeuilActionPerformed(evt);
+            }
+        });
+
+        btn_quitter.setBackground(new java.awt.Color(255, 0, 0));
+        btn_quitter.setFont(new java.awt.Font("Comic Sans MS", 3, 14)); // NOI18N
+        btn_quitter.setForeground(new java.awt.Color(255, 255, 255));
+        btn_quitter.setText("Deconnexion");
+        btn_quitter.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_quitterActionPerformed(evt);
+            }
+        });
+
+        com_box_type.setFont(new java.awt.Font("Comic Sans MS", 3, 14)); // NOI18N
+        com_box_type.setForeground(new java.awt.Color(0, 58, 111));
+        com_box_type.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Marche", "Course" }));
+        com_box_type.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                com_box_typeActionPerformed(evt);
+            }
+        });
+
+        btn_commencer_regime1.setBackground(new java.awt.Color(255, 198, 147));
+        btn_commencer_regime1.setFont(new java.awt.Font("Comic Sans MS", 3, 14)); // NOI18N
+        btn_commencer_regime1.setText("Ajouter un autre objectif");
+
+        img.setIcon(new javax.swing.ImageIcon(getClass().getResource("/fr/esic/img/perdre poids.jpg"))); // NOI18N
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 888, Short.MAX_VALUE)
+            .addGap(0, 984, Short.MAX_VALUE)
+            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(layout.createSequentialGroup()
+                    .addGap(0, 22, Short.MAX_VALUE)
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(layout.createSequentialGroup()
+                            .addGap(290, 290, 290)
+                            .addComponent(txt_nbre_kg, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGap(200, 200, 200)
+                            .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(layout.createSequentialGroup()
+                            .addGap(740, 740, 740)
+                            .addComponent(com_box_type, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(layout.createSequentialGroup()
+                            .addGap(160, 160, 160)
+                            .addComponent(txt_poids_actuel, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(layout.createSequentialGroup()
+                            .addGap(220, 220, 220)
+                            .addComponent(btn_valider_regime, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(layout.createSequentialGroup()
+                            .addGap(770, 770, 770)
+                            .addComponent(btn_quitter, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(layout.createSequentialGroup()
+                            .addGap(570, 570, 570)
+                            .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(layout.createSequentialGroup()
+                            .addGap(490, 490, 490)
+                            .addComponent(lb_date_start_regime, javax.swing.GroupLayout.PREFERRED_SIZE, 280, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(layout.createSequentialGroup()
+                            .addGap(290, 290, 290)
+                            .addComponent(txt_periode_regime, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(layout.createSequentialGroup()
+                            .addGap(30, 30, 30)
+                            .addComponent(btn_commencer_regime, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(layout.createSequentialGroup()
+                            .addGap(20, 20, 20)
+                            .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(layout.createSequentialGroup()
+                            .addGap(740, 740, 740)
+                            .addComponent(combox_cadence, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(layout.createSequentialGroup()
+                            .addGap(20, 20, 20)
+                            .addComponent(jLabel2))
+                        .addGroup(layout.createSequentialGroup()
+                            .addGap(500, 500, 500)
+                            .addComponent(btn_commencer_regime1, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(layout.createSequentialGroup()
+                            .addGap(20, 20, 20)
+                            .addComponent(btn_acceeuil, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(layout.createSequentialGroup()
+                            .addGap(20, 20, 20)
+                            .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(layout.createSequentialGroup()
+                            .addGap(20, 20, 20)
+                            .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(layout.createSequentialGroup()
+                            .addGap(160, 160, 160)
+                            .addComponent(txt_poids_souhaité, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(layout.createSequentialGroup()
+                            .addGap(750, 750, 750)
+                            .addComponent(txt_nbre_heure, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(layout.createSequentialGroup()
+                            .addGap(570, 570, 570)
+                            .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(img, javax.swing.GroupLayout.PREFERRED_SIZE, 940, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGap(0, 22, Short.MAX_VALUE)))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 527, Short.MAX_VALUE)
+            .addGap(0, 597, Short.MAX_VALUE)
+            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(layout.createSequentialGroup()
+                    .addGap(0, 18, Short.MAX_VALUE)
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(layout.createSequentialGroup()
+                            .addGap(70, 70, 70)
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(txt_nbre_kg, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGap(20, 20, 20)
+                            .addComponent(com_box_type, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGap(40, 40, 40)
+                            .addComponent(txt_poids_actuel, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGap(160, 160, 160)
+                            .addComponent(btn_valider_regime, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGap(30, 30, 30)
+                            .addComponent(btn_quitter, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(layout.createSequentialGroup()
+                            .addGap(140, 140, 140)
+                            .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(layout.createSequentialGroup()
+                            .addGap(20, 20, 20)
+                            .addComponent(lb_date_start_regime, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(layout.createSequentialGroup()
+                            .addGap(140, 140, 140)
+                            .addComponent(txt_periode_regime, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(layout.createSequentialGroup()
+                            .addGap(500, 500, 500)
+                            .addComponent(btn_commencer_regime, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(layout.createSequentialGroup()
+                            .addGap(300, 300, 300)
+                            .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(layout.createSequentialGroup()
+                            .addGap(70, 70, 70)
+                            .addComponent(combox_cadence, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(layout.createSequentialGroup()
+                            .addGap(70, 70, 70)
+                            .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(layout.createSequentialGroup()
+                            .addGap(430, 430, 430)
+                            .addComponent(btn_commencer_regime1, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(layout.createSequentialGroup()
+                            .addGap(20, 20, 20)
+                            .addComponent(btn_acceeuil, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(layout.createSequentialGroup()
+                            .addGap(220, 220, 220)
+                            .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(layout.createSequentialGroup()
+                            .addGap(140, 140, 140)
+                            .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(layout.createSequentialGroup()
+                            .addGap(300, 300, 300)
+                            .addComponent(txt_poids_souhaité, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(layout.createSequentialGroup()
+                            .addGap(240, 240, 240)
+                            .addComponent(txt_nbre_heure, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(layout.createSequentialGroup()
+                            .addGap(240, 240, 240)
+                            .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(img, javax.swing.GroupLayout.PREFERRED_SIZE, 560, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGap(0, 19, Short.MAX_VALUE)))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void combox_cadenceActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_combox_cadenceActionPerformed
+
+    }//GEN-LAST:event_combox_cadenceActionPerformed
+
+    private void btn_valider_regimeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_valider_regimeActionPerformed
+
+        int nbre_kilo = Integer.parseInt(txt_nbre_kg.getText());
+        int periode = Integer.parseInt(txt_periode_regime.getText());
+        double poids_initial = Double.parseDouble(txt_poids_actuel.getText());
+        double poids_souhaite = Double.parseDouble(txt_poids_souhaité.getText());
+        String cadence = combox_cadence.getSelectedItem().toString();
+        int nbre_heure = Integer.parseInt(txt_nbre_heure.getText());
+        String type_activité = com_box_type.getSelectedItem().toString();
+
+        btn_commencer_regime.setEnabled(true);
+        btn_commencer_regime1.setEnabled(true);
+        String sql = "insert into regime_perdre_poids (Nombre_kilo,periode_regime,poids_actuel,poids_final,cadence,nbre_heure,type_activité) values(?,?,?,?,?,?,?)";
+
+        try {
+            Connection connexion = ConnexionBd.getConnection();
+            PreparedStatement prepare;
+            prepare = connexion.prepareStatement(sql);
+            prepare.setInt(1, nbre_kilo);
+            prepare.setInt(2, periode);
+            prepare.setDouble(3, poids_initial);
+            prepare.setDouble(4, poids_souhaite);
+            prepare.setString(5, cadence);
+            prepare.setInt(6, nbre_heure);
+            prepare.setString(7, type_activité);
+            prepare.execute();
+            JOptionPane.showMessageDialog(rootPane, "Régime Ajouté avec succés!!");
+
+        } catch (SQLException ex) {
+            Logger.getLogger(Fenetre_IMC.class.getName()).log(Level.SEVERE, null, ex);
+        }
+
+    }//GEN-LAST:event_btn_valider_regimeActionPerformed
+
+    private void btn_commencer_regimeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_commencer_regimeActionPerformed
+
+    }//GEN-LAST:event_btn_commencer_regimeActionPerformed
+
+    private void btn_acceeuilActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_acceeuilActionPerformed
+        Fenetre_de_demarage fn = new Fenetre_de_demarage();
+        fn.setVisible(true);
+        this.hide();
+    }//GEN-LAST:event_btn_acceeuilActionPerformed
+
+    private void btn_quitterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_quitterActionPerformed
+        Connexion cnx = new Connexion();
+        cnx.setVisible(true);
+        this.hide();
+    }//GEN-LAST:event_btn_quitterActionPerformed
+
+    private void com_box_typeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_com_box_typeActionPerformed
+
+    }//GEN-LAST:event_com_box_typeActionPerformed
 
     /**
      * @param args the command line arguments
@@ -79,5 +401,26 @@ public class RegimePrendrePoids extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btn_acceeuil;
+    private javax.swing.JButton btn_commencer_regime;
+    private javax.swing.JButton btn_commencer_regime1;
+    private javax.swing.JButton btn_quitter;
+    private javax.swing.JButton btn_valider_regime;
+    private javax.swing.JComboBox com_box_type;
+    private javax.swing.JComboBox combox_cadence;
+    private javax.swing.JLabel img;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel lb_date_start_regime;
+    private javax.swing.JTextField txt_nbre_heure;
+    private javax.swing.JTextField txt_nbre_kg;
+    private javax.swing.JTextField txt_periode_regime;
+    private javax.swing.JTextField txt_poids_actuel;
+    private javax.swing.JTextField txt_poids_souhaité;
     // End of variables declaration//GEN-END:variables
 }

@@ -50,7 +50,7 @@ public class UserDao {
         String sql ="insert into sportif(nom,prenom,sex,login,mdp,mdp2,poids,age) values(?,?,?,?,?,?,?,?)";
    
     Connection connexion=ConnexionBd.getConnection();
-    PreparedStatement prepare =connexion.prepareCall(sql);
+    PreparedStatement prepare =connexion.prepareStatement(sql);
     
     
     
