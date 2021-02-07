@@ -114,7 +114,7 @@ public class FitnessTime extends javax.swing.JFrame {
 
         img.setFont(new java.awt.Font("Segoe Print", 3, 24)); // NOI18N
         img.setIcon(new javax.swing.ImageIcon(getClass().getResource("/fr/esic/img/page_app.jpg"))); // NOI18N
-        jPanel1.add(img, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 930, 660));
+        jPanel1.add(img, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 920, 610));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);

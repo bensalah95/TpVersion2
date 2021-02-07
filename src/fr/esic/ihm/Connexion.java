@@ -27,7 +27,7 @@ public class Connexion extends javax.swing.JFrame {
    void showDate(){
         
         Date actuelle = new Date();
-       DateFormat dateFormat=new SimpleDateFormat("dd/MM/YYYY ");
+       DateFormat dateFormat=new SimpleDateFormat("dd/MM/YYYY hh:mm:ss ");
        lb_date.setText(" "+dateFormat.format(actuelle));
      
     }

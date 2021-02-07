@@ -267,7 +267,9 @@ this.hide();
     }//GEN-LAST:event_btn_acceeuilActionPerformed
 
     private void btn_commencer_regimeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_commencer_regimeActionPerformed
-
+ Commencer_Sport sport= new Commencer_Sport();
+        sport.setVisible(true);
+        this.hide();
 
 
     }//GEN-LAST:event_btn_commencer_regimeActionPerformed
