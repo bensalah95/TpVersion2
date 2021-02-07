@@ -55,7 +55,7 @@ public class RegimePerdrePoids extends javax.swing.JFrame {
 
         jLabel2.setFont(new java.awt.Font("Comic Sans MS", 3, 14)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(0, 58, 111));
-        jLabel2.setText("Nombre de  Kilogramme a parcourir :");
+        jLabel2.setText("Nombre de  Kilogramme a perdre :");
         jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 70, -1, 50));
 
         txt_nbre_kg.setFont(new java.awt.Font("Comic Sans MS", 3, 14)); // NOI18N
@@ -135,6 +135,11 @@ public class RegimePerdrePoids extends javax.swing.JFrame {
         btn_commencer_regime.setBackground(new java.awt.Color(0, 153, 0));
         btn_commencer_regime.setFont(new java.awt.Font("Comic Sans MS", 3, 14)); // NOI18N
         btn_commencer_regime.setText("Commencer");
+        btn_commencer_regime.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_commencer_regimeActionPerformed(evt);
+            }
+        });
         jPanel1.add(btn_commencer_regime, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 500, 150, 40));
 
         btn_acceeuil.setBackground(new java.awt.Color(255, 168, 138));
@@ -172,6 +177,11 @@ public class RegimePerdrePoids extends javax.swing.JFrame {
         btn_commencer_regime1.setBackground(new java.awt.Color(255, 198, 147));
         btn_commencer_regime1.setFont(new java.awt.Font("Comic Sans MS", 3, 14)); // NOI18N
         btn_commencer_regime1.setText("Ajouter un autre objectif");
+        btn_commencer_regime1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_commencer_regime1ActionPerformed(evt);
+            }
+        });
         jPanel1.add(btn_commencer_regime1, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 430, 220, 40));
 
         img.setIcon(new javax.swing.ImageIcon(getClass().getResource("/fr/esic/img/perdre poids.jpg"))); // NOI18N
@@ -255,6 +265,18 @@ fn.setVisible(true);
 this.hide();
 
     }//GEN-LAST:event_btn_acceeuilActionPerformed
+
+    private void btn_commencer_regimeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_commencer_regimeActionPerformed
+
+
+
+    }//GEN-LAST:event_btn_commencer_regimeActionPerformed
+
+    private void btn_commencer_regime1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_commencer_regime1ActionPerformed
+      Ajouter_nv_objectif nv=new Ajouter_nv_objectif();
+      nv.setVisible(true);
+      this.hide();
+    }//GEN-LAST:event_btn_commencer_regime1ActionPerformed
 
     
     public static void main(String args[]) {
