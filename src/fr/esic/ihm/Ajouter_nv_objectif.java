@@ -117,6 +117,11 @@ public class Ajouter_nv_objectif extends javax.swing.JFrame {
         btn_commencer_regime.setBackground(new java.awt.Color(0, 153, 0));
         btn_commencer_regime.setFont(new java.awt.Font("Comic Sans MS", 3, 14)); // NOI18N
         btn_commencer_regime.setText("Commencer");
+        btn_commencer_regime.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_commencer_regimeActionPerformed(evt);
+            }
+        });
         jPanel1.add(btn_commencer_regime, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 500, 150, 40));
 
         jLabel6.setFont(new java.awt.Font("Comic Sans MS", 3, 14)); // NOI18N
@@ -215,6 +220,12 @@ btn_commencer_regime.setEnabled(false);
 btn_commencer_regime1.setEnabled(false);
 
     }//GEN-LAST:event_formWindowOpened
+
+    private void btn_commencer_regimeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_commencer_regimeActionPerformed
+        Commencer_Sport sport= new Commencer_Sport();
+        sport.setVisible(true);
+        this.hide();
+    }//GEN-LAST:event_btn_commencer_regimeActionPerformed
 
     /**
      * @param args the command line arguments
