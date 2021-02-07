@@ -42,7 +42,7 @@ public class Fenetre_de_demarage extends javax.swing.JFrame {
         btn_modifie_profil.setFont(new java.awt.Font("Comic Sans MS", 3, 14)); // NOI18N
         btn_modifie_profil.setForeground(new java.awt.Color(176, 151, 178));
         btn_modifie_profil.setText("Modifier le profil");
-        getContentPane().add(btn_modifie_profil, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 190, 180, 40));
+        getContentPane().add(btn_modifie_profil, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 120, 180, 40));
 
         btn_ajouter_objectif.setBackground(new java.awt.Color(255, 255, 255));
         btn_ajouter_objectif.setFont(new java.awt.Font("Comic Sans MS", 3, 14)); // NOI18N
@@ -53,7 +53,7 @@ public class Fenetre_de_demarage extends javax.swing.JFrame {
                 btn_ajouter_objectifActionPerformed(evt);
             }
         });
-        getContentPane().add(btn_ajouter_objectif, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 190, 180, 40));
+        getContentPane().add(btn_ajouter_objectif, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 120, 180, 40));
 
         btn_historique.setBackground(new java.awt.Color(255, 255, 255));
         btn_historique.setFont(new java.awt.Font("Comic Sans MS", 3, 14)); // NOI18N
@@ -64,13 +64,13 @@ public class Fenetre_de_demarage extends javax.swing.JFrame {
                 btn_historiqueActionPerformed(evt);
             }
         });
-        getContentPane().add(btn_historique, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 340, 180, 40));
+        getContentPane().add(btn_historique, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 390, 180, 40));
 
         jButton4.setBackground(new java.awt.Color(255, 255, 255));
         jButton4.setFont(new java.awt.Font("Comic Sans MS", 3, 14)); // NOI18N
         jButton4.setForeground(new java.awt.Color(176, 151, 178));
         jButton4.setText("Completer le profil");
-        getContentPane().add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 340, 180, 40));
+        getContentPane().add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 390, 180, 40));
         getContentPane().add(date, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 20, 90, 24));
 
         btn_quitter.setBackground(new java.awt.Color(255, 0, 0));
@@ -82,7 +82,7 @@ public class Fenetre_de_demarage extends javax.swing.JFrame {
                 btn_quitterActionPerformed(evt);
             }
         });
-        getContentPane().add(btn_quitter, new org.netbeans.lib.awtextra.AbsoluteConstraints(780, 550, 150, 40));
+        getContentPane().add(btn_quitter, new org.netbeans.lib.awtextra.AbsoluteConstraints(780, 560, 150, 40));
 
         img.setIcon(new javax.swing.ImageIcon(getClass().getResource("/fr/esic/img/inscription.jpg"))); // NOI18N
         getContentPane().add(img, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 970, 610));
