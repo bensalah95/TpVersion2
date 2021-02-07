@@ -104,7 +104,7 @@ public class Fenetre_IMC extends javax.swing.JFrame {
         btn_getpoids.setBackground(new java.awt.Color(255, 102, 0));
         btn_getpoids.setFont(new java.awt.Font("Comic Sans MS", 1, 14)); // NOI18N
         btn_getpoids.setForeground(new java.awt.Color(255, 255, 255));
-        btn_getpoids.setText("Gangner Poids");
+        btn_getpoids.setText("Gagner Poids");
         btn_getpoids.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btn_getpoidsActionPerformed(evt);

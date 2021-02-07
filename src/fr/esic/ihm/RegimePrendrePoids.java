@@ -61,7 +61,7 @@ public class RegimePrendrePoids extends javax.swing.JFrame {
 
         jLabel2.setFont(new java.awt.Font("Comic Sans MS", 3, 14)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(0, 58, 111));
-        jLabel2.setText("Nombre de  Kilogramme a parcourir :");
+        jLabel2.setText("Nombre de  Kilométres a parcourir :");
 
         txt_nbre_kg.setFont(new java.awt.Font("Comic Sans MS", 3, 14)); // NOI18N
         txt_nbre_kg.setForeground(new java.awt.Color(0, 58, 111));
@@ -323,7 +323,7 @@ public class RegimePrendrePoids extends javax.swing.JFrame {
 
         btn_commencer_regime.setEnabled(true);
         btn_commencer_regime1.setEnabled(true);
-        String sql = "insert into regime_perdre_poids (Nombre_kilo,periode_regime,poids_actuel,poids_final,cadence,nbre_heure,type_activité) values(?,?,?,?,?,?,?)";
+        String sql = "insert into regime_prendre_poids (Id_Sportif,Nombre_kilo,periode_regime,poids_actuel,poids_final,cadence,nbre_heure,type_activité) values(null,?,?,?,?,?,?,?)";
 
         try {
             Connection connexion = ConnexionBd.getConnection();

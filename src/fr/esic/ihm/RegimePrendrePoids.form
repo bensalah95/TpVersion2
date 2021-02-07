@@ -208,7 +208,7 @@
         <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
           <Color blue="6f" green="3a" red="0" type="rgb"/>
         </Property>
-        <Property name="text" type="java.lang.String" value="Nombre de  Kilogramme a parcourir :"/>
+        <Property name="text" type="java.lang.String" value="Nombre de  Kilom&#xe9;tres a parcourir :"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JTextField" name="txt_nbre_kg">

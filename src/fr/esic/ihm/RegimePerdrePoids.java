@@ -53,7 +53,7 @@ public class RegimePerdrePoids extends javax.swing.JFrame {
 
         jLabel2.setFont(new java.awt.Font("Comic Sans MS", 3, 14)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(0, 58, 111));
-        jLabel2.setText("Nombre de  Kilogramme a parcourir :");
+        jLabel2.setText("Nombre de  Kilomètres a parcourir :");
         jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 70, -1, 50));
 
         txt_nbre_kg.setFont(new java.awt.Font("Comic Sans MS", 3, 14)); // NOI18N
@@ -112,7 +112,7 @@ public class RegimePerdrePoids extends javax.swing.JFrame {
 
         jLabel7.setFont(new java.awt.Font("Comic Sans MS", 3, 14)); // NOI18N
         jLabel7.setForeground(new java.awt.Color(0, 58, 111));
-        jLabel7.setText("Nombre des Heures :");
+        jLabel7.setText("Nombre d'Heures :");
         jPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 240, 150, 40));
 
         txt_nbre_heure.setFont(new java.awt.Font("Comic Sans MS", 3, 14)); // NOI18N
@@ -200,6 +200,7 @@ public class RegimePerdrePoids extends javax.swing.JFrame {
 
         int nbre_kilo = Integer.parseInt(txt_nbre_kg.getText());
         int periode = Integer.parseInt(txt_periode_regime.getText());
+        //int poids_imc = Integer.parseInt(Fenetre_IMC.txt_poids.getText());
         double poids_initial = Double.parseDouble(txt_poids_actuel.getText());
         double poids_souhaite = Double.parseDouble(txt_poids_souhaité.getText());
         String cadence = combox_cadence.getSelectedItem().toString();
