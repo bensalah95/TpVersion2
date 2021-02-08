@@ -2,7 +2,8 @@ drop schema  if exists obesite;
 create schema  if not exists obesite;
 CREATE TABLE `obesite`.`historique_cnx_dec` (
     `login` VARCHAR(45),
-    `date_cnx` DATE
+    `date_cnx` VARCHAR(45),
+	`nb_cnx` int(20)
 );
 
 
@@ -44,15 +45,4 @@ ALTER TABLE `obesite`.`sportif`
 CHANGE COLUMN `id` `id` INT(11) NOT NULL AUTO_INCREMENT ,
 ADD PRIMARY KEY (`id`);
 ;
-
-
-ALTER TABLE `obesite`.`sportif` 
-DROP COLUMN `dateInscrip`,
-DROP COLUMN `dateConx`;
-
-ALTER TABLE `obesite`.`historique_cnx_dec` 
-ADD COLUMN `date_inscri` VARCHAR(45) NULL AFTER `nbre_cnx`;
-
-ALTER TABLE `obesite`.`historique_cnx_dec` 
-ADD COLUMN `date_decnx` VARCHAR(45) NULL AFTER `date_inscri`;
 
