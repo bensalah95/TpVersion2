@@ -10,6 +10,7 @@ import javax.swing.JOptionPane;
 
 public class RegimePerdrePoids extends javax.swing.JFrame {
 
+   
     public RegimePerdrePoids() {
         initComponents();
     }
@@ -217,13 +218,7 @@ public class RegimePerdrePoids extends javax.swing.JFrame {
           btn_commencer_regime1.setEnabled(true);
         String sql ="insert into regime_perdre_poids (Nombre_kilo,periode_regime,poids_actuel,poids_final,cadence,nbre_heure,type_activité) values(?,?,?,?,?,?,?)";
    
-   /*  prepare.setInt(1, Nombre_kilo);
-            prepare.setInt(2, periode_regime);
-            prepare.setDouble(3, poids_actuel);
-            prepare.setDouble(4, poids_final);
-            prepare.setString(5, cadence);
-            prepare.setInt(6, nbre_heure);
-            prepare.setString(7, type_activité);*/
+   
         try {
             Connection connexion = ConnexionBd.getConnection();
             PreparedStatement prepare;
@@ -238,6 +233,7 @@ public class RegimePerdrePoids extends javax.swing.JFrame {
             prepare.execute();
             JOptionPane.showMessageDialog(rootPane, "Régime Ajouté avec succés!!");
 
+             
         } catch (SQLException ex) {
             Logger.getLogger(Fenetre_IMC.class.getName()).log(Level.SEVERE, null, ex);
         }
@@ -341,5 +337,6 @@ public class RegimePerdrePoids extends javax.swing.JFrame {
     private javax.swing.JTextField txt_poids_souhaité;
     private javax.swing.ButtonGroup type_activite;
     // End of variables declaration//GEN-END:variables
+
 
 }

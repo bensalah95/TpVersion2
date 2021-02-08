@@ -14,7 +14,7 @@ public class ConnexionBd {
  protected static final String DRIVER_NAME="com.mysql.jdbc.Driver";
     protected static final String DB_NAME="obesite";
 
-    protected static final String URL="jdbc:mysql://localhost/obesite";
+    protected static final String URL="jdbc:mysql://localhost:3307/obesite";
     protected static final String USER="root";
     protected static final String PASSWORD="";
     
