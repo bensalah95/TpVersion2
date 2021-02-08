@@ -137,6 +137,11 @@ public class Fenetre_IMC extends javax.swing.JFrame {
         btn_maintien_poids.setFont(new java.awt.Font("Comic Sans MS", 1, 14)); // NOI18N
         btn_maintien_poids.setForeground(new java.awt.Color(255, 255, 255));
         btn_maintien_poids.setText("Maintien Poids");
+        btn_maintien_poids.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_maintien_poidsActionPerformed(evt);
+            }
+        });
         jPanel1.add(btn_maintien_poids, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 570, 140, 40));
 
         titre1.setFont(new java.awt.Font("Comic Sans MS", 3, 18)); // NOI18N
@@ -296,6 +301,13 @@ RegimePerdrePoids perdre_poids =new RegimePerdrePoids();
 perdre_poids.setVisible(true);
 this.hide();
             }//GEN-LAST:event_btn_getpoidsActionPerformed
+
+    private void btn_maintien_poidsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_maintien_poidsActionPerformed
+
+        
+        
+        
+    }//GEN-LAST:event_btn_maintien_poidsActionPerformed
 
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */

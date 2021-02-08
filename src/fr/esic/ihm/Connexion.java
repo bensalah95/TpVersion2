@@ -6,6 +6,8 @@ import de.esic.dao.UserDao;
 import fr.esic.model.User;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.Statement;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
@@ -121,25 +123,41 @@ public class Connexion extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
+int nbre_cnx;
+String log;
     private void bt_connexionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bt_connexionActionPerformed
-         Date actuelle = new Date();
-       DateFormat dateFormat=new SimpleDateFormat("dd/MM/YYYY ");
-       lb_date.setText(""+dateFormat.format(actuelle));  
-      String date=dateFormat.format(actuelle);
+        Date actuelle = new Date();
+        DateFormat dateFormat=new SimpleDateFormat("dd/MM/YYYY hh:mm:ss ");
+        lb_date.setText(""+dateFormat.format(actuelle));  
+        String date=dateFormat.format(actuelle);
         String date_cnx; 
         date_cnx = date;
         
         String login=txt_login.getText();
         String password=txt_pwd.getText();
-        String sql ="insert into historique_cnx_dec(login,date_cnx) values(?,date_cnx)";
-        try{
-            
-          Connection connexion=ConnexionBd.getConnection();
-          PreparedStatement prepare;
+        
+        
+       
+         
+        try{ 
+            Connection connexion=ConnexionBd.getConnection();
+            PreparedStatement prepare;
+            Statement st;
+            ResultSet rst;
+            st=connexion.createStatement();
+            rst=st.executeQuery("select * from  historique_cnx_dec");
+          String sql ="insert into historique_cnx_dec(login,date_cnx,nbre_cnx) values(?,?,?)";
+         while(rst.next()){
+             log=rst.getString("login");
+              if(log.equals(login)){
+                nbre_cnx++;
+               
+             }}
+          
           prepare = connexion.prepareStatement(sql);
           prepare.setString(1,login);
-         // prepare.setString(2,date);
+          prepare.setString(2,date);
+          prepare.setInt(3,nbre_cnx);
           prepare.execute();
 
             

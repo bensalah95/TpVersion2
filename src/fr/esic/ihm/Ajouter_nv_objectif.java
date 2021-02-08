@@ -48,6 +48,7 @@ public class Ajouter_nv_objectif extends javax.swing.JFrame {
         btn_commencer_regime = new javax.swing.JButton();
         jLabel6 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
+        lb_msq_encour = new javax.swing.JLabel();
         img = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -62,7 +63,7 @@ public class Ajouter_nv_objectif extends javax.swing.JFrame {
         btn_commencer_regime1.setBackground(new java.awt.Color(255, 198, 147));
         btn_commencer_regime1.setFont(new java.awt.Font("Comic Sans MS", 3, 14)); // NOI18N
         btn_commencer_regime1.setText("Ajouter un autre objectif");
-        jPanel1.add(btn_commencer_regime1, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 430, 220, 40));
+        jPanel1.add(btn_commencer_regime1, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 460, 220, 40));
 
         lb_date_start_regime.setBackground(new java.awt.Color(255, 168, 138));
         jPanel1.add(lb_date_start_regime, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 20, 280, 40));
@@ -86,11 +87,11 @@ public class Ajouter_nv_objectif extends javax.swing.JFrame {
                 com_box_typeActionPerformed(evt);
             }
         });
-        jPanel1.add(com_box_type, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 140, 140, 40));
+        jPanel1.add(com_box_type, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 140, 140, 40));
 
         txt_nbre_heure.setFont(new java.awt.Font("Comic Sans MS", 3, 14)); // NOI18N
         txt_nbre_heure.setForeground(new java.awt.Color(0, 58, 111));
-        jPanel1.add(txt_nbre_heure, new org.netbeans.lib.awtextra.AbsoluteConstraints(750, 240, 140, 40));
+        jPanel1.add(txt_nbre_heure, new org.netbeans.lib.awtextra.AbsoluteConstraints(750, 150, 140, 40));
 
         btn_valider_regime.setBackground(new java.awt.Color(0, 58, 111));
         btn_valider_regime.setFont(new java.awt.Font("Comic Sans MS", 3, 14)); // NOI18N
@@ -101,7 +102,7 @@ public class Ajouter_nv_objectif extends javax.swing.JFrame {
                 btn_valider_regimeActionPerformed(evt);
             }
         });
-        jPanel1.add(btn_valider_regime, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 430, 220, 40));
+        jPanel1.add(btn_valider_regime, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 460, 220, 40));
 
         btn_quitter.setBackground(new java.awt.Color(255, 0, 0));
         btn_quitter.setFont(new java.awt.Font("Comic Sans MS", 3, 14)); // NOI18N
@@ -112,7 +113,7 @@ public class Ajouter_nv_objectif extends javax.swing.JFrame {
                 btn_quitterActionPerformed(evt);
             }
         });
-        jPanel1.add(btn_quitter, new org.netbeans.lib.awtextra.AbsoluteConstraints(770, 500, 150, 40));
+        jPanel1.add(btn_quitter, new org.netbeans.lib.awtextra.AbsoluteConstraints(760, 550, 150, 40));
 
         btn_commencer_regime.setBackground(new java.awt.Color(0, 153, 0));
         btn_commencer_regime.setFont(new java.awt.Font("Comic Sans MS", 3, 14)); // NOI18N
@@ -122,17 +123,23 @@ public class Ajouter_nv_objectif extends javax.swing.JFrame {
                 btn_commencer_regimeActionPerformed(evt);
             }
         });
-        jPanel1.add(btn_commencer_regime, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 500, 150, 40));
+        jPanel1.add(btn_commencer_regime, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 550, 150, 40));
 
         jLabel6.setFont(new java.awt.Font("Comic Sans MS", 3, 14)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(0, 58, 111));
         jLabel6.setText("Type d'activité : ");
-        jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 140, 140, 40));
+        jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 140, 140, 40));
 
         jLabel7.setFont(new java.awt.Font("Comic Sans MS", 3, 14)); // NOI18N
         jLabel7.setForeground(new java.awt.Color(0, 58, 111));
         jLabel7.setText("Nombre des Heures :");
-        jPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 240, 150, 40));
+        jPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 150, 150, 40));
+
+        lb_msq_encour.setBackground(new java.awt.Color(255, 255, 255));
+        lb_msq_encour.setFont(new java.awt.Font("Comic Sans MS", 3, 24)); // NOI18N
+        lb_msq_encour.setForeground(new java.awt.Color(255, 122, 169));
+        lb_msq_encour.setText("BRAVO !!!! BON TRAVAIL ");
+        jPanel1.add(lb_msq_encour, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 230, 400, 130));
 
         img.setIcon(new javax.swing.ImageIcon(getClass().getResource("/fr/esic/img/perdre poids.jpg"))); // NOI18N
         jPanel1.add(img, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, 610));
@@ -171,6 +178,7 @@ public class Ajouter_nv_objectif extends javax.swing.JFrame {
         String type_activité=com_box_type.  getSelectedItem().toString();
 
         btn_commencer_regime.setEnabled(true);
+        lb_msq_encour.setVisible(true);
       
         try {
             Connection connexion=ConnexionBd.getConnection();
@@ -185,7 +193,7 @@ public class Ajouter_nv_objectif extends javax.swing.JFrame {
          periode_regime=rst.getInt("periode_regime");
          poids_actuel=rst.getDouble("poids_actuel");
          poids_final=rst.getDouble("poids_final");
-        cadence=rst.getString("cadence");  
+         cadence=rst.getString("cadence");  
               // System.out.println("bnj"+Nombre_kilo);
              String sql = "insert into regime_perdre_poids (Nombre_kilo,periode_regime,poids_actuel,poids_final,cadence,nbre_heure,type_activité) values(?,?,?,?,?,?,?)";
             prepare = connexion.prepareCall(sql);
@@ -221,7 +229,7 @@ public class Ajouter_nv_objectif extends javax.swing.JFrame {
     private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
 btn_commencer_regime.setEnabled(false);
 btn_commencer_regime1.setEnabled(false);
-
+lb_msq_encour.hide();
     }//GEN-LAST:event_formWindowOpened
 
     private void btn_commencer_regimeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_commencer_regimeActionPerformed
@@ -277,6 +285,7 @@ btn_commencer_regime1.setEnabled(false);
     private javax.swing.JLabel jLabel7;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JLabel lb_date_start_regime;
+    private javax.swing.JLabel lb_msq_encour;
     private javax.swing.JTextField txt_nbre_heure;
     // End of variables declaration//GEN-END:variables
 }

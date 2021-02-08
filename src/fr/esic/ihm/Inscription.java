@@ -11,6 +11,7 @@ import fr.esic.model.User;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
+import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.logging.Level;
@@ -28,10 +29,13 @@ public class Inscription extends javax.swing.JFrame {
      */
     public Inscription() {
         initComponents();
-           Date thisDate=new Date();
- SimpleDateFormat f=new SimpleDateFormat("dd/MM/YYYY hh:mm:ss ");
- 
- lb_date_inscription.setText(f.format(thisDate));
+         
+         Date actuelle = new Date();
+        DateFormat dateFormat=new SimpleDateFormat("dd/MM/YYYY hh:mm:ss ");
+        lb_date_inscription.setText(""+dateFormat.format(actuelle));  
+        String date=dateFormat.format(actuelle);
+        String date_cnx; 
+        date_cnx = date;
  
     }
     @SuppressWarnings("unchecked")
@@ -247,8 +251,19 @@ public class Inscription extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(rootPane, "inscription avec succées ");
 
  }*/
-            try {  
+            try { /* 
+                 Connection connexion=ConnexionBd.getConnection();
+            PreparedStatement prepare;
         
+                 String sql ="insert into historique_cnx_dec(login,date_cnx,nbre_cnx) values(?,?,?)";
+                      prepare = connexion.prepareStatement(sql);
+          prepare.setString(1,login);
+          prepare.setString(2,date);
+          prepare.setInt(3,nbre_cnx);
+          prepare.execute();
+*/
+                
+                
             User u=new User(nom,prenom,sex,login,mdp,mdp2,poids,age);
             UserDao.insertPerson(u);
             JOptionPane.showMessageDialog(rootPane, "inscription avec succées ");
