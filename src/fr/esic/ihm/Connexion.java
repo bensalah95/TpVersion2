@@ -43,7 +43,6 @@ public class Connexion extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         txt_login = new javax.swing.JTextField();
-        txt_pwd = new javax.swing.JTextField();
         bt_connexion = new javax.swing.JButton();
         bt_inscription = new javax.swing.JButton();
         lb_msg = new javax.swing.JLabel();
@@ -51,9 +50,16 @@ public class Connexion extends javax.swing.JFrame {
         jLabel3 = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
         jLabel11 = new javax.swing.JLabel();
+        txt_pwd = new javax.swing.JPasswordField();
+        tabl = new javax.swing.JPanel();
         img = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        addWindowListener(new java.awt.event.WindowAdapter() {
+            public void windowOpened(java.awt.event.WindowEvent evt) {
+                formWindowOpened(evt);
+            }
+        });
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel1.setFont(new java.awt.Font("Comic Sans MS", 0, 18)); // NOI18N
@@ -67,10 +73,7 @@ public class Connexion extends javax.swing.JFrame {
         getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 180, 140, -1));
 
         txt_login.setFont(new java.awt.Font("Comic Sans MS", 1, 18)); // NOI18N
-        getContentPane().add(txt_login, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 120, 320, -1));
-
-        txt_pwd.setFont(new java.awt.Font("Comic Sans MS", 1, 18)); // NOI18N
-        getContentPane().add(txt_pwd, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 180, 320, -1));
+        getContentPane().add(txt_login, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 110, 320, -1));
 
         bt_connexion.setBackground(new java.awt.Color(255, 255, 255));
         bt_connexion.setFont(new java.awt.Font("Comic Sans MS", 1, 18)); // NOI18N
@@ -92,15 +95,15 @@ public class Connexion extends javax.swing.JFrame {
                 bt_inscriptionActionPerformed(evt);
             }
         });
-        getContentPane().add(bt_inscription, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 630, 310, -1));
+        getContentPane().add(bt_inscription, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 370, 310, -1));
 
         lb_msg.setFont(new java.awt.Font("Comic Sans MS", 1, 24)); // NOI18N
         lb_msg.setForeground(new java.awt.Color(255, 0, 0));
-        getContentPane().add(lb_msg, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 420, 470, 80));
+        getContentPane().add(lb_msg, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 300, 470, 30));
 
         lb_date.setFont(new java.awt.Font("Comic Sans MS", 3, 14)); // NOI18N
         lb_date.setForeground(new java.awt.Color(153, 0, 255));
-        getContentPane().add(lb_date, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 60, 220, 30));
+        getContentPane().add(lb_date, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 40, 220, 30));
 
         jLabel3.setFont(new java.awt.Font("Comic Sans MS", 3, 24)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(153, 168, 237));
@@ -118,101 +121,28 @@ public class Connexion extends javax.swing.JFrame {
         jLabel11.setText("ecter");
         getContentPane().add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(337, 30, 70, 30));
 
+        txt_pwd.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txt_pwdActionPerformed(evt);
+            }
+        });
+        getContentPane().add(txt_pwd, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 180, 320, 30));
+
         img.setIcon(new javax.swing.ImageIcon(getClass().getResource("/fr/esic/img/cnx_img.jpg"))); // NOI18N
-        getContentPane().add(img, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, -1, 970, 700));
+        tabl.add(img);
+
+        getContentPane().add(tabl, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 960, 700));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-int nbre_cnx;
-String log;
-    private void bt_connexionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bt_connexionActionPerformed
-        Date actuelle = new Date();
-        DateFormat dateFormat=new SimpleDateFormat("dd/MM/YYYY hh:mm:ss ");
-        lb_date.setText(""+dateFormat.format(actuelle));  
-        String date=dateFormat.format(actuelle);
-        String date_cnx; 
-        date_cnx = date;
-        
-        String login=txt_login.getText();
-        String password=txt_pwd.getText();
-        
-        
-       
-         
-        try{ 
-            Connection connexion=ConnexionBd.getConnection();
-            PreparedStatement prepare;
-            Statement st;
-            ResultSet rst;
-            st=connexion.createStatement();
-            rst=st.executeQuery("select * from  historique_cnx_dec");
-          String sql ="insert into historique_cnx_dec(login,date_cnx,nb_cnx) values(?,?,?)";
-         while(rst.next()){
-             log=rst.getString("login");
-              if(log.equals(login)){
-                nbre_cnx++;
-               
-             }}
-          
-          prepare = connexion.prepareStatement(sql);
-          prepare.setString(1,login);
-          prepare.setString(2,date);
-          prepare.setInt(3,nbre_cnx);
-
-          prepare.execute();
-
-            
-            User u = UserDao.getByLoginAndPassword(login, password);
-
-            if(u!=null){
-                JOptionPane.showMessageDialog(rootPane,"connexion reussi!");
-                if(nbre_cnx<1){
-                    HelpConnexion helpConnexion = new HelpConnexion();
-                helpConnexion.setVisible(true);
-
-                this.setVisible(false);
-                }
-                else{
-                    Fenetre_de_demarage demarage= new Fenetre_de_demarage();
-                demarage.setVisible(true);
-                this.hide();
-                }
-                
-            }
-            else
-            {
-                lb_msg.setVisible(true);
-                lb_msg.setText("idenifiant ou mot de passe incorrecte!! ");}
-
-        }catch(Exception e){
-
-            JOptionPane.showMessageDialog(rootPane,"exception!"+e.getMessage());
-        }
-        
-        /*
-        String sql ="insert into regime_perdre_poids (nbre_kilo,periode,poids_initial,poids_souhaite,cadence,nbre_heure,type_activité) values(?,?,?,?,?,?,?)";
-   
-   
-        try {
-            Connection connexion=ConnexionBd.getConnection();
-            PreparedStatement prepare;
-            prepare = connexion.prepareStatement(sql);
-            prepare.setInt(1, nbre_kilo);*/
-        
-        
-        
-        
-        
-        
-    }//GEN-LAST:event_bt_connexionActionPerformed
 
     private void bt_inscriptionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bt_inscriptionActionPerformed
 
-       Inscription inscri =new Inscription();
+        Inscription inscri =new Inscription();
         inscri.setVisible(true);
         this.hide();
-/*String nom, String prenom, String sex, String login, String password, String password2, float poids, int age*/
-       /* try{
+        /*String nom, String prenom, String sex, String login, String password, String password2, float poids, int age*/
+        /* try{
             UserDao.insertPerson(new User ("manel","bensalah","féminin","manel","bbbb","bbbb",65,25));
 
         }catch(Exception e){
@@ -220,6 +150,86 @@ String log;
             JOptionPane.showMessageDialog(rootPane, "excception"+e.getMessage());}  */
     }//GEN-LAST:event_bt_inscriptionActionPerformed
 
+    private void bt_connexionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bt_connexionActionPerformed
+        Date actuelle = new Date();
+        DateFormat dateFormat=new SimpleDateFormat("dd/MM/YYYY hh:mm:ss ");
+        lb_date.setText(""+dateFormat.format(actuelle));
+        String date=dateFormat.format(actuelle);
+        String date_cnx;
+        date_cnx = date;
+
+        String login=txt_login.getText();
+        String password=txt_pwd.getText();
+
+        try{
+            Connection connexion=ConnexionBd.getConnection();
+            PreparedStatement prepare;
+            Statement st;
+            ResultSet rst;
+            st=connexion.createStatement();
+            rst=st.executeQuery("select * from  historique_cnx_dec");
+            String sql ="insert into historique_cnx_dec(login,date_cnx,nb_cnx) values(?,?,?)";
+            while(rst.next()){
+                log=rst.getString("login");
+                if(log.equals(login)){
+                    nbre_cnx++;
+
+                }}
+
+                prepare = connexion.prepareStatement(sql);
+                prepare.setString(1,login);
+                prepare.setString(2,date);
+                prepare.setInt(3,nbre_cnx);
+
+                prepare.execute();
+
+                User u = UserDao.getByLoginAndPassword(login, password);
+
+                if(u!=null){
+                    JOptionPane.showMessageDialog(rootPane,"connexion reussi!");
+                    if(nbre_cnx<1){
+                        HelpConnexion helpConnexion = new HelpConnexion();
+                        helpConnexion.setVisible(true);
+
+                        this.setVisible(false);
+                    }
+                    else{
+                        Fenetre_de_demarage demarage= new Fenetre_de_demarage();
+                        demarage.setVisible(true);
+                        this.hide();
+                    }
+
+                }
+                else
+                {
+                    lb_msg.setVisible(true);
+                    lb_msg.setText("idenifiant ou mot de passe incorrecte!! ");}
+
+            }catch(Exception e){
+
+                JOptionPane.showMessageDialog(rootPane,"exception!"+e.getMessage());
+            }
+
+            /*
+            String sql ="insert into regime_perdre_poids (nbre_kilo,periode,poids_initial,poids_souhaite,cadence,nbre_heure,type_activité) values(?,?,?,?,?,?,?)";
+
+            try {
+                Connection connexion=ConnexionBd.getConnection();
+                PreparedStatement prepare;
+                prepare = connexion.prepareStatement(sql);
+                prepare.setInt(1, nbre_kilo);*/
+    }//GEN-LAST:event_bt_connexionActionPerformed
+
+    private void txt_pwdActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txt_pwdActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txt_pwdActionPerformed
+
+    private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
+
+        // TODO add your handling code here:
+    }//GEN-LAST:event_formWindowOpened
+int nbre_cnx;
+String log;
     /**
      * @param args the command line arguments
      */
@@ -266,7 +276,8 @@ String log;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel lb_date;
     private javax.swing.JLabel lb_msg;
+    private javax.swing.JPanel tabl;
     private javax.swing.JTextField txt_login;
-    private javax.swing.JTextField txt_pwd;
+    private javax.swing.JPasswordField txt_pwd;
     // End of variables declaration//GEN-END:variables
 }

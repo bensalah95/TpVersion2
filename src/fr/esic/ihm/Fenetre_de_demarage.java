@@ -47,6 +47,8 @@ public class Fenetre_de_demarage extends javax.swing.JFrame {
         date = new javax.swing.JLabel();
         btn_help = new javax.swing.JButton();
         btn_quitter = new javax.swing.JButton();
+        jButton5 = new javax.swing.JButton();
+        jButton6 = new javax.swing.JButton();
         img = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -72,19 +74,19 @@ public class Fenetre_de_demarage extends javax.swing.JFrame {
         btn_historique.setBackground(new java.awt.Color(255, 255, 255));
         btn_historique.setFont(new java.awt.Font("Comic Sans MS", 3, 14)); // NOI18N
         btn_historique.setForeground(new java.awt.Color(176, 151, 178));
-        btn_historique.setText("Mon  Historique");
+        btn_historique.setText("Mon  Historique de connexion");
         btn_historique.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btn_historiqueActionPerformed(evt);
             }
         });
-        getContentPane().add(btn_historique, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 390, 180, 40));
+        getContentPane().add(btn_historique, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 280, 250, 40));
 
         jButton4.setBackground(new java.awt.Color(255, 255, 255));
         jButton4.setFont(new java.awt.Font("Comic Sans MS", 3, 14)); // NOI18N
         jButton4.setForeground(new java.awt.Color(176, 151, 178));
-        jButton4.setText("Completer le profil");
-        getContentPane().add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 390, 180, 40));
+        jButton4.setText("Récap Journaliere");
+        getContentPane().add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 410, 230, 40));
         getContentPane().add(date, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 20, 90, 24));
 
         btn_help.setBackground(new java.awt.Color(102, 102, 102));
@@ -109,8 +111,20 @@ public class Fenetre_de_demarage extends javax.swing.JFrame {
         });
         getContentPane().add(btn_quitter, new org.netbeans.lib.awtextra.AbsoluteConstraints(780, 560, 150, 40));
 
+        jButton5.setBackground(new java.awt.Color(255, 255, 255));
+        jButton5.setFont(new java.awt.Font("Comic Sans MS", 3, 14)); // NOI18N
+        jButton5.setForeground(new java.awt.Color(176, 151, 178));
+        jButton5.setText("Récap Hebdomadaire");
+        getContentPane().add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 410, 230, 40));
+
+        jButton6.setBackground(new java.awt.Color(255, 255, 255));
+        jButton6.setFont(new java.awt.Font("Comic Sans MS", 3, 14)); // NOI18N
+        jButton6.setForeground(new java.awt.Color(176, 151, 178));
+        jButton6.setText("Completer le profil");
+        getContentPane().add(jButton6, new org.netbeans.lib.awtextra.AbsoluteConstraints(810, 270, 230, 40));
+
         img.setIcon(new javax.swing.ImageIcon(getClass().getResource("/fr/esic/img/inscription.jpg"))); // NOI18N
-        getContentPane().add(img, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 970, 610));
+        getContentPane().add(img, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1060, 610));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -216,5 +230,7 @@ public class Fenetre_de_demarage extends javax.swing.JFrame {
     private javax.swing.JLabel date;
     private javax.swing.JLabel img;
     private javax.swing.JButton jButton4;
+    private javax.swing.JButton jButton5;
+    private javax.swing.JButton jButton6;
     // End of variables declaration//GEN-END:variables
 }

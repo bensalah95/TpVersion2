@@ -5,33 +5,53 @@
  */
 package fr.esic.ihm;
 
+import de.esic.dao.ConnexionBd;
 import de.esic.dao.UserDao;
 import fr.esic.model.User;
 import fr.esic.proprities.PropriGlobal;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+import java.time.Clock;
 import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
-/**
- *
- * @author marye
- */
-public class Historique extends javax.swing.JFrame {
 
-    /**
-     * Creates new form Home
-     */
+public class Historique extends javax.swing.JFrame {
+    /*
+Statement st;
+ResultSet rs;
+    String login;
+String date_cnx;
+int nb_cnx;
+
+    DefaultTableModel model=new DefaultTableModel();
+  */
     public Historique() {
         initComponents();
-    }
 
+        
+    
+               
+               
+       
+       
+    }
+    
+    
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
         jScrollPane2 = new javax.swing.JScrollPane();
-        t_member = new javax.swing.JTable();
+        t_historique = new javax.swing.JTable();
         lb_bnj = new javax.swing.JLabel();
+        img = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         addWindowListener(new java.awt.event.WindowAdapter() {
@@ -39,8 +59,9 @@ public class Historique extends javax.swing.JFrame {
                 formWindowOpened(evt);
             }
         });
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        t_member.setModel(new javax.swing.table.DefaultTableModel(
+        t_historique.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
                 {null, null, null, null},
@@ -51,79 +72,58 @@ public class Historique extends javax.swing.JFrame {
                 "Title 1", "Title 2", "Title 3", "Title 4"
             }
         ));
-        jScrollPane2.setViewportView(t_member);
+        jScrollPane2.setViewportView(t_historique);
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(112, 112, 112)
-                .addComponent(lb_bnj, javax.swing.GroupLayout.PREFERRED_SIZE, 141, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(223, Short.MAX_VALUE))
-            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                    .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(21, 21, 21)
-                .addComponent(lb_bnj, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(376, Short.MAX_VALUE))
-            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                    .addContainerGap(81, Short.MAX_VALUE)
-                    .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 337, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-        );
+        getContentPane().add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 270, -1, 100));
+        getContentPane().add(lb_bnj, new org.netbeans.lib.awtextra.AbsoluteConstraints(239, 79, 141, 34));
+
+        img.setIcon(new javax.swing.ImageIcon(getClass().getResource("/fr/esic/img/historique de cnx.jpg"))); // NOI18N
+        getContentPane().add(img, new org.netbeans.lib.awtextra.AbsoluteConstraints(1, 0, -1, 620));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
-        
-        lb_bnj.setText("Bonjour "+" "+ PropriGlobal.user_Connect.getNom().toUpperCase()+" "+PropriGlobal.user_Connect.getPrenom());
-        /*PropertiesGlobal.USER_CONNECT.getNom()*/
-        
-        DefaultTableModel model=new DefaultTableModel();
-      
-       model.addColumn("nom");
-       model.addColumn("prenom");
-       model.addColumn("regime");
-       model.addColumn("Poids Initial");
-       model.addColumn("Poids Final");
-     model.addColumn("date d'inscription");
-            /*     
-      try{
-      // List<User>membres=UserDao.getAll();
-       //for (User membre:membres){
+//lb_bnj.setText("Bonjour "+" "+ PropriGlobal.user_Connect.getNom().toUpperCase()+" "+PropriGlobal.user_Connect.getPrenom()); 
+                 /*
           
+       model.addColumn("Login");
+       model.addColumn("Date De Connexion");
+       model.addColumn("Nombre de  fois de connexion");
        
-       model.addRow(new Object[]
-               
-       {
-          // membre.getId(),
-           //membre.getNom(),
-           //membre.getPrenom(),
-           //membre.getLogin()
-       
-       });
-       
-       } 
-       }catch(Exception e){
-       JOptionPane.showMessageDialog(rootPane, "err"+e.getMessage());
-       } */
-
-        
-        
+        try {
+            Connection connexion = ConnexionBd.getConnection();
+             st=connexion.createStatement();  
+             String sql="select * from historique_cnx_dec";
+             rs=st.executeQuery(sql);
+             
+                   
+           login= rs.getString("login");
+           date_cnx= rs.getString("date_cnx");
+           nb_cnx= rs.getInt(nb_cnx);
+           
+             while(rs.next()){
+            model.addRow(new Object[]
+                    
+            {
+                
+          rs.getString(login),
+          rs.getString(date_cnx),
+          rs.getInt(nb_cnx)
+                    
+            });
+                    
+}
+             
+        } catch (Exception e) {
+        }
+        t_historique.setModel(model);
+        */
+   
     }//GEN-LAST:event_formWindowOpened
 
-    /**
-     * @param args the command line arguments
-     */
+
+    
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
@@ -158,8 +158,9 @@ public class Historique extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel img;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JLabel lb_bnj;
-    private javax.swing.JTable t_member;
+    private javax.swing.JTable t_historique;
     // End of variables declaration//GEN-END:variables
 }
