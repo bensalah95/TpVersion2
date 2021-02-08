@@ -42,6 +42,7 @@ public class FitnessTime extends javax.swing.JFrame {
         img = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -65,7 +66,7 @@ public class FitnessTime extends javax.swing.JFrame {
                 jButton2ActionPerformed(evt);
             }
         });
-        jPanel1.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 540, -1, -1));
+        jPanel1.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 480, -1, -1));
 
         jLabel1.setFont(new java.awt.Font("Sitka Text", 3, 12)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(102, 102, 102));
@@ -75,7 +76,7 @@ public class FitnessTime extends javax.swing.JFrame {
         jLabel2.setFont(new java.awt.Font("Sitka Text", 3, 12)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(102, 102, 102));
         jLabel2.setText("Nouveau Membre ?");
-        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(750, 520, -1, -1));
+        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(750, 460, -1, -1));
 
         jLabel3.setFont(new java.awt.Font("Segoe Print", 3, 24)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(255, 150, 149));
@@ -114,21 +115,9 @@ public class FitnessTime extends javax.swing.JFrame {
 
         img.setFont(new java.awt.Font("Segoe Print", 3, 24)); // NOI18N
         img.setIcon(new javax.swing.ImageIcon(getClass().getResource("/fr/esic/img/page_app.jpg"))); // NOI18N
-        jPanel1.add(img, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 920, 610));
+        jPanel1.add(img, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 920, 550));
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(78, 78, 78)
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(315, Short.MAX_VALUE))
-        );
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 1, -1, 550));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents

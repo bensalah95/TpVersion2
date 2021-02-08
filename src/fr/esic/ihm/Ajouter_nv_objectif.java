@@ -160,10 +160,10 @@ public class Ajouter_nv_objectif extends javax.swing.JFrame {
     private void com_box_typeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_com_box_typeActionPerformed
 
     }//GEN-LAST:event_com_box_typeActionPerformed
-    int nbre_kilo;
-    int periode;
-    double poids_initial;
-    double poids_souhaite;
+    int Nombre_kilo;
+    int periode_regime;
+    double poids_actuel;
+    double poids_final;
     String cadence ;
     private void btn_valider_regimeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_valider_regimeActionPerformed
 
@@ -181,23 +181,26 @@ public class Ajouter_nv_objectif extends javax.swing.JFrame {
             rst=st.executeQuery("select * from  regime_perdre_poids");
           
             if(rst.next()){
-         nbre_kilo=rst.getInt("nbre_kilo");
-         periode=rst.getInt("periode");
-         poids_initial=rst.getDouble("poids_initial");
-         poids_souhaite=rst.getDouble("poids_souhaite");
+         Nombre_kilo=rst.getInt("Nombre_kilo");
+         periode_regime=rst.getInt("periode_regime");
+         poids_actuel=rst.getDouble("poids_actuel");
+         poids_final=rst.getDouble("poids_final");
         cadence=rst.getString("cadence");  
-              // System.out.println("bnj"+nbre_kilo);
-              String sql ="insert into regime_perdre_poids (nbre_kilo,periode,poids_initial,poids_souhaite,cadence,nbre_heure,type_activité) values(?,?,?,?,?,?,?)";
-            
+              // System.out.println("bnj"+Nombre_kilo);
+             String sql = "insert into regime_perdre_poids (Nombre_kilo,periode_regime,poids_actuel,poids_final,cadence,nbre_heure,type_activité) values(?,?,?,?,?,?,?)";
             prepare = connexion.prepareCall(sql);
-            prepare.setInt(1, nbre_kilo);
-            prepare.setInt(2, periode);
-            prepare.setDouble(3, poids_initial);
-            prepare.setDouble(4, poids_souhaite);
+            prepare.setInt(1, Nombre_kilo);
+            prepare.setInt(2, periode_regime);
+            prepare.setDouble(3, poids_actuel);
+            prepare.setDouble(4, poids_final);
             prepare.setString(5, cadence);
+           
             prepare.setInt(6, nbre_heure);
             prepare.setString(7, type_activité);
-            prepare.execute(); }
+            
+           
+            prepare.execute(); 
+            }
        
             
             

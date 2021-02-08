@@ -137,7 +137,7 @@ public class Connexion extends javax.swing.JFrame {
             
           Connection connexion=ConnexionBd.getConnection();
           PreparedStatement prepare;
-          prepare = connexion.prepareCall(sql);
+          prepare = connexion.prepareStatement(sql);
           prepare.setString(1,login);
          // prepare.setString(2,date);
           prepare.execute();
@@ -168,7 +168,7 @@ public class Connexion extends javax.swing.JFrame {
         try {
             Connection connexion=ConnexionBd.getConnection();
             PreparedStatement prepare;
-            prepare = connexion.prepareCall(sql);
+            prepare = connexion.prepareStatement(sql);
             prepare.setInt(1, nbre_kilo);*/
         
         

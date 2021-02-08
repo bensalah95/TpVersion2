@@ -217,13 +217,19 @@ public class RegimePerdrePoids extends javax.swing.JFrame {
     
   btn_commencer_regime.setEnabled(true);
           btn_commencer_regime1.setEnabled(true);
-        String sql ="insert into regime_perdre_poids (nbre_kilo,periode,poids_initial,poids_souhaite,cadence,nbre_heure,type_activité) values(?,?,?,?,?,?,?)";
+        String sql ="insert into regime_perdre_poids (Nombre_kilo,periode_regime,poids_actuel,poids_final,cadence,nbre_heure,type_activité) values(?,?,?,?,?,?,?)";
    
-   
+   /*  prepare.setInt(1, Nombre_kilo);
+            prepare.setInt(2, periode_regime);
+            prepare.setDouble(3, poids_actuel);
+            prepare.setDouble(4, poids_final);
+            prepare.setString(5, cadence);
+            prepare.setInt(6, nbre_heure);
+            prepare.setString(7, type_activité);*/
         try {
             Connection connexion=ConnexionBd.getConnection();
             PreparedStatement prepare;
-            prepare = connexion.prepareCall(sql);
+            prepare = connexion.prepareStatement(sql);
             prepare.setInt(1, nbre_kilo);
             prepare.setInt(2, periode);
             prepare.setDouble(3, poids_initial);

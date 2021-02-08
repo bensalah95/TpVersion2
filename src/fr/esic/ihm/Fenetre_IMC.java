@@ -254,7 +254,7 @@ double res_imc;
             
             Connection connexion=ConnexionBd.getConnection();
             PreparedStatement prepare;
-            prepare = connexion.prepareCall(sql);
+            prepare = connexion.prepareStatement(sql);
              prepare.setDouble(1, poids);
              prepare.setInt(2, taille);
              prepare.execute();
