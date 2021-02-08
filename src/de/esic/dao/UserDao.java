@@ -1,4 +1,5 @@
 
+
 package de.esic.dao;
 
 import fr.esic.model.User;
@@ -11,9 +12,6 @@ import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
-
-
-
 
 public class UserDao {
    
@@ -99,6 +97,5 @@ public class UserDao {
 
 
 
-    
     
 }

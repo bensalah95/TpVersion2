@@ -125,7 +125,7 @@ public class Connexion extends javax.swing.JFrame {
     private void bt_connexionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bt_connexionActionPerformed
          Date actuelle = new Date();
        DateFormat dateFormat=new SimpleDateFormat("dd/MM/YYYY ");
-       lb_date.setText(" "+dateFormat.format(actuelle));  
+       lb_date.setText(""+dateFormat.format(actuelle));  
       String date=dateFormat.format(actuelle);
         String date_cnx; 
         date_cnx = date;
@@ -184,12 +184,12 @@ public class Connexion extends javax.swing.JFrame {
         inscri.setVisible(true);
         this.hide();
 /*String nom, String prenom, String sex, String login, String password, String password2, float poids, int age*/
-        try{
+       /* try{
             UserDao.insertPerson(new User ("manel","bensalah","féminin","manel","bbbb","bbbb",65,25));
 
         }catch(Exception e){
 
-            JOptionPane.showMessageDialog(rootPane, "excception"+e.getMessage());}
+            JOptionPane.showMessageDialog(rootPane, "excception"+e.getMessage());}  */
     }//GEN-LAST:event_bt_inscriptionActionPerformed
 
     /**

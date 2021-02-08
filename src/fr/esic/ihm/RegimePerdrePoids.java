@@ -1,4 +1,3 @@
-
 package fr.esic.ihm;
 
 import de.esic.dao.ConnexionBd;
@@ -11,7 +10,6 @@ import javax.swing.JOptionPane;
 
 public class RegimePerdrePoids extends javax.swing.JFrame {
 
-   
     public RegimePerdrePoids() {
         initComponents();
     }
@@ -114,7 +112,7 @@ public class RegimePerdrePoids extends javax.swing.JFrame {
 
         jLabel7.setFont(new java.awt.Font("Comic Sans MS", 3, 14)); // NOI18N
         jLabel7.setForeground(new java.awt.Color(0, 58, 111));
-        jLabel7.setText("Nombre des Heures :");
+        jLabel7.setText("Nombre d'Heures :");
         jPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 240, 150, 40));
 
         txt_nbre_heure.setFont(new java.awt.Font("Comic Sans MS", 3, 14)); // NOI18N
@@ -227,7 +225,7 @@ public class RegimePerdrePoids extends javax.swing.JFrame {
             prepare.setInt(6, nbre_heure);
             prepare.setString(7, type_activité);*/
         try {
-            Connection connexion=ConnexionBd.getConnection();
+            Connection connexion = ConnexionBd.getConnection();
             PreparedStatement prepare;
             prepare = connexion.prepareStatement(sql);
             prepare.setInt(1, nbre_kilo);
@@ -240,35 +238,34 @@ public class RegimePerdrePoids extends javax.swing.JFrame {
             prepare.execute();
             JOptionPane.showMessageDialog(rootPane, "Régime Ajouté avec succés!!");
 
-             
         } catch (SQLException ex) {
             Logger.getLogger(Fenetre_IMC.class.getName()).log(Level.SEVERE, null, ex);
         }
-           
-        
+
+
     }//GEN-LAST:event_btn_valider_regimeActionPerformed
 
     private void com_box_typeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_com_box_typeActionPerformed
     }//GEN-LAST:event_com_box_typeActionPerformed
 
     private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
-     
-     btn_commencer_regime.setEnabled(false);
-     btn_commencer_regime1.setEnabled(false);
-     /*
+
+        btn_commencer_regime.setEnabled(false);
+        btn_commencer_regime1.setEnabled(false);
+        /*
      btn_valider_regime.setEnabled(false);*/
     }//GEN-LAST:event_formWindowOpened
 
     private void btn_quitterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_quitterActionPerformed
-      Connexion cnx=new Connexion();
-      cnx.setVisible(true);
-      this.hide();
+        Connexion cnx = new Connexion();
+        cnx.setVisible(true);
+        this.hide();
     }//GEN-LAST:event_btn_quitterActionPerformed
 
     private void btn_acceeuilActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_acceeuilActionPerformed
-Fenetre_de_demarage fn =new Fenetre_de_demarage();
-fn.setVisible(true);
-this.hide();
+        Fenetre_de_demarage fn = new Fenetre_de_demarage();
+        fn.setVisible(true);
+        this.hide();
 
     }//GEN-LAST:event_btn_acceeuilActionPerformed
 
@@ -344,6 +341,5 @@ this.hide();
     private javax.swing.JTextField txt_poids_souhaité;
     private javax.swing.ButtonGroup type_activite;
     // End of variables declaration//GEN-END:variables
-
 
 }
