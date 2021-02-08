@@ -40,6 +40,7 @@ public class Fenetre_IMC extends javax.swing.JFrame {
         conseil = new javax.swing.JLabel();
         btn_maigrir = new javax.swing.JButton();
         btn_getpoids = new javax.swing.JButton();
+        btn_help = new javax.swing.JButton();
         lb_conseil = new javax.swing.JLabel();
         lb_statut = new javax.swing.JLabel();
         lb_res_imc = new javax.swing.JLabel();
@@ -112,6 +113,17 @@ public class Fenetre_IMC extends javax.swing.JFrame {
         });
         jPanel1.add(btn_getpoids, new org.netbeans.lib.awtextra.AbsoluteConstraints(800, 620, 140, 40));
 
+        btn_help.setBackground(new java.awt.Color(102, 102, 102));
+        btn_help.setFont(new java.awt.Font("Comic Sans MS", 3, 14)); // NOI18N
+        btn_help.setForeground(new java.awt.Color(255, 255, 255));
+        btn_help.setText("Help");
+        btn_help.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_helpActionPerformed(evt);
+            }
+        });
+        jPanel1.add(btn_help, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 620, 140, 40));
+
         lb_conseil.setFont(new java.awt.Font("Comic Sans MS", 3, 14)); // NOI18N
         jPanel1.add(lb_conseil, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 450, 670, 40));
 
@@ -123,6 +135,7 @@ public class Fenetre_IMC extends javax.swing.JFrame {
         jPanel1.add(txt_taille, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 140, 140, 40));
         jPanel1.add(txt_poids, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 80, 140, 40));
 
+        btn_imc.setBackground(new java.awt.Color(0, 204, 204));
         btn_imc.setFont(new java.awt.Font("Comic Sans MS", 1, 14)); // NOI18N
         btn_imc.setForeground(new java.awt.Color(0, 58, 111));
         btn_imc.setText("Calculer IMC");
@@ -309,6 +322,12 @@ this.hide();
         
     }//GEN-LAST:event_btn_maintien_poidsActionPerformed
 
+    private void btn_helpActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_helpActionPerformed
+        HelpIMC imc = new HelpIMC();
+        imc.setVisible(true);
+        this.hide();
+    }//GEN-LAST:event_btn_helpActionPerformed
+
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
@@ -343,6 +362,7 @@ this.hide();
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btn_getpoids;
+    private javax.swing.JButton btn_help;
     private javax.swing.JButton btn_imc;
     private javax.swing.JButton btn_maigrir;
     private javax.swing.JButton btn_maintien_poids;

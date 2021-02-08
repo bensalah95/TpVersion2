@@ -146,7 +146,7 @@ String log;
             ResultSet rst;
             st=connexion.createStatement();
             rst=st.executeQuery("select * from  historique_cnx_dec");
-          String sql ="insert into historique_cnx_dec(login,date_cnx,nbre_cnx) values(?,?,?)";
+          String sql ="insert into historique_cnx_dec(login,date_cnx,nb_cnx) values(?,?,?)";
          while(rst.next()){
              log=rst.getString("login");
               if(log.equals(login)){
@@ -158,16 +158,26 @@ String log;
           prepare.setString(1,login);
           prepare.setString(2,date);
           prepare.setInt(3,nbre_cnx);
+
           prepare.execute();
 
             
-            User u =UserDao.getByLoginAndPassword(login, password);
+            User u = UserDao.getByLoginAndPassword(login, password);
 
             if(u!=null){
                 JOptionPane.showMessageDialog(rootPane,"connexion reussi!");
-                Fenetre_de_demarage demarage= new Fenetre_de_demarage();
+                if(nbre_cnx<1){
+                    HelpConnexion helpConnexion = new HelpConnexion();
+                helpConnexion.setVisible(true);
+
+                this.setVisible(false);
+                }
+                else{
+                    Fenetre_de_demarage demarage= new Fenetre_de_demarage();
                 demarage.setVisible(true);
                 this.hide();
+                }
+                
             }
             else
             {

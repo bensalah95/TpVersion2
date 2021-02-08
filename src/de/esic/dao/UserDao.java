@@ -34,6 +34,7 @@ public class UserDao {
         u.setLogin(rs.getString("login"));
         u.setPassword(rs.getString("mdp"));
         
+        
         }
         
         
@@ -95,6 +96,7 @@ public class UserDao {
         return users ;
         }
 
+      
 
 
     

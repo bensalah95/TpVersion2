@@ -40,6 +40,7 @@ public class Ajouter_nv_objectif extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         btn_commencer_regime1 = new javax.swing.JButton();
         lb_date_start_regime = new javax.swing.JLabel();
+        btn_help = new javax.swing.JButton();
         btn_acceeuil = new javax.swing.JButton();
         com_box_type = new javax.swing.JComboBox();
         txt_nbre_heure = new javax.swing.JTextField();
@@ -67,6 +68,17 @@ public class Ajouter_nv_objectif extends javax.swing.JFrame {
 
         lb_date_start_regime.setBackground(new java.awt.Color(255, 168, 138));
         jPanel1.add(lb_date_start_regime, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 20, 280, 40));
+
+        btn_help.setBackground(new java.awt.Color(102, 102, 102));
+        btn_help.setFont(new java.awt.Font("Comic Sans MS", 3, 14)); // NOI18N
+        btn_help.setForeground(new java.awt.Color(255, 255, 255));
+        btn_help.setText("Help");
+        btn_help.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_helpActionPerformed(evt);
+            }
+        });
+        jPanel1.add(btn_help, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 550, 140, 40));
 
         btn_acceeuil.setBackground(new java.awt.Color(255, 168, 138));
         btn_acceeuil.setFont(new java.awt.Font("Comic Sans MS", 3, 14)); // NOI18N
@@ -238,6 +250,12 @@ lb_msq_encour.hide();
         this.hide();
     }//GEN-LAST:event_btn_commencer_regimeActionPerformed
 
+    private void btn_helpActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_helpActionPerformed
+        HelpObjectif imc = new HelpObjectif();
+        imc.setVisible(true);
+        this.hide();
+    }//GEN-LAST:event_btn_helpActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -277,6 +295,7 @@ lb_msq_encour.hide();
     private javax.swing.JButton btn_acceeuil;
     private javax.swing.JButton btn_commencer_regime;
     private javax.swing.JButton btn_commencer_regime1;
+    private javax.swing.JButton btn_help;
     private javax.swing.JButton btn_quitter;
     private javax.swing.JButton btn_valider_regime;
     private javax.swing.JComboBox com_box_type;

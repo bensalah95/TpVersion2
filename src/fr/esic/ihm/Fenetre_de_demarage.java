@@ -5,6 +5,18 @@
  */
 package fr.esic.ihm;
 
+import de.esic.dao.ConnexionBd;
+import de.esic.dao.UserDao;
+import fr.esic.model.User;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.Statement;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.text.DateFormat;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author marye
@@ -16,6 +28,7 @@ public class Fenetre_de_demarage extends javax.swing.JFrame {
      */
     public Fenetre_de_demarage() {
         initComponents();
+
     }
 
     /**
@@ -32,6 +45,7 @@ public class Fenetre_de_demarage extends javax.swing.JFrame {
         btn_historique = new javax.swing.JButton();
         jButton4 = new javax.swing.JButton();
         date = new javax.swing.JLabel();
+        btn_help = new javax.swing.JButton();
         btn_quitter = new javax.swing.JButton();
         img = new javax.swing.JLabel();
 
@@ -73,6 +87,17 @@ public class Fenetre_de_demarage extends javax.swing.JFrame {
         getContentPane().add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 390, 180, 40));
         getContentPane().add(date, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 20, 90, 24));
 
+        btn_help.setBackground(new java.awt.Color(102, 102, 102));
+        btn_help.setFont(new java.awt.Font("Comic Sans MS", 3, 14)); // NOI18N
+        btn_help.setForeground(new java.awt.Color(255, 255, 255));
+        btn_help.setText("Help");
+        btn_help.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_helpActionPerformed(evt);
+            }
+        });
+        getContentPane().add(btn_help, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 560, 150, 40));
+
         btn_quitter.setBackground(new java.awt.Color(255, 0, 0));
         btn_quitter.setFont(new java.awt.Font("Comic Sans MS", 3, 14)); // NOI18N
         btn_quitter.setForeground(new java.awt.Color(255, 255, 255));
@@ -91,21 +116,60 @@ public class Fenetre_de_demarage extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btn_historiqueActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_historiqueActionPerformed
-       Historique monhistorique =new Historique();
-       this.setVisible(true);
-       this.hide();
+        Historique monhistorique = new Historique();
+        this.setVisible(true);
+        this.hide();
     }//GEN-LAST:event_btn_historiqueActionPerformed
 
     private void btn_ajouter_objectifActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_ajouter_objectifActionPerformed
-       Fenetre_IMC imc=new Fenetre_IMC();
-       imc.setVisible(true);
-       this.hide();
+        Fenetre_IMC imc = new Fenetre_IMC();
+        imc.setVisible(true);
+        this.hide();
     }//GEN-LAST:event_btn_ajouter_objectifActionPerformed
 
-    private void btn_quitterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_quitterActionPerformed
-        Connexion cnx=new Connexion();
+    private void btn_helpActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_helpActionPerformed
+        Connexion cnx = new Connexion();
         cnx.setVisible(true);
         this.hide();
+    }//GEN-LAST:event_btn_helpActionPerformed
+
+    private void btn_quitterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_quitterActionPerformed
+        
+         Connexion cnx=new Connexion();
+        cnx.setVisible(true);
+        this.hide();
+        /*Date actuel = new Date();
+        DateFormat dateFormat = new SimpleDateFormat();
+        String log;
+        String date = dateFormat.format(actuel);
+
+        try {
+            Connection connexion = ConnexionBd.getConnection();
+            PreparedStatement prepare;
+            Statement st;
+            ResultSet rst;
+            st = connexion.createStatement();
+            rst = st.executeQuery("select * from  historique_cnx_dec");
+            String sql = "insert into historique_cnx_dec(login,date_cnx,nb_cnx,date_decnx) values(?)";
+
+            prepare = connexion.prepareStatement(sql);
+            prepare.setString(1, date);
+                        prepare.setString(2, date);
+            prepare.setInt(3,4);
+
+            prepare.setString(4, date);
+            prepare.execute();
+
+            Connexion cnx = new Connexion();
+            cnx.setVisible(true);
+            this.hide();
+
+        } catch (Exception e) {
+
+            JOptionPane.showMessageDialog(rootPane, "exception!" + e.getMessage());
+        }
+
+*/
     }//GEN-LAST:event_btn_quitterActionPerformed
 
     /**
@@ -145,6 +209,7 @@ public class Fenetre_de_demarage extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btn_ajouter_objectif;
+    private javax.swing.JButton btn_help;
     private javax.swing.JButton btn_historique;
     private javax.swing.JButton btn_modifie_profil;
     private javax.swing.JButton btn_quitter;
