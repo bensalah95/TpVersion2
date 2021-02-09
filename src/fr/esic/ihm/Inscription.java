@@ -253,6 +253,7 @@ public class Inscription extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(rootPane, "inscription avec succées ");
 
  }*/
+        
             try { /* 
                  Connection connexion=ConnexionBd.getConnection();
             PreparedStatement prepare;

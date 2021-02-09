@@ -1,8 +1,4 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package fr.esic.ihm;
 
 import de.esic.dao.ConnexionBd;
@@ -15,12 +11,9 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 
-/**
- *
- * @author marye
- */
-public class Mise_a_jour_de_poids extends javax.swing.JFrame {
 
+public class Mise_a_jour_de_poids extends javax.swing.JFrame {
+ 
    
     public Mise_a_jour_de_poids() {
         initComponents();
@@ -104,42 +97,52 @@ public class Mise_a_jour_de_poids extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void txt_poids_actuelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txt_poids_actuelActionPerformed
-        // TODO add your handling code here:
     }//GEN-LAST:event_txt_poids_actuelActionPerformed
-double  poids_initial;
- PreparedStatement prepare;
-            Statement st;
-            ResultSet rst;
-    private void btn_validerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_validerActionPerformed
-     
-        double poids_a_jour=Double.parseDouble(txt_poids_actuel.getText());
 
+            PreparedStatement prepare,stmt;
+            Statement st;
+            ResultSet rst; 
+            double poids_a_jour,poids_initial;
+    private void btn_validerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_validerActionPerformed
+   
         try {
-            Connection connexion=ConnexionBd.getConnection();
+         Connection connexion=ConnexionBd.getConnection();   
             
-            st=connexion.createStatement();
+       poids_a_jour=Double.parseDouble(txt_poids_actuel.getText());
+       st=connexion.createStatement();
             rst=st.executeQuery("select * from  sportif");
            if (rst.next()){
-                poids_initial=rst.getDouble("poids");
-                  txt_poids_initial.setText(poids_initial+"");
-            }
-            
+            poids_initial=rst.getDouble("poids");
+           }
+
             String sql = "insert into suivi_poids(poids_initial,poids_a_jour) values(?,?)";
+           
             prepare = connexion.prepareCall(sql);
             prepare.setDouble(1, poids_initial);
             prepare.setDouble(2, poids_a_jour);
             prepare.execute(); 
-            JOptionPane.showMessageDialog(rootPane, "Mise àjour de poids avec succés!!");
-            
+            JOptionPane.showMessageDialog(rootPane, "Poids initial : "+poids_initial+"\nPoids actuel : "+poids_a_jour+" \n Mise àjour de poids avec succés!!");
+        
+        
         } catch (Exception e) {
+        } 
+        String sql1 = "update sportif set poids='poids_a_jour'";
+        try {
+          Connection  connexion=ConnexionBd.getConnection();
+            stmt = connexion.prepareStatement(sql1); 
+           // stmt.setDouble(8, poids_a_jour);
+      stmt.executeUpdate(sql1);
+      System.out.println("Database updated successfully ");
+        } catch (SQLException ex) {
+            Logger.getLogger(Mise_a_jour_de_poids.class.getName()).log(Level.SEVERE, null, ex);
         }
-            
-      
+        
 
     }//GEN-LAST:event_btn_validerActionPerformed
 
     private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
-            txt_poids_initial.setText(poids_initial+"");
+        
+        txt_poids_initial.setText(""+poids_initial);
     }//GEN-LAST:event_formWindowOpened
 
     
