@@ -17,6 +17,7 @@ public class User {
     private double poids;
     private int age;
     private int taille;
+    private String date_cnx;
 
     public User(String nom, String prenom, String login, String password, String password2) {
         this.nom = nom;
@@ -39,6 +40,14 @@ public class User {
         this.age = age;
         this.taille = taille;
      }
+
+    public String getDate_cnx() {
+        return date_cnx;
+    }
+
+    public void setDate_cnx(String date_cnx) {
+        this.date_cnx = date_cnx;
+    }
 
     public int getTaille() {
         return taille;

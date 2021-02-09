@@ -51,6 +51,7 @@ int nb_cnx;
         jScrollPane2 = new javax.swing.JScrollPane();
         t_historique = new javax.swing.JTable();
         lb_bnj = new javax.swing.JLabel();
+        bt_annuler = new javax.swing.JButton();
         img = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -77,6 +78,17 @@ int nb_cnx;
         getContentPane().add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 270, -1, 100));
         getContentPane().add(lb_bnj, new org.netbeans.lib.awtextra.AbsoluteConstraints(239, 79, 141, 34));
 
+        bt_annuler.setBackground(new java.awt.Color(255, 0, 0));
+        bt_annuler.setFont(new java.awt.Font("Comic Sans MS", 3, 14)); // NOI18N
+        bt_annuler.setForeground(new java.awt.Color(255, 255, 255));
+        bt_annuler.setText("Retour");
+        bt_annuler.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bt_annulerActionPerformed(evt);
+            }
+        });
+        getContentPane().add(bt_annuler, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 550, 120, -1));
+
         img.setIcon(new javax.swing.ImageIcon(getClass().getResource("/fr/esic/img/historique de cnx.jpg"))); // NOI18N
         getContentPane().add(img, new org.netbeans.lib.awtextra.AbsoluteConstraints(1, 0, -1, 620));
 
@@ -84,6 +96,25 @@ int nb_cnx;
     }// </editor-fold>//GEN-END:initComponents
 
     private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
+
+        DefaultTableModel model = new DefaultTableModel();
+
+        model.addColumn("Date dernier connexion");
+        
+        try {
+            List<User> membres = UserDao.getHistorique();
+            
+            for ( User membre : membres){
+                model.addRow(new Object[]{
+                    membre.getDate_cnx(),
+                    
+                });
+            }
+        } catch (Exception e) {
+        }
+
+        t_historique.setModel(model);
+
 //lb_bnj.setText("Bonjour "+" "+ PropriGlobal.user_Connect.getNom().toUpperCase()+" "+PropriGlobal.user_Connect.getPrenom()); 
                  /*
           
@@ -122,6 +153,12 @@ int nb_cnx;
    
     }//GEN-LAST:event_formWindowOpened
 
+    private void bt_annulerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bt_annulerActionPerformed
+        Fenetre_de_demarage demarage= new Fenetre_de_demarage();
+                        demarage.setVisible(true);
+                        this.hide();
+    }//GEN-LAST:event_bt_annulerActionPerformed
+
 
     
     public static void main(String args[]) {
@@ -158,6 +195,7 @@ int nb_cnx;
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton bt_annuler;
     private javax.swing.JLabel img;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JLabel lb_bnj;

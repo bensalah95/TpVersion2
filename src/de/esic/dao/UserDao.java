@@ -98,6 +98,25 @@ public class UserDao {
         return users ;
         }
 
+      public static List<User> getHistorique() throws SQLException{
+        List<User> users = new ArrayList<>();
+        
+        String sql = "SELECT date_cnx FROM historique_cnx_dec";
+        Connection connexion = ConnexionBd.getConnection();
+
+        Statement requete=connexion.createStatement();
+      
+        ResultSet rs=requete.executeQuery(sql);
+        while (rs.next()) {
+            User u = new User();
+            u.setDate_cnx(rs.getString("date_cnx"));
+            
+
+            users.add(u);
+
+        }
+        return users;
+    }
       
 
 

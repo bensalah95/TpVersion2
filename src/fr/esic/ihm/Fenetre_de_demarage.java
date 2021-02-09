@@ -209,7 +209,9 @@ public class Fenetre_de_demarage extends javax.swing.JFrame {
     }//GEN-LAST:event_btn_quitterActionPerformed
 
     private void btn_historique1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_historique1ActionPerformed
-        // TODO add your handling code here:
+        Historique his = new Historique();
+        his.setVisible(true);
+        this.hide();
     }//GEN-LAST:event_btn_historique1ActionPerformed
 
     private void btn_modifie_profilActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_modifie_profilActionPerformed
