@@ -130,7 +130,7 @@ public class Mise_a_jour_de_poids extends javax.swing.JFrame {
         try {
           Connection  connexion=ConnexionBd.getConnection();
             stmt = connexion.prepareStatement(sql1); 
-           // stmt.setDouble(8, poids_a_jour);
+           stmt.setDouble(8, poids_a_jour);
       stmt.executeUpdate(sql1);
       System.out.println("Database updated successfully ");
         } catch (SQLException ex) {
