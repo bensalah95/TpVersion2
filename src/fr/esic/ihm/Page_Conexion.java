@@ -187,7 +187,6 @@ String log;
 
                 if(u!=null){
                     PropriGlobal.user_Connect=u;
-                    JOptionPane.showMessageDialog(rootPane,"connexion reussi!");
                     if(nbre_cnx<1){
                         HelpConnexion helpConnexion = new HelpConnexion();
                         helpConnexion.setVisible(true);
