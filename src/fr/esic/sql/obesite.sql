@@ -46,3 +46,6 @@ CHANGE COLUMN `id` `id` INT(11) NOT NULL AUTO_INCREMENT ,
 ADD PRIMARY KEY (`id`);
 ;
 
+CREATE TABLE `obesite`.`suivi_poids` (
+  `poids_initial` VARCHAR(45) NOT NULL,
+  `poids_a_jour` VARCHAR(45) NOT NULL);
