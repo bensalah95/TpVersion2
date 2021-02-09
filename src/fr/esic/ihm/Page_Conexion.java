@@ -44,7 +44,7 @@ String log;
         jLabel2 = new javax.swing.JLabel();
         txt_login = new javax.swing.JTextField();
         bt_connexion = new javax.swing.JButton();
-        bt_inscription = new javax.swing.JButton();
+        bt_retour = new javax.swing.JButton();
         lb_msg = new javax.swing.JLabel();
         lb_date = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
@@ -60,15 +60,15 @@ String log;
         jLabel1.setFont(new java.awt.Font("Comic Sans MS", 0, 18)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(0, 58, 111));
         jLabel1.setText("LOGIN");
-        page_cnx.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 120, 140, -1));
+        page_cnx.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 140, 140, -1));
 
         jLabel2.setFont(new java.awt.Font("Comic Sans MS", 0, 18)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(0, 58, 111));
         jLabel2.setText("PASSWORD");
-        page_cnx.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 180, 140, -1));
+        page_cnx.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 190, 140, -1));
 
         txt_login.setFont(new java.awt.Font("Comic Sans MS", 1, 18)); // NOI18N
-        page_cnx.add(txt_login, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 110, 320, -1));
+        page_cnx.add(txt_login, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 140, 320, -1));
 
         bt_connexion.setBackground(new java.awt.Color(255, 255, 255));
         bt_connexion.setFont(new java.awt.Font("Comic Sans MS", 1, 18)); // NOI18N
@@ -79,18 +79,18 @@ String log;
                 bt_connexionActionPerformed(evt);
             }
         });
-        page_cnx.add(bt_connexion, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 250, 240, -1));
+        page_cnx.add(bt_connexion, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 260, 240, -1));
 
-        bt_inscription.setBackground(new java.awt.Color(255, 255, 255));
-        bt_inscription.setFont(new java.awt.Font("Comic Sans MS", 1, 18)); // NOI18N
-        bt_inscription.setForeground(new java.awt.Color(0, 51, 255));
-        bt_inscription.setText("inscription ?");
-        bt_inscription.addActionListener(new java.awt.event.ActionListener() {
+        bt_retour.setBackground(new java.awt.Color(255, 255, 255));
+        bt_retour.setFont(new java.awt.Font("Comic Sans MS", 1, 18)); // NOI18N
+        bt_retour.setForeground(new java.awt.Color(0, 51, 255));
+        bt_retour.setText("Retour");
+        bt_retour.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                bt_inscriptionActionPerformed(evt);
+                bt_retourActionPerformed(evt);
             }
         });
-        page_cnx.add(bt_inscription, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 370, 310, -1));
+        page_cnx.add(bt_retour, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 570, 120, -1));
 
         lb_msg.setFont(new java.awt.Font("Comic Sans MS", 1, 24)); // NOI18N
         lb_msg.setForeground(new java.awt.Color(255, 0, 0));
@@ -98,7 +98,7 @@ String log;
 
         lb_date.setFont(new java.awt.Font("Comic Sans MS", 3, 14)); // NOI18N
         lb_date.setForeground(new java.awt.Color(153, 0, 255));
-        page_cnx.add(lb_date, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 40, 200, 30));
+        page_cnx.add(lb_date, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 30, 200, 30));
 
         jLabel3.setFont(new java.awt.Font("Comic Sans MS", 3, 24)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(153, 168, 237));
@@ -121,30 +121,20 @@ String log;
                 txt_pwdActionPerformed(evt);
             }
         });
-        page_cnx.add(txt_pwd, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 180, 320, 30));
+        page_cnx.add(txt_pwd, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 190, 320, 30));
 
-        img.setIcon(new javax.swing.ImageIcon(getClass().getResource("/fr/esic/img/cnx_img.jpg"))); // NOI18N
-        page_cnx.add(img, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 810, 700));
+        img.setIcon(new javax.swing.ImageIcon(getClass().getResource("/fr/esic/img/connexion.jpg"))); // NOI18N
+        page_cnx.add(img, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, -10, 610, 650));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 810, Short.MAX_VALUE)
-            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(layout.createSequentialGroup()
-                    .addGap(0, 0, Short.MAX_VALUE)
-                    .addComponent(page_cnx, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(0, 0, Short.MAX_VALUE)))
+            .addComponent(page_cnx, javax.swing.GroupLayout.PREFERRED_SIZE, 611, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 700, Short.MAX_VALUE)
-            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(layout.createSequentialGroup()
-                    .addGap(0, 0, Short.MAX_VALUE)
-                    .addComponent(page_cnx, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(0, 0, Short.MAX_VALUE)))
+            .addComponent(page_cnx, javax.swing.GroupLayout.PREFERRED_SIZE, 626, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
 
         pack();
@@ -220,10 +210,10 @@ String log;
                 prepare.setInt(1, nbre_kilo);*/
     }//GEN-LAST:event_bt_connexionActionPerformed
 
-    private void bt_inscriptionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bt_inscriptionActionPerformed
+    private void bt_retourActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bt_retourActionPerformed
 
-        Inscription inscri =new Inscription();
-        inscri.setVisible(true);
+        FitnessTime fit =new FitnessTime();
+        fit.setVisible(true);
         this.hide();
         /*String nom, String prenom, String sex, String login, String password, String password2, float poids, int age*/
         /* try{
@@ -232,7 +222,7 @@ String log;
         }catch(Exception e){
 
             JOptionPane.showMessageDialog(rootPane, "excception"+e.getMessage());}  */
-    }//GEN-LAST:event_bt_inscriptionActionPerformed
+    }//GEN-LAST:event_bt_retourActionPerformed
 
     private void txt_pwdActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txt_pwdActionPerformed
         // TODO add your handling code here:
@@ -275,7 +265,7 @@ String log;
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton bt_connexion;
-    private javax.swing.JButton bt_inscription;
+    private javax.swing.JButton bt_retour;
     private javax.swing.JLabel img;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;

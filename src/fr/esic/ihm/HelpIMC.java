@@ -33,9 +33,7 @@ public class HelpIMC extends javax.swing.JFrame {
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
-        jLabel6 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
-        jLabel8 = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -44,19 +42,15 @@ public class HelpIMC extends javax.swing.JFrame {
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/fr/esic/img/help.jpg"))); // NOI18N
 
-        jLabel2.setText("AIDE IMC A MODIFIER");
+        jLabel2.setText("AIDE IMC");
 
-        jLabel3.setText("vous trouverez tous ce qu'il vous faudra pour prendre ou perdre du poids très facilement !");
+        jLabel3.setText("L’indice de masse corporelle (IMC) permet d’évaluer rapidement votre corpulence simplement");
 
-        jLabel4.setText("Vous pourrez, vous fixer un ou plusieurs ojectifs, avoir un suivi personnaliser en fonction de votre morphologie.");
+        jLabel4.setText("avec votre poids et votre taille, quel que soit votre sexe.");
 
-        jLabel5.setText("Vous aurez donc accès à un récapitulation quotidien ou hebdomadaire de votre progression");
+        jLabel5.setText("Calculez rapidement votre IMC et découvrez dans quelle catégorie vous vous situez.");
 
-        jLabel6.setText("Pour une meilleur analyse personnel, veuillez renseigner votre taille/poids dans la rubrique \"Modifier le profil\".");
-
-        jLabel7.setText("et un historique de tous vos exercices.");
-
-        jLabel8.setText("Pour commencer, cliquez sur le bouton continuer.");
+        jLabel7.setText("Veuillez donc rentrer votre poids ainsi que votre taille actuelle afin de calculer votre IMC.");
 
         jButton1.setBackground(new java.awt.Color(0, 102, 0));
         jButton1.setText("Continuer");
@@ -79,9 +73,7 @@ public class HelpIMC extends javax.swing.JFrame {
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(57, 57, 57)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel8)
                             .addComponent(jLabel7)
-                            .addComponent(jLabel6)
                             .addComponent(jLabel5)
                             .addComponent(jLabel3)
                             .addComponent(jLabel2)
@@ -89,26 +81,22 @@ public class HelpIMC extends javax.swing.JFrame {
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(340, 340, 340)
                         .addComponent(jButton1)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(128, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap(31, Short.MAX_VALUE)
                 .addComponent(jLabel2)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGap(18, 18, 18)
                 .addComponent(jLabel3)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel4)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel5)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel7)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel6)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jLabel8)
-                .addGap(23, 23, 23)
+                .addComponent(jLabel4)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jLabel5)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jLabel7)
+                .addGap(18, 18, 18)
                 .addComponent(jButton1)
                 .addGap(18, 18, 18)
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 335, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -183,9 +171,7 @@ public class HelpIMC extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
-    private javax.swing.JLabel jLabel8;
     private javax.swing.JPanel jPanel1;
     // End of variables declaration//GEN-END:variables
 }

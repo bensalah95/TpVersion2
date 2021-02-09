@@ -46,7 +46,7 @@ public class UserDao {
            /*Date thisDate=new Date();
  SimpleDateFormat f=new SimpleDateFormat("yyyy-MM-dd  hh:mm:ss ");
         */
-        String sql ="insert into sportif(nom,prenom,sex,login,mdp,mdp2,poids,age) values(?,?,?,?,?,?,?,?)";
+        String sql ="insert into sportif(nom,prenom,sex,login,mdp,mdp2,poids,age,taille) values(?,?,?,?,?,?,?,?,?)";
    
     Connection connexion=ConnexionBd.getConnection();
     PreparedStatement prepare =connexion.prepareStatement(sql);
@@ -61,6 +61,8 @@ public class UserDao {
     prepare.setString(6, u.getPassword2());
     prepare.setDouble(7,u.getPoids());
     prepare.setInt(8,u.getAge());
+    prepare.setInt(9,u.getTaille());
+
    
          //prepare.setString(9, date.getText());
 

@@ -36,6 +36,7 @@ CREATE TABLE `obesite`.`sportif` (
   `mdp2` varchar(45) NOT NULL,
   `poids` double  NULL,
   `age` int(11)  NULL,
+  `taille`int(11) NULL,
   `dateConx` date  NULL,
   `dateInscrip` date  NULL
 ) ;
@@ -46,6 +47,10 @@ CHANGE COLUMN `id` `id` INT(11) NOT NULL AUTO_INCREMENT ,
 ADD PRIMARY KEY (`id`);
 ;
 
-CREATE TABLE `obesite`.`suivi_poids` (
-  `poids_initial` VARCHAR(45) NOT NULL,
-  `poids_a_jour` VARCHAR(45) NOT NULL);
+
+ALTER TABLE `obesite`.`sportif` 
+DROP COLUMN `dateInscrip`,
+DROP COLUMN `dateConx`;
+
+
+

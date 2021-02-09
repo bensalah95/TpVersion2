@@ -16,6 +16,7 @@ public class User {
     private String password2;
     private double poids;
     private int age;
+    private int taille;
 
     public User(String nom, String prenom, String login, String password, String password2) {
         this.nom = nom;
@@ -26,7 +27,7 @@ public class User {
     }
     
     
-     public User(String nom, String prenom, String sex, String login, String password, String password2, double poids, int age) {
+     public User(String nom, String prenom, String sex, String login, String password, String password2, double poids, int age, int taille) {
      
         this.nom = nom;
         this.prenom = prenom;
@@ -36,7 +37,16 @@ public class User {
         this.password2 = password2;
         this.poids = poids;
         this.age = age;
+        this.taille = taille;
      }
+
+    public int getTaille() {
+        return taille;
+    }
+
+    public void setTaille(int taille) {
+        this.taille = taille;
+    }
       public User() {
        
     }

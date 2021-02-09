@@ -55,6 +55,7 @@ public class Ajouter_nv_objectif extends javax.swing.JFrame {
 
         btn_commencer_regime1.setBackground(new java.awt.Color(255, 198, 147));
         btn_commencer_regime1.setFont(new java.awt.Font("Comic Sans MS", 3, 14)); // NOI18N
+        btn_commencer_regime1.setForeground(new java.awt.Color(255, 255, 255));
         btn_commencer_regime1.setText("Ajouter un autre objectif");
         jPanel1.add(btn_commencer_regime1, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 460, 220, 40));
 
