@@ -53,10 +53,10 @@ public class Modifier_Profile extends javax.swing.JFrame {
             }
         });
 
-        lbMsgBonjour.setFont(new java.awt.Font("Comic Sans MS", 1, 12)); // NOI18N
-        lbMsgBonjour.setForeground(new java.awt.Color(255, 255, 255));
+        lbMsgBonjour.setBackground(new java.awt.Color(102, 102, 255));
+        lbMsgBonjour.setFont(new java.awt.Font("Comic Sans MS", 1, 18)); // NOI18N
+        lbMsgBonjour.setForeground(new java.awt.Color(0, 0, 0));
         lbMsgBonjour.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lbMsgBonjour.setText("Bonjour");
 
         lbNewLog.setFont(new java.awt.Font("Segoe UI", 3, 12)); // NOI18N
         lbNewLog.setText("Nouveau login");
@@ -107,21 +107,23 @@ public class Modifier_Profile extends javax.swing.JFrame {
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(txtNewPoids, javax.swing.GroupLayout.DEFAULT_SIZE, 196, Short.MAX_VALUE)
                             .addComponent(txtNewLog)
-                            .addComponent(lbMsgBonjour, javax.swing.GroupLayout.PREFERRED_SIZE, 172, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(txtNewMdp)))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(164, 164, 164)
                         .addComponent(btValider)
                         .addGap(154, 154, 154)
-                        .addComponent(btRetour)))
+                        .addComponent(btRetour))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(216, 216, 216)
+                        .addComponent(lbMsgBonjour, javax.swing.GroupLayout.PREFERRED_SIZE, 346, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(107, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(lbMsgBonjour, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 62, Short.MAX_VALUE)
+                .addGap(16, 16, 16)
+                .addComponent(lbMsgBonjour, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 37, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lbNewLog)
                     .addComponent(txtNewLog, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -146,8 +148,7 @@ public class Modifier_Profile extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
-        // TODO add your handling code here:
-        lbMsgBonjour.setText("Bonjour " + PropriGlobal.user_Connect.getLogin());
+        lbMsgBonjour.setText("ici modifiez votre profil " + PropriGlobal.user_Connect.getPrenom());
     }//GEN-LAST:event_formWindowOpened
 
     private void btRetourActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btRetourActionPerformed
