@@ -8,6 +8,7 @@ package fr.esic.ihm;
 import de.esic.dao.ConnexionBd;
 import de.esic.dao.UserDao;
 import fr.esic.model.User;
+import fr.esic.proprities.PropriGlobal;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -17,10 +18,8 @@ import java.util.Date;
 import java.text.DateFormat;
 import javax.swing.JOptionPane;
 
-
 public class Fenetre_de_demarage extends javax.swing.JFrame {
 
-   
     public Fenetre_de_demarage() {
         initComponents();
 
@@ -54,6 +53,11 @@ public class Fenetre_de_demarage extends javax.swing.JFrame {
         btn_modifie_profil.setFont(new java.awt.Font("Comic Sans MS", 3, 14)); // NOI18N
         btn_modifie_profil.setForeground(new java.awt.Color(176, 151, 178));
         btn_modifie_profil.setText("Modifier le profil");
+        btn_modifie_profil.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_modifie_profilActionPerformed(evt);
+            }
+        });
         getContentPane().add(btn_modifie_profil, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 120, 180, 40));
 
         btn_ajouter_objectif.setBackground(new java.awt.Color(255, 255, 255));
@@ -137,8 +141,8 @@ public class Fenetre_de_demarage extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btn_poids_mise_ajourActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_poids_mise_ajourActionPerformed
-       Mise_a_jour_de_poids poids= new Mise_a_jour_de_poids();
-              poids .setVisible(true);
+        Mise_a_jour_de_poids poids = new Mise_a_jour_de_poids();
+        poids.setVisible(true);
         this.hide();
     }//GEN-LAST:event_btn_poids_mise_ajourActionPerformed
 
@@ -149,16 +153,17 @@ public class Fenetre_de_demarage extends javax.swing.JFrame {
     }//GEN-LAST:event_btn_ajouter_objectifActionPerformed
 
     private void btn_helpActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_helpActionPerformed
-       Page_Conexion cnx= new Page_Conexion();
-      cnx.setVisible(true);
-      this.hide();
+        Page_Conexion cnx = new Page_Conexion();
+        cnx.setVisible(true);
+        this.hide();
     }//GEN-LAST:event_btn_helpActionPerformed
 
     private void btn_quitterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_quitterActionPerformed
-        
-       Page_Conexion cnx= new Page_Conexion();
-      cnx.setVisible(true);
-      this.hide();
+
+        PropriGlobal.user_Connect=null;
+        Page_Conexion cnx = new Page_Conexion();
+        cnx.setVisible(true);
+        this.hide();
         /*Date actuel = new Date();
         DateFormat dateFormat = new SimpleDateFormat();
         String log;
@@ -190,12 +195,19 @@ public class Fenetre_de_demarage extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(rootPane, "exception!" + e.getMessage());
         }
 
-*/
+         */
     }//GEN-LAST:event_btn_quitterActionPerformed
 
     private void btn_historique1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_historique1ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_btn_historique1ActionPerformed
+
+    private void btn_modifie_profilActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_modifie_profilActionPerformed
+        // TODO add your handling code here:
+        Modifier_Profile profil = new Modifier_Profile();
+        profil.setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_btn_modifie_profilActionPerformed
 
     /**
      * @param args the command line arguments

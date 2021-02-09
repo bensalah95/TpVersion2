@@ -8,6 +8,7 @@ package fr.esic.ihm;
 import de.esic.dao.ConnexionBd;
 import de.esic.dao.UserDao;
 import fr.esic.model.User;
+import fr.esic.proprities.PropriGlobal;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -185,6 +186,7 @@ String log;
                 User u = UserDao.getByLoginAndPassword(login, password);
 
                 if(u!=null){
+                    PropriGlobal.user_Connect=u;
                     JOptionPane.showMessageDialog(rootPane,"connexion reussi!");
                     if(nbre_cnx<1){
                         HelpConnexion helpConnexion = new HelpConnexion();
