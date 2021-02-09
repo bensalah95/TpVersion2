@@ -123,7 +123,7 @@ public class FitnessTime extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-      Connexion cnx=new Connexion();
+      Page_Conexion cnx= new Page_Conexion();
       cnx.setVisible(true);
       this.hide();
     }//GEN-LAST:event_jButton1ActionPerformed

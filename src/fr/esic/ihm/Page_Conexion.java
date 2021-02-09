@@ -1,4 +1,8 @@
-
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
 package fr.esic.ihm;
 
 import de.esic.dao.ConnexionBd;
@@ -10,36 +14,31 @@ import java.sql.ResultSet;
 import java.sql.Statement;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
-import java.util.Calendar;
 import java.util.Date;
-import java.util.GregorianCalendar;
 import javax.swing.JOptionPane;
 
-
-public class Connexion extends javax.swing.JFrame {
-
-
+public class Page_Conexion extends javax.swing.JFrame {
+int nbre_cnx;
+String log;
    
-    
-    public Connexion() {
+    public Page_Conexion() {
         initComponents();
-       showDate();
-   
+        showDate();
+        
     }
-   void showDate(){
+ public  void showDate(){
         
         Date actuelle = new Date();
        DateFormat dateFormat=new SimpleDateFormat("dd/MM/YYYY hh:mm:ss ");
        lb_date.setText(" "+dateFormat.format(actuelle));
      
     }
-    
-
    
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        page_cnx = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         txt_login = new javax.swing.JTextField();
@@ -51,29 +50,24 @@ public class Connexion extends javax.swing.JFrame {
         jLabel10 = new javax.swing.JLabel();
         jLabel11 = new javax.swing.JLabel();
         txt_pwd = new javax.swing.JPasswordField();
-        tabl = new javax.swing.JPanel();
         img = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        addWindowListener(new java.awt.event.WindowAdapter() {
-            public void windowOpened(java.awt.event.WindowEvent evt) {
-                formWindowOpened(evt);
-            }
-        });
-        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        page_cnx.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel1.setFont(new java.awt.Font("Comic Sans MS", 0, 18)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(0, 58, 111));
         jLabel1.setText("LOGIN");
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 120, 140, -1));
+        page_cnx.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 120, 140, -1));
 
         jLabel2.setFont(new java.awt.Font("Comic Sans MS", 0, 18)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(0, 58, 111));
         jLabel2.setText("PASSWORD");
-        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 180, 140, -1));
+        page_cnx.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 180, 140, -1));
 
         txt_login.setFont(new java.awt.Font("Comic Sans MS", 1, 18)); // NOI18N
-        getContentPane().add(txt_login, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 110, 320, -1));
+        page_cnx.add(txt_login, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 110, 320, -1));
 
         bt_connexion.setBackground(new java.awt.Color(255, 255, 255));
         bt_connexion.setFont(new java.awt.Font("Comic Sans MS", 1, 18)); // NOI18N
@@ -84,7 +78,7 @@ public class Connexion extends javax.swing.JFrame {
                 bt_connexionActionPerformed(evt);
             }
         });
-        getContentPane().add(bt_connexion, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 250, 240, -1));
+        page_cnx.add(bt_connexion, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 250, 240, -1));
 
         bt_inscription.setBackground(new java.awt.Color(255, 255, 255));
         bt_inscription.setFont(new java.awt.Font("Comic Sans MS", 1, 18)); // NOI18N
@@ -95,60 +89,65 @@ public class Connexion extends javax.swing.JFrame {
                 bt_inscriptionActionPerformed(evt);
             }
         });
-        getContentPane().add(bt_inscription, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 370, 310, -1));
+        page_cnx.add(bt_inscription, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 370, 310, -1));
 
         lb_msg.setFont(new java.awt.Font("Comic Sans MS", 1, 24)); // NOI18N
         lb_msg.setForeground(new java.awt.Color(255, 0, 0));
-        getContentPane().add(lb_msg, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 300, 470, 30));
+        page_cnx.add(lb_msg, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 300, 470, 30));
 
         lb_date.setFont(new java.awt.Font("Comic Sans MS", 3, 14)); // NOI18N
         lb_date.setForeground(new java.awt.Color(153, 0, 255));
-        getContentPane().add(lb_date, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 40, 220, 30));
+        page_cnx.add(lb_date, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 40, 200, 30));
 
         jLabel3.setFont(new java.awt.Font("Comic Sans MS", 3, 24)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(153, 168, 237));
         jLabel3.setText("Se");
-        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 20, 40, 30));
+        page_cnx.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 20, 40, 30));
 
         jLabel10.setFont(new java.awt.Font("Comic Sans MS", 3, 24)); // NOI18N
         jLabel10.setForeground(new java.awt.Color(153, 133, 205));
         jLabel10.setText("Conn");
-        getContentPane().add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 30, 60, 30));
+        page_cnx.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 30, 60, 30));
 
         jLabel11.setBackground(new java.awt.Color(255, 255, 255));
         jLabel11.setFont(new java.awt.Font("Comic Sans MS", 3, 24)); // NOI18N
         jLabel11.setForeground(new java.awt.Color(172, 113, 193));
         jLabel11.setText("ecter");
-        getContentPane().add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(337, 30, 70, 30));
+        page_cnx.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 30, 70, 30));
 
         txt_pwd.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txt_pwdActionPerformed(evt);
             }
         });
-        getContentPane().add(txt_pwd, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 180, 320, 30));
+        page_cnx.add(txt_pwd, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 180, 320, 30));
 
         img.setIcon(new javax.swing.ImageIcon(getClass().getResource("/fr/esic/img/cnx_img.jpg"))); // NOI18N
-        tabl.add(img);
+        page_cnx.add(img, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 810, 700));
 
-        getContentPane().add(tabl, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 960, 700));
+        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
+        getContentPane().setLayout(layout);
+        layout.setHorizontalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 810, Short.MAX_VALUE)
+            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(layout.createSequentialGroup()
+                    .addGap(0, 0, Short.MAX_VALUE)
+                    .addComponent(page_cnx, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(0, 0, Short.MAX_VALUE)))
+        );
+        layout.setVerticalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 700, Short.MAX_VALUE)
+            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(layout.createSequentialGroup()
+                    .addGap(0, 0, Short.MAX_VALUE)
+                    .addComponent(page_cnx, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(0, 0, Short.MAX_VALUE)))
+        );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    private void bt_inscriptionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bt_inscriptionActionPerformed
-
-        Inscription inscri =new Inscription();
-        inscri.setVisible(true);
-        this.hide();
-        /*String nom, String prenom, String sex, String login, String password, String password2, float poids, int age*/
-        /* try{
-            UserDao.insertPerson(new User ("manel","bensalah","féminin","manel","bbbb","bbbb",65,25));
-
-        }catch(Exception e){
-
-            JOptionPane.showMessageDialog(rootPane, "excception"+e.getMessage());}  */
-    }//GEN-LAST:event_bt_inscriptionActionPerformed
 
     private void bt_connexionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bt_connexionActionPerformed
         Date actuelle = new Date();
@@ -220,16 +219,24 @@ public class Connexion extends javax.swing.JFrame {
                 prepare.setInt(1, nbre_kilo);*/
     }//GEN-LAST:event_bt_connexionActionPerformed
 
+    private void bt_inscriptionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bt_inscriptionActionPerformed
+
+        Inscription inscri =new Inscription();
+        inscri.setVisible(true);
+        this.hide();
+        /*String nom, String prenom, String sex, String login, String password, String password2, float poids, int age*/
+        /* try{
+            UserDao.insertPerson(new User ("manel","bensalah","féminin","manel","bbbb","bbbb",65,25));
+
+        }catch(Exception e){
+
+            JOptionPane.showMessageDialog(rootPane, "excception"+e.getMessage());}  */
+    }//GEN-LAST:event_bt_inscriptionActionPerformed
+
     private void txt_pwdActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txt_pwdActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txt_pwdActionPerformed
 
-    private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
-
-        // TODO add your handling code here:
-    }//GEN-LAST:event_formWindowOpened
-int nbre_cnx;
-String log;
     /**
      * @param args the command line arguments
      */
@@ -247,20 +254,20 @@ String log;
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Connexion.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Page_Conexion.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Connexion.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Page_Conexion.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Connexion.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Page_Conexion.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Connexion.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Page_Conexion.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new Connexion().setVisible(true);
+                new Page_Conexion().setVisible(true);
             }
         });
     }
@@ -276,7 +283,7 @@ String log;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel lb_date;
     private javax.swing.JLabel lb_msg;
-    private javax.swing.JPanel tabl;
+    private javax.swing.JPanel page_cnx;
     private javax.swing.JTextField txt_login;
     private javax.swing.JPasswordField txt_pwd;
     // End of variables declaration//GEN-END:variables

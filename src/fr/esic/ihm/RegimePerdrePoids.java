@@ -254,9 +254,9 @@ public class RegimePerdrePoids extends javax.swing.JFrame {
     }//GEN-LAST:event_formWindowOpened
 
     private void btn_quitterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_quitterActionPerformed
-        Connexion cnx = new Connexion();
-        cnx.setVisible(true);
-        this.hide();
+       Page_Conexion cnx= new Page_Conexion();
+      cnx.setVisible(true);
+      this.hide();
     }//GEN-LAST:event_btn_quitterActionPerformed
 
     private void btn_acceeuilActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_acceeuilActionPerformed

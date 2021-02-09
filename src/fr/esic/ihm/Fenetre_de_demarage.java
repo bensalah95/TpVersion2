@@ -142,16 +142,16 @@ public class Fenetre_de_demarage extends javax.swing.JFrame {
     }//GEN-LAST:event_btn_ajouter_objectifActionPerformed
 
     private void btn_helpActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_helpActionPerformed
-        Connexion cnx = new Connexion();
-        cnx.setVisible(true);
-        this.hide();
+       Page_Conexion cnx= new Page_Conexion();
+      cnx.setVisible(true);
+      this.hide();
     }//GEN-LAST:event_btn_helpActionPerformed
 
     private void btn_quitterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_quitterActionPerformed
         
-         Connexion cnx=new Connexion();
-        cnx.setVisible(true);
-        this.hide();
+       Page_Conexion cnx= new Page_Conexion();
+      cnx.setVisible(true);
+      this.hide();
         /*Date actuel = new Date();
         DateFormat dateFormat = new SimpleDateFormat();
         String log;

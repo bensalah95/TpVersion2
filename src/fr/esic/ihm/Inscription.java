@@ -1,8 +1,4 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package fr.esic.ihm;
 
 import de.esic.dao.ConnexionBd;
@@ -282,9 +278,10 @@ public class Inscription extends javax.swing.JFrame {
     }//GEN-LAST:event_bt_annulerActionPerformed
 
     private void bt_connexionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bt_connexionActionPerformed
-        Connexion cnx =new Connexion();
+     Page_Conexion cnx =new Page_Conexion();
         cnx.setVisible(true);
         this.hide();
+        
     }//GEN-LAST:event_bt_connexionActionPerformed
 
     private void txt_nomActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txt_nomActionPerformed
