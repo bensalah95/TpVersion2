@@ -130,6 +130,11 @@ public class Fenetre_de_demarage extends javax.swing.JFrame {
         jButton6.setFont(new java.awt.Font("Comic Sans MS", 3, 14)); // NOI18N
         jButton6.setForeground(new java.awt.Color(176, 151, 178));
         jButton6.setText("Completer le profil");
+        jButton6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton6ActionPerformed(evt);
+            }
+        });
         getContentPane().add(jButton6, new org.netbeans.lib.awtextra.AbsoluteConstraints(810, 270, 230, 40));
 
         btn_historique1.setBackground(new java.awt.Color(255, 255, 255));
@@ -219,6 +224,15 @@ public class Fenetre_de_demarage extends javax.swing.JFrame {
 
     private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
         lbBienvenue.setText("Bonjour " + PropriGlobal.user_Connect.getPrenom() + " "+ PropriGlobal.user_Connect.getNom().toUpperCase());    }//GEN-LAST:event_formWindowOpened
+
+    private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
+        // TODO add your handling code here:
+        Completer_Profile maj = new Completer_Profile();
+        maj.setVisible(true);
+        this.setVisible(false);
+        
+        
+    }//GEN-LAST:event_jButton6ActionPerformed
 
     /**
      * @param args the command line arguments
