@@ -45,7 +45,6 @@ public class Fenetre_de_demarage extends javax.swing.JFrame {
         jButton5 = new javax.swing.JButton();
         jButton6 = new javax.swing.JButton();
         btn_historique1 = new javax.swing.JButton();
-        img = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         addWindowListener(new java.awt.event.WindowAdapter() {
@@ -143,9 +142,6 @@ public class Fenetre_de_demarage extends javax.swing.JFrame {
             }
         });
         getContentPane().add(btn_historique1, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 280, 250, 40));
-
-        img.setIcon(new javax.swing.ImageIcon(getClass().getResource("/fr/esic/img/inscription.jpg"))); // NOI18N
-        getContentPane().add(img, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1060, 610));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -267,7 +263,6 @@ public class Fenetre_de_demarage extends javax.swing.JFrame {
     private javax.swing.JButton btn_poids_mise_ajour;
     private javax.swing.JButton btn_quitter;
     private javax.swing.JLabel date;
-    private javax.swing.JLabel img;
     private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton5;
     private javax.swing.JButton jButton6;

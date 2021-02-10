@@ -51,7 +51,6 @@ String log;
         jLabel10 = new javax.swing.JLabel();
         jLabel11 = new javax.swing.JLabel();
         txt_pwd = new javax.swing.JPasswordField();
-        img = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -122,9 +121,6 @@ String log;
             }
         });
         page_cnx.add(txt_pwd, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 190, 320, 30));
-
-        img.setIcon(new javax.swing.ImageIcon(getClass().getResource("/fr/esic/img/connexion.jpg"))); // NOI18N
-        page_cnx.add(img, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, -10, 610, 650));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -266,7 +262,6 @@ String log;
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton bt_connexion;
     private javax.swing.JButton bt_retour;
-    private javax.swing.JLabel img;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;

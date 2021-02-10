@@ -52,20 +52,30 @@ public class Modifier_Profile extends javax.swing.JFrame {
                 formWindowOpened(evt);
             }
         });
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         lbMsgBonjour.setBackground(new java.awt.Color(102, 102, 255));
         lbMsgBonjour.setFont(new java.awt.Font("Comic Sans MS", 1, 18)); // NOI18N
-        lbMsgBonjour.setForeground(new java.awt.Color(0, 0, 0));
         lbMsgBonjour.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        getContentPane().add(lbMsgBonjour, new org.netbeans.lib.awtextra.AbsoluteConstraints(216, 16, 346, 46));
 
-        lbNewLog.setFont(new java.awt.Font("Segoe UI", 3, 12)); // NOI18N
+        lbNewLog.setFont(new java.awt.Font("Comic Sans MS", 3, 18)); // NOI18N
         lbNewLog.setText("Nouveau login");
+        getContentPane().add(lbNewLog, new org.netbeans.lib.awtextra.AbsoluteConstraints(12, 102, 151, -1));
 
-        lbNewMdp.setFont(new java.awt.Font("Segoe UI", 3, 12)); // NOI18N
+        lbNewMdp.setFont(new java.awt.Font("Comic Sans MS", 3, 18)); // NOI18N
         lbNewMdp.setText("Nouveau mdp");
+        getContentPane().add(lbNewMdp, new org.netbeans.lib.awtextra.AbsoluteConstraints(12, 142, 151, -1));
 
-        lbNewPoids.setFont(new java.awt.Font("Segoe UI", 3, 12)); // NOI18N
+        lbNewPoids.setFont(new java.awt.Font("Comic Sans MS", 3, 18)); // NOI18N
         lbNewPoids.setText("Nouveau poids");
+        getContentPane().add(lbNewPoids, new org.netbeans.lib.awtextra.AbsoluteConstraints(12, 204, 151, -1));
+
+        txtNewLog.setFont(new java.awt.Font("Comic Sans MS", 3, 18)); // NOI18N
+        getContentPane().add(txtNewLog, new org.netbeans.lib.awtextra.AbsoluteConstraints(306, 99, 196, -1));
+
+        txtNewPoids.setFont(new java.awt.Font("Comic Sans MS", 3, 18)); // NOI18N
+        getContentPane().add(txtNewPoids, new org.netbeans.lib.awtextra.AbsoluteConstraints(306, 201, 196, -1));
 
         btValider.setBackground(new java.awt.Color(0, 153, 0));
         btValider.setFont(new java.awt.Font("Comic Sans MS", 3, 14)); // NOI18N
@@ -76,6 +86,7 @@ public class Modifier_Profile extends javax.swing.JFrame {
                 btValiderActionPerformed(evt);
             }
         });
+        getContentPane().add(btValider, new org.netbeans.lib.awtextra.AbsoluteConstraints(164, 334, -1, -1));
 
         btRetour.setBackground(new java.awt.Color(255, 255, 0));
         btRetour.setFont(new java.awt.Font("Comic Sans MS", 3, 14)); // NOI18N
@@ -86,63 +97,11 @@ public class Modifier_Profile extends javax.swing.JFrame {
                 btRetourActionPerformed(evt);
             }
         });
+        getContentPane().add(btRetour, new org.netbeans.lib.awtextra.AbsoluteConstraints(517, 334, -1, -1));
+        getContentPane().add(lb_msg, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 274, 602, 42));
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(lb_msg, javax.swing.GroupLayout.PREFERRED_SIZE, 602, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(79, 79, 79))
-            .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(lbNewLog, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(lbNewPoids, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(lbNewMdp, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(143, 143, 143)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(txtNewPoids, javax.swing.GroupLayout.DEFAULT_SIZE, 196, Short.MAX_VALUE)
-                            .addComponent(txtNewLog)
-                            .addComponent(txtNewMdp)))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(164, 164, 164)
-                        .addComponent(btValider)
-                        .addGap(154, 154, 154)
-                        .addComponent(btRetour))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(216, 216, 216)
-                        .addComponent(lbMsgBonjour, javax.swing.GroupLayout.PREFERRED_SIZE, 346, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(107, Short.MAX_VALUE))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(16, 16, 16)
-                .addComponent(lbMsgBonjour, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 37, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lbNewLog)
-                    .addComponent(txtNewLog, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lbNewMdp)
-                    .addComponent(txtNewMdp, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(40, 40, 40)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lbNewPoids)
-                    .addComponent(txtNewPoids, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(51, 51, 51)
-                .addComponent(lb_msg, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btValider)
-                    .addComponent(btRetour))
-                .addGap(68, 68, 68))
-        );
+        txtNewMdp.setFont(new java.awt.Font("Comic Sans MS", 3, 18)); // NOI18N
+        getContentPane().add(txtNewMdp, new org.netbeans.lib.awtextra.AbsoluteConstraints(306, 139, 196, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents

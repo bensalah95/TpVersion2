@@ -41,8 +41,6 @@ public class Ajouter_nv_objectif extends javax.swing.JFrame {
         btn_commencer_regime = new javax.swing.JButton();
         jLabel6 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
-        lb_msq_encour = new javax.swing.JLabel();
-        img = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         addWindowListener(new java.awt.event.WindowAdapter() {
@@ -101,7 +99,7 @@ public class Ajouter_nv_objectif extends javax.swing.JFrame {
         btn_valider_regime.setBackground(new java.awt.Color(0, 58, 111));
         btn_valider_regime.setFont(new java.awt.Font("Comic Sans MS", 3, 14)); // NOI18N
         btn_valider_regime.setForeground(new java.awt.Color(255, 255, 255));
-        btn_valider_regime.setText("Valider Régime");
+        btn_valider_regime.setText("Valider");
         btn_valider_regime.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btn_valider_regimeActionPerformed(evt);
@@ -140,15 +138,6 @@ public class Ajouter_nv_objectif extends javax.swing.JFrame {
         jLabel7.setText("Nombre des Heures :");
         jPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 150, 150, 40));
 
-        lb_msq_encour.setBackground(new java.awt.Color(255, 255, 255));
-        lb_msq_encour.setFont(new java.awt.Font("Comic Sans MS", 3, 24)); // NOI18N
-        lb_msq_encour.setForeground(new java.awt.Color(255, 122, 169));
-        lb_msq_encour.setText("BRAVO !!!! BON TRAVAIL ");
-        jPanel1.add(lb_msq_encour, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 230, 400, 130));
-
-        img.setIcon(new javax.swing.ImageIcon(getClass().getResource("/fr/esic/img/perdre poids.jpg"))); // NOI18N
-        jPanel1.add(img, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, 610));
-
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -183,7 +172,7 @@ public class Ajouter_nv_objectif extends javax.swing.JFrame {
         String type_activité=com_box_type.  getSelectedItem().toString();
 
         btn_commencer_regime.setEnabled(true);
-        lb_msq_encour.setVisible(true);
+   
       
         try {
             Connection connexion=ConnexionBd.getConnection();
@@ -234,7 +223,7 @@ public class Ajouter_nv_objectif extends javax.swing.JFrame {
     private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
 btn_commencer_regime.setEnabled(false);
 btn_commencer_regime1.setEnabled(false);
-lb_msq_encour.hide();
+
     }//GEN-LAST:event_formWindowOpened
 
     private void btn_commencer_regimeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_commencer_regimeActionPerformed
@@ -289,12 +278,10 @@ lb_msq_encour.hide();
     private javax.swing.JButton btn_quitter;
     private javax.swing.JButton btn_valider_regime;
     private javax.swing.JComboBox com_box_type;
-    private javax.swing.JLabel img;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JLabel lb_date_start_regime;
-    private javax.swing.JLabel lb_msq_encour;
     private javax.swing.JTextField txt_nbre_heure;
     // End of variables declaration//GEN-END:variables
 }

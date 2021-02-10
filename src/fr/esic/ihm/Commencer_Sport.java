@@ -5,6 +5,16 @@
  */
 package fr.esic.ihm;
 
+import de.esic.dao.ConnexionBd;
+import java.awt.Color;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
 /**
  *
  * @author marye
@@ -14,6 +24,19 @@ public class Commencer_Sport extends javax.swing.JFrame {
     /**
      * Creates new form Commencer_Sport
      */
+    
+    static int milliseconde = 0;
+    static int seconde = 0;
+    static int minute = 0;
+    static int heure = 0;
+    static boolean state = true;
+    
+    int nbre_heure;
+    String activite;
+     PreparedStatement prepare;
+            Statement st;
+            ResultSet rst;
+    
     public Commencer_Sport() {
         initComponents();
     }
@@ -27,25 +50,204 @@ public class Commencer_Sport extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jButton2 = new javax.swing.JButton();
+        btn_start = new javax.swing.JButton();
         Time_sport = new javax.swing.JLabel();
-        img = new javax.swing.JLabel();
+        txt_hour = new javax.swing.JLabel();
+        txt_minute = new javax.swing.JLabel();
+        txt_seconde = new javax.swing.JLabel();
+        txt_milliseconde = new javax.swing.JLabel();
+        btn_stop = new javax.swing.JButton();
+        btn_reset = new javax.swing.JButton();
+        lb_msg = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        addWindowListener(new java.awt.event.WindowAdapter() {
+            public void windowOpened(java.awt.event.WindowEvent evt) {
+                formWindowOpened(evt);
+            }
+        });
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jButton2.setBackground(new java.awt.Color(204, 204, 255));
-        jButton2.setFont(new java.awt.Font("Comic Sans MS", 3, 24)); // NOI18N
-        jButton2.setForeground(new java.awt.Color(204, 0, 14));
-        jButton2.setText("Stop!");
-        getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 550, 110, 40));
+        btn_start.setBackground(new java.awt.Color(204, 204, 255));
+        btn_start.setFont(new java.awt.Font("Comic Sans MS", 3, 24)); // NOI18N
+        btn_start.setForeground(new java.awt.Color(0, 102, 0));
+        btn_start.setText("Start!");
+        btn_start.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_startActionPerformed(evt);
+            }
+        });
+        getContentPane().add(btn_start, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 510, 110, 40));
         getContentPane().add(Time_sport, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 170, -1, -1));
 
-        img.setIcon(new javax.swing.ImageIcon(getClass().getResource("/fr/esic/img/img_comncer_sport.jpg"))); // NOI18N
-        getContentPane().add(img, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 800, 600));
+        txt_hour.setFont(new java.awt.Font("Comic Sans MS", 3, 24)); // NOI18N
+        txt_hour.setForeground(new java.awt.Color(255, 153, 0));
+        txt_hour.setText("00:");
+        getContentPane().add(txt_hour, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 140, 60, 60));
+
+        txt_minute.setFont(new java.awt.Font("Comic Sans MS", 3, 24)); // NOI18N
+        txt_minute.setForeground(new java.awt.Color(255, 153, 0));
+        txt_minute.setText("00:");
+        getContentPane().add(txt_minute, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 140, 60, 60));
+
+        txt_seconde.setFont(new java.awt.Font("Comic Sans MS", 3, 24)); // NOI18N
+        txt_seconde.setForeground(new java.awt.Color(255, 153, 0));
+        txt_seconde.setText("00:");
+        getContentPane().add(txt_seconde, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 140, 60, 60));
+
+        txt_milliseconde.setFont(new java.awt.Font("Comic Sans MS", 3, 24)); // NOI18N
+        txt_milliseconde.setForeground(new java.awt.Color(255, 153, 0));
+        txt_milliseconde.setText("00");
+        getContentPane().add(txt_milliseconde, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 140, 80, 60));
+
+        btn_stop.setBackground(new java.awt.Color(204, 204, 255));
+        btn_stop.setFont(new java.awt.Font("Comic Sans MS", 3, 24)); // NOI18N
+        btn_stop.setForeground(new java.awt.Color(204, 0, 14));
+        btn_stop.setText("Stop!");
+        btn_stop.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_stopActionPerformed(evt);
+            }
+        });
+        getContentPane().add(btn_stop, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 410, 110, 40));
+
+        btn_reset.setBackground(new java.awt.Color(204, 204, 255));
+        btn_reset.setFont(new java.awt.Font("Comic Sans MS", 3, 24)); // NOI18N
+        btn_reset.setForeground(new java.awt.Color(0, 0, 153));
+        btn_reset.setText("Reset!");
+        btn_reset.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_resetActionPerformed(evt);
+            }
+        });
+        getContentPane().add(btn_reset, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 490, 110, 40));
+
+        lb_msg.setFont(new java.awt.Font("Comic Sans MS", 3, 24)); // NOI18N
+        getContentPane().add(lb_msg, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 250, 390, 120));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+ 
+    private void btn_startActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_startActionPerformed
+ 
+state = true;
+         try {
+            Connection connexion=ConnexionBd.getConnection();
+            PreparedStatement prepare;
+            Statement st;
+            ResultSet rst;
+            st=connexion.createStatement();
+            rst=st.executeQuery("select * from  regime_perdre_poids");
+          
+            if(rst.next()){
+         nbre_heure=rst.getInt("nbre_heure");
+         activite=rst.getString("type_activité");
+    
+      
+            }
+         } 
+         catch (SQLException ex) {
+            Logger.getLogger(Commencer_Sport.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
+          lb_msg.setVisible(true);
+        lb_msg.setText("BON COURGE !!!");
+        lb_msg.setForeground(Color.green);
+        
+    Thread t = new Thread() 
+        {
+            public void run ()
+                    
+            {
+                
+                for (; ; )
+                {
+                    if(state==true)
+                    {
+                        try
+                        {
+                            sleep(1);
+                            if(milliseconde>1000)
+                            {
+                                milliseconde=0;
+                                seconde++;
+                                
+                            }
+                            
+                            if(seconde>60)
+                            {
+                                milliseconde=0;
+                                seconde=0;
+                                minute++;
+                            }
+                            
+                            
+                            
+                            if(minute>60)
+                            {
+                                milliseconde=0;
+                                seconde=0;
+                                minute=0;
+                                heure++;
+                                
+                            }
+                           
+                            
+                             txt_milliseconde.setText(" : "+milliseconde);
+                        milliseconde++;
+                        
+                        txt_seconde.setText(" : "+seconde);
+                        txt_minute.setText(" : "+minute);
+                        txt_hour.setText(""+heure);
+                           
+                        } catch (Exception e)
+                        {
+                        }
+                  
+                    }
+                    else{
+                        break;
+                    }
+                    
+                    
+                }
+                
+            }
+            
+        };
+    
+    t.start();
+    
+    }//GEN-LAST:event_btn_startActionPerformed
+
+    private void btn_stopActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_stopActionPerformed
+lb_msg.setVisible(true);
+lb_msg.setText("REPOSE TOI  & CONTINUEZ!!");
+  lb_msg.setForeground(Color.red);
+        state=false;
+      
+    }//GEN-LAST:event_btn_stopActionPerformed
+
+    private void btn_resetActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_resetActionPerformed
+        // TODO add your handling code here:
+        lb_msg.setVisible(true);
+lb_msg.setText("Essayez de nouveau !!!");
+  lb_msg.setForeground(Color.blue);
+        state=false;
+          heure=0;
+        milliseconde=0;
+        minute=0;
+        seconde=0;
+        txt_hour.setText("00:");
+        txt_minute.setText("00:");
+        txt_seconde.setText("00:");
+        txt_milliseconde.setText("00");
+        
+    }//GEN-LAST:event_btn_resetActionPerformed
+
+    private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
+        lb_msg.hide();
+    }//GEN-LAST:event_formWindowOpened
 
     /**
      * @param args the command line arguments
@@ -84,7 +286,13 @@ public class Commencer_Sport extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel Time_sport;
-    private javax.swing.JLabel img;
-    private javax.swing.JButton jButton2;
+    private javax.swing.JButton btn_reset;
+    private javax.swing.JButton btn_start;
+    private javax.swing.JButton btn_stop;
+    private javax.swing.JLabel lb_msg;
+    private javax.swing.JLabel txt_hour;
+    private javax.swing.JLabel txt_milliseconde;
+    private javax.swing.JLabel txt_minute;
+    private javax.swing.JLabel txt_seconde;
     // End of variables declaration//GEN-END:variables
 }

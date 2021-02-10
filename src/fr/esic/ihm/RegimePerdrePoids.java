@@ -42,7 +42,6 @@ public class RegimePerdrePoids extends javax.swing.JFrame {
         btn_quitter = new javax.swing.JButton();
         com_box_type = new javax.swing.JComboBox();
         btn_commencer_regime1 = new javax.swing.JButton();
-        img = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         addWindowListener(new java.awt.event.WindowAdapter() {
@@ -184,9 +183,6 @@ public class RegimePerdrePoids extends javax.swing.JFrame {
         });
         jPanel1.add(btn_commencer_regime1, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 430, 220, 40));
 
-        img.setIcon(new javax.swing.ImageIcon(getClass().getResource("/fr/esic/img/perdre poids.jpg"))); // NOI18N
-        jPanel1.add(img, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 940, 560));
-
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -321,7 +317,6 @@ public class RegimePerdrePoids extends javax.swing.JFrame {
     private javax.swing.JButton btn_valider_regime;
     private javax.swing.JComboBox com_box_type;
     private javax.swing.JComboBox combox_cadence;
-    private javax.swing.JLabel img;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;

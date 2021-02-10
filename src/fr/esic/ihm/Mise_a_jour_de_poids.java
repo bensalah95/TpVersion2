@@ -30,7 +30,6 @@ public class Mise_a_jour_de_poids extends javax.swing.JFrame {
         btn_valider = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         date_de_balnce = new javax.swing.JLabel();
-        img = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         addWindowListener(new java.awt.event.WindowAdapter() {
@@ -78,9 +77,6 @@ public class Mise_a_jour_de_poids extends javax.swing.JFrame {
         jLabel1.setText("Scale's   Time");
         jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 20, 310, 40));
         jPanel1.add(date_de_balnce, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 30, 190, 30));
-
-        img.setIcon(new javax.swing.ImageIcon(getClass().getResource("/fr/esic/img/mise ajour depoids.jpg"))); // NOI18N
-        jPanel1.add(img, new org.netbeans.lib.awtextra.AbsoluteConstraints(-3, 3, 900, 540));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -181,7 +177,6 @@ public class Mise_a_jour_de_poids extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btn_valider;
     private javax.swing.JLabel date_de_balnce;
-    private javax.swing.JLabel img;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;

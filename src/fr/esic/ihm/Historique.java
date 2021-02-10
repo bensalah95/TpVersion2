@@ -52,7 +52,6 @@ int nb_cnx;
         t_historique = new javax.swing.JTable();
         lb_bnj = new javax.swing.JLabel();
         bt_annuler = new javax.swing.JButton();
-        img = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         addWindowListener(new java.awt.event.WindowAdapter() {
@@ -88,9 +87,6 @@ int nb_cnx;
             }
         });
         getContentPane().add(bt_annuler, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 550, 120, -1));
-
-        img.setIcon(new javax.swing.ImageIcon(getClass().getResource("/fr/esic/img/historique de cnx.jpg"))); // NOI18N
-        getContentPane().add(img, new org.netbeans.lib.awtextra.AbsoluteConstraints(1, 0, -1, 620));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -196,7 +192,6 @@ int nb_cnx;
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton bt_annuler;
-    private javax.swing.JLabel img;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JLabel lb_bnj;
     private javax.swing.JTable t_historique;
