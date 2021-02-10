@@ -120,14 +120,17 @@ public class Modifier_Profile extends javax.swing.JFrame {
     private void btValiderActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btValiderActionPerformed
         // TODO add your handling code here:
 
+        String lastLogin = PropriGlobal.user_Connect.getLogin();
+        System.out.println(lastLogin);
         String login = txtNewLog.getText();
         String password = txtNewMdp.getText();
         int poids = Integer.parseInt(txtNewPoids.getText());
 
+        
         String sql = "UPDATE sportif SET login = ? , mdp= ?, mdp2= ?, poids= ? WHERE id = ?";
 
         //System.out.println(sql);
-
+        
         try {
 
             Connection connexion = ConnexionBd.getConnection();
@@ -150,7 +153,7 @@ public class Modifier_Profile extends javax.swing.JFrame {
                 this.setVisible(false);
             } else {
                 lb_msg.setVisible(true);
-                lb_msg.setText("idenifiant ou mot de passe incorrecte!! ");
+                lb_msg.setText("identifiant ou mot de passe incorrecte!! ");
             }
 
         } catch (Exception e) {

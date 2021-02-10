@@ -41,6 +41,20 @@ public class User {
         this.taille = taille;
      }
 
+    public User(int id, String nom, String prenom, String sex, String login, String password, String password2, int age) {
+        this.id = id;
+        this.nom = nom;
+        this.prenom = prenom;
+        this.sex = sex;
+        this.login = login;
+        this.password = password;
+        this.password2 = password2;
+        this.age = age;
+    }
+     
+     
+     
+
     public String getDate_cnx() {
         return date_cnx;
     }

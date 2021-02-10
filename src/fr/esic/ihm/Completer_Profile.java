@@ -36,29 +36,25 @@ public class Completer_Profile extends javax.swing.JFrame {
     private void initComponents() {
 
         lbMsgAccueil = new javax.swing.JLabel();
-        lbMail = new javax.swing.JLabel();
-        lbEtudes = new javax.swing.JLabel();
-        txtMail = new javax.swing.JTextField();
-        txtEtudes = new javax.swing.JTextField();
         btValider = new javax.swing.JButton();
         btRetour = new javax.swing.JButton();
+        lbMailError = new javax.swing.JLabel();
+        lbPoids = new javax.swing.JLabel();
+        lbTaille = new javax.swing.JLabel();
+        txtPoids = new javax.swing.JTextField();
+        txtTaille = new javax.swing.JTextField();
         lb_msg = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        addWindowListener(new java.awt.event.WindowAdapter() {
+            public void windowOpened(java.awt.event.WindowEvent evt) {
+                formWindowOpened(evt);
+            }
+        });
 
-        lbMsgAccueil.setBackground(new java.awt.Color(102, 102, 255));
         lbMsgAccueil.setFont(new java.awt.Font("Comic Sans MS", 1, 18)); // NOI18N
+        lbMsgAccueil.setForeground(new java.awt.Color(0, 102, 204));
         lbMsgAccueil.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-
-        lbMail.setFont(new java.awt.Font("Comic Sans MS", 3, 18)); // NOI18N
-        lbMail.setText("eMail");
-
-        lbEtudes.setFont(new java.awt.Font("Comic Sans MS", 3, 18)); // NOI18N
-        lbEtudes.setText("Etudes");
-
-        txtMail.setFont(new java.awt.Font("Comic Sans MS", 3, 18)); // NOI18N
-
-        txtEtudes.setFont(new java.awt.Font("Comic Sans MS", 3, 18)); // NOI18N
 
         btValider.setBackground(new java.awt.Color(0, 153, 0));
         btValider.setFont(new java.awt.Font("Comic Sans MS", 3, 14)); // NOI18N
@@ -80,63 +76,80 @@ public class Completer_Profile extends javax.swing.JFrame {
             }
         });
 
+        lbMailError.setFont(new java.awt.Font("Comic Sans MS", 3, 14)); // NOI18N
+        lbMailError.setForeground(new java.awt.Color(204, 0, 51));
+
+        lbPoids.setFont(new java.awt.Font("Comic Sans MS", 3, 18)); // NOI18N
+        lbPoids.setText("Poids");
+
+        lbTaille.setFont(new java.awt.Font("Comic Sans MS", 3, 18)); // NOI18N
+        lbTaille.setText("Taille");
+
+        txtPoids.setFont(new java.awt.Font("Comic Sans MS", 3, 18)); // NOI18N
+
+        txtTaille.setFont(new java.awt.Font("Comic Sans MS", 3, 18)); // NOI18N
+
+        lb_msg.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        lb_msg.setForeground(new java.awt.Color(204, 0, 51));
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(16, 16, 16)
-                .addComponent(lbEtudes, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(146, 146, 146)
-                .addComponent(txtEtudes, javax.swing.GroupLayout.PREFERRED_SIZE, 196, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(lbTaille, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(lbPoids, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 57, Short.MAX_VALUE)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(txtTaille, javax.swing.GroupLayout.PREFERRED_SIZE, 196, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txtPoids, javax.swing.GroupLayout.PREFERRED_SIZE, 196, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(104, 104, 104)
+                        .addComponent(lbMailError, javax.swing.GroupLayout.PREFERRED_SIZE, 226, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap())
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(lb_msg, javax.swing.GroupLayout.PREFERRED_SIZE, 447, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(56, 56, 56))))
+            .addGroup(layout.createSequentialGroup()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(165, 165, 165)
+                        .addComponent(lbMsgAccueil, javax.swing.GroupLayout.PREFERRED_SIZE, 346, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(102, 102, 102)
+                        .addComponent(btValider)
+                        .addGap(75, 75, 75)
+                        .addComponent(btRetour)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(143, Short.MAX_VALUE)
-                .addComponent(btValider)
-                .addGap(156, 156, 156)
-                .addComponent(btRetour)
-                .addGap(75, 75, 75))
-            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(layout.createSequentialGroup()
-                    .addGap(0, 0, Short.MAX_VALUE)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGroup(layout.createSequentialGroup()
-                            .addGap(204, 204, 204)
-                            .addComponent(lbMsgAccueil, javax.swing.GroupLayout.PREFERRED_SIZE, 346, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGroup(layout.createSequentialGroup()
-                            .addComponent(lbMail, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGap(143, 143, 143)
-                            .addComponent(txtMail, javax.swing.GroupLayout.PREFERRED_SIZE, 196, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGroup(layout.createSequentialGroup()
-                            .addGap(108, 108, 108)
-                            .addComponent(lb_msg, javax.swing.GroupLayout.PREFERRED_SIZE, 602, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGap(0, 0, Short.MAX_VALUE)))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(211, 211, 211)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lbEtudes)
-                    .addComponent(txtEtudes, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 123, Short.MAX_VALUE)
+                .addContainerGap()
+                .addComponent(lbMsgAccueil, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(124, 124, 124)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(lbMailError, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(layout.createSequentialGroup()
+                            .addGap(6, 6, 6)
+                            .addComponent(lbPoids)
+                            .addGap(18, 18, 18)
+                            .addComponent(lbTaille))
+                        .addGroup(layout.createSequentialGroup()
+                            .addComponent(txtPoids, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGap(18, 18, 18)
+                            .addComponent(txtTaille, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addGap(118, 118, 118)
+                .addComponent(lb_msg)
+                .addGap(48, 48, 48)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(btValider)
                     .addComponent(btRetour))
-                .addGap(106, 106, 106))
-            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(layout.createSequentialGroup()
-                    .addGap(0, 39, Short.MAX_VALUE)
-                    .addComponent(lbMsgAccueil, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(37, 37, 37)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGroup(layout.createSequentialGroup()
-                            .addGap(3, 3, 3)
-                            .addComponent(lbMail))
-                        .addComponent(txtMail, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGap(143, 143, 143)
-                    .addComponent(lb_msg, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(0, 160, Short.MAX_VALUE)))
+                .addContainerGap(74, Short.MAX_VALUE))
         );
 
         pack();
@@ -148,10 +161,11 @@ public class Completer_Profile extends javax.swing.JFrame {
         String login = PropriGlobal.user_Connect.getLogin();
         String password = PropriGlobal.user_Connect.getPassword();
 
-        String mail = txtMail.getText();
-        String etudes = txtEtudes.getText();
+        String poids = txtPoids.getText();
+        String taille = txtTaille.getText();
+        
 
-        String sql = "UPDATE sportif SET mail = ? , etudes= ? WHERE id = ?";
+        String sql = "UPDATE sportif SET poids= ? , taille = ?  WHERE id = ?";
 
         //System.out.println(sql);
         try {
@@ -159,8 +173,9 @@ public class Completer_Profile extends javax.swing.JFrame {
             Connection connexion = ConnexionBd.getConnection();
             PreparedStatement prepare;
             prepare = connexion.prepareStatement(sql);
-            prepare.setString(1, mail);
-            prepare.setString(2, etudes);
+            prepare.setString(1, poids);
+            prepare.setString(2, taille);
+
             prepare.setInt(3, PropriGlobal.user_Connect.getId());
 
             prepare.execute();
@@ -189,6 +204,11 @@ public class Completer_Profile extends javax.swing.JFrame {
         profil.setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_btRetourActionPerformed
+
+    private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
+        // TODO add your handling code here:
+        lbMsgAccueil.setText("Mise à jour du profil de " + PropriGlobal.user_Connect.getLogin());
+    }//GEN-LAST:event_formWindowOpened
 
     /**
      * @param args the command line arguments
@@ -228,11 +248,12 @@ public class Completer_Profile extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btRetour;
     private javax.swing.JButton btValider;
-    private javax.swing.JLabel lbEtudes;
-    private javax.swing.JLabel lbMail;
+    private javax.swing.JLabel lbMailError;
     private javax.swing.JLabel lbMsgAccueil;
+    private javax.swing.JLabel lbPoids;
+    private javax.swing.JLabel lbTaille;
     private javax.swing.JLabel lb_msg;
-    private javax.swing.JTextField txtEtudes;
-    private javax.swing.JTextField txtMail;
+    private javax.swing.JTextField txtPoids;
+    private javax.swing.JTextField txtTaille;
     // End of variables declaration//GEN-END:variables
 }
