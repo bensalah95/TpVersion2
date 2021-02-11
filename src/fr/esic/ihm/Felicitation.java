@@ -36,7 +36,6 @@ public class Felicitation extends javax.swing.JFrame {
         jLabel5 = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
         lbPrenom = new javax.swing.JLabel();
-        img = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         addWindowListener(new java.awt.event.WindowAdapter() {
@@ -57,16 +56,13 @@ public class Felicitation extends javax.swing.JFrame {
         getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 40, 130, -1));
 
         jLabel3.setFont(new java.awt.Font("Comic Sans MS", 3, 14)); // NOI18N
-        jLabel3.setForeground(new java.awt.Color(0, 0, 0));
         jLabel3.setText("vous avez perdu ");
         getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 70, 130, 60));
 
         txtPoidsFinal.setFont(new java.awt.Font("Segoe UI", 3, 14)); // NOI18N
-        txtPoidsFinal.setForeground(new java.awt.Color(0, 0, 0));
         getContentPane().add(txtPoidsFinal, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 80, 50, 40));
 
         jLabel5.setFont(new java.awt.Font("Comic Sans MS", 3, 14)); // NOI18N
-        jLabel5.setForeground(new java.awt.Color(0, 0, 0));
         jLabel5.setText("kg");
         getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 80, 50, 40));
 
@@ -84,9 +80,6 @@ public class Felicitation extends javax.swing.JFrame {
         lbPrenom.setFont(new java.awt.Font("Comic Sans MS", 3, 18)); // NOI18N
         lbPrenom.setForeground(new java.awt.Color(51, 102, 0));
         getContentPane().add(lbPrenom, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 10, 200, 30));
-
-        img.setIcon(new javax.swing.ImageIcon(getClass().getResource("/fr/esic/img/victoire.jpg"))); // NOI18N
-        getContentPane().add(img, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 900, 510));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -138,7 +131,6 @@ public class Felicitation extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel img;
     private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;

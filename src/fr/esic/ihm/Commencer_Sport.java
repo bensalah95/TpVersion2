@@ -6,7 +6,10 @@
 package fr.esic.ihm;
 
 import de.esic.dao.ConnexionBd;
+import fr.esic.proprities.PropriGlobal;
 import java.awt.Color;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -14,31 +17,28 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.JOptionPane;
+import javax.swing.Timer;
 
-/**
- *
- * @author marye
- */
 public class Commencer_Sport extends javax.swing.JFrame {
 
-    /**
-     * Creates new form Commencer_Sport
-     */
-    
     static int milliseconde = 0;
     static int seconde = 0;
     static int minute = 0;
     static int heure = 0;
     static boolean state = true;
+    //static String Tmps;
     
     int nbre_heure;
     String activite;
      PreparedStatement prepare;
             Statement st;
             ResultSet rst;
-    
+             Timer t;
+    int time=0;
     public Commencer_Sport() {
         initComponents();
+          setLocationRelativeTo(this);
     }
 
     /**
@@ -57,7 +57,7 @@ public class Commencer_Sport extends javax.swing.JFrame {
         txt_seconde = new javax.swing.JLabel();
         txt_milliseconde = new javax.swing.JLabel();
         btn_stop = new javax.swing.JButton();
-        btn_reset = new javax.swing.JButton();
+        btn_valider_temps = new javax.swing.JButton();
         lb_msg = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -111,16 +111,16 @@ public class Commencer_Sport extends javax.swing.JFrame {
         });
         getContentPane().add(btn_stop, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 410, 110, 40));
 
-        btn_reset.setBackground(new java.awt.Color(204, 204, 255));
-        btn_reset.setFont(new java.awt.Font("Comic Sans MS", 3, 24)); // NOI18N
-        btn_reset.setForeground(new java.awt.Color(0, 0, 153));
-        btn_reset.setText("Reset!");
-        btn_reset.addActionListener(new java.awt.event.ActionListener() {
+        btn_valider_temps.setBackground(new java.awt.Color(204, 204, 255));
+        btn_valider_temps.setFont(new java.awt.Font("Comic Sans MS", 3, 24)); // NOI18N
+        btn_valider_temps.setForeground(new java.awt.Color(0, 0, 153));
+        btn_valider_temps.setText("Valider ");
+        btn_valider_temps.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btn_resetActionPerformed(evt);
+                btn_valider_tempsActionPerformed(evt);
             }
         });
-        getContentPane().add(btn_reset, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 490, 110, 40));
+        getContentPane().add(btn_valider_temps, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 490, 210, 40));
 
         lb_msg.setFont(new java.awt.Font("Comic Sans MS", 3, 24)); // NOI18N
         getContentPane().add(lb_msg, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 250, 390, 120));
@@ -130,30 +130,63 @@ public class Commencer_Sport extends javax.swing.JFrame {
  
     private void btn_startActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_startActionPerformed
  
-state = true;
-         try {
-            Connection connexion=ConnexionBd.getConnection();
-            PreparedStatement prepare;
-            Statement st;
-            ResultSet rst;
-            st=connexion.createStatement();
-            rst=st.executeQuery("select * from  regime_perdre_poids");
-          
-            if(rst.next()){
-         nbre_heure=rst.getInt("nbre_heure");
-         activite=rst.getString("type_activité");
-    
-      
-            }
-         } 
-         catch (SQLException ex) {
-            Logger.getLogger(Commencer_Sport.class.getName()).log(Level.SEVERE, null, ex);
-        }
+        
+         t =new Timer(10,new ActionListener() {
+         public void actionPerformed(ActionEvent e) {
+       txt_milliseconde.setText(String.valueOf(time));
+       
+        
+       time= time+10;
+       heure=time/3600000;
+       minute=(time/60000)%60;
+       seconde=(time/1000)%60;
+       txt_seconde.setText(""+seconde);
+       txt_minute.setText(""+minute);
+       txt_hour.setText(""+heure);
+        
+        
+         
+    } 
+}); 
+        t.start();
+                           if(milliseconde>100)
+                            {
+                                milliseconde=0;
+                                seconde++;
+                                
+                            }
+                            
+                            if(seconde>60)
+                            {
+                                milliseconde=0;
+                                seconde=0;
+                                minute++;
+                            }
+                            
+                            
+                            if(minute>60)
+                            {
+                                milliseconde=0;
+                                seconde=0;
+                                minute=0;
+                                heure++;
+                                
+                            }
+                           
+                            
+                             txt_milliseconde.setText(" : "+milliseconde);
+                        milliseconde++;
+                        
+                        txt_seconde.setText(" : "+seconde+" s ");
+                        txt_minute.setText(" : "+minute +" min ");
+                        txt_hour.setText(""+heure+" H " );
+//state = true;
+       
         
           lb_msg.setVisible(true);
         lb_msg.setText("BON COURGE !!!");
         lb_msg.setForeground(Color.green);
-        
+        /*
     Thread t = new Thread() 
         {
             public void run ()
@@ -180,7 +213,6 @@ state = true;
                                 seconde=0;
                                 minute++;
                             }
-                            
                             
                             
                             if(minute>60)
@@ -217,20 +249,82 @@ state = true;
         };
     
     t.start();
-    
+    */
+     btn_stop.setEnabled(true);
+     btn_valider_temps.setEnabled(false);
+      btn_start.setEnabled(false);
+   
     }//GEN-LAST:event_btn_startActionPerformed
 
     private void btn_stopActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_stopActionPerformed
+t.stop();
 lb_msg.setVisible(true);
-lb_msg.setText("REPOSE TOI  & CONTINUEZ!!");
-  lb_msg.setForeground(Color.red);
-        state=false;
+lb_msg.setText("Reposer ou Valider!!");
+lb_msg.setForeground(Color.red);
+state=false;
       
+          // TODO add your handling code here:
+      /*  lb_msg.setVisible(true);
+lb_msg.setText("Essayez de nouveau !!!");
+  lb_msg.setForeground(Color.blue);
+        state=false;
+          heure=0;
+        milliseconde=0;
+        minute=0;
+        seconde=0;
+        txt_hour.setText("00:");
+        txt_minute.setText("00:");
+        txt_seconde.setText("00:");
+        txt_milliseconde.setText("00");*/
+      
+     
+     
+      btn_start.setEnabled(true);
+      btn_valider_temps.setEnabled(true);
+         btn_stop.setEnabled(false);
+      // String  Time =txt_hour.getText()+"H"+txt_minute.getText()+"min" +txt_seconde.getText()+"s"; 
+       
+         System.out.println(""+time);
     }//GEN-LAST:event_btn_stopActionPerformed
 
-    private void btn_resetActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_resetActionPerformed
-        // TODO add your handling code here:
-        lb_msg.setVisible(true);
+    private void btn_valider_tempsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_valider_tempsActionPerformed
+
+  
+         String sql = "insert into regime_perdre_poids (nbre_heure) values(?)";
+        try {
+            Connection connexion=ConnexionBd.getConnection();
+            PreparedStatement prepare;
+        
+            prepare = connexion.prepareCall(sql);
+            prepare.setInt(1, time);
+            
+        prepare.execute(); 
+        } catch (Exception e) {
+        }
+        
+        
+        int response=JOptionPane.showConfirmDialog(this, "Vous voullez vraimant Enregistre et quitter?", "Quitter KorParfait ", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
+       
+        if (response==JOptionPane.YES_OPTION){
+            JOptionPane.showMessageDialog(rootPane, "Enregistrment avec succces");
+            this.dispose();
+            System.out.println("vous avez quitté l'application");
+        } 
+
+        else if (response==JOptionPane.NO_OPTION){
+
+            System.out.println("vous avez resté dans  l'application");
+        }
+
+        else if (response==JOptionPane.CLOSED_OPTION)
+
+        {System.out.println("fenetre fermée!");}       
+        
+        
+        
+
+// TODO add your handling code here:
+      /*  lb_msg.setVisible(true);
 lb_msg.setText("Essayez de nouveau !!!");
   lb_msg.setForeground(Color.blue);
         state=false;
@@ -242,11 +336,14 @@ lb_msg.setText("Essayez de nouveau !!!");
         txt_minute.setText("00:");
         txt_seconde.setText("00:");
         txt_milliseconde.setText("00");
-        
-    }//GEN-LAST:event_btn_resetActionPerformed
+        */
+     
+    }//GEN-LAST:event_btn_valider_tempsActionPerformed
 
     private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
         lb_msg.hide();
+        btn_valider_temps.setEnabled(false);
+        btn_stop.setEnabled(false);
     }//GEN-LAST:event_formWindowOpened
 
     /**
@@ -286,9 +383,9 @@ lb_msg.setText("Essayez de nouveau !!!");
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel Time_sport;
-    private javax.swing.JButton btn_reset;
     private javax.swing.JButton btn_start;
     private javax.swing.JButton btn_stop;
+    private javax.swing.JButton btn_valider_temps;
     private javax.swing.JLabel lb_msg;
     private javax.swing.JLabel txt_hour;
     private javax.swing.JLabel txt_milliseconde;

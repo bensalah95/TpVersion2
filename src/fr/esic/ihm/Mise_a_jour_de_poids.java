@@ -134,16 +134,7 @@ public class Mise_a_jour_de_poids extends javax.swing.JFrame {
         
         } catch (Exception e) {
         } 
-        String sql1 = "update sportif set poids='poids_a_jour'";
-        try {
-          Connection  connexion=ConnexionBd.getConnection();
-            stmt = connexion.prepareStatement(sql1); 
-           stmt.setDouble(8, poids_a_jour);
-      stmt.executeUpdate(sql1);
-      System.out.println("Database updated successfully ");
-        } catch (SQLException ex) {
-            Logger.getLogger(Mise_a_jour_de_poids.class.getName()).log(Level.SEVERE, null, ex);
-        }
+       
         
 
     }//GEN-LAST:event_btn_validerActionPerformed
