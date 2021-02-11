@@ -307,9 +307,8 @@ public class Inscription extends javax.swing.JFrame {
                 JOptionPane.showMessageDialog(rootPane, "inscription avec succées ");
                 //System.out.println(u);
 
-            } catch (SQLException ex) {
-                Logger.getLogger(Inscription.class.getName()).log(Level.SEVERE, null, ex);
-            }
+            } catch (Exception e) {
+                JOptionPane.showMessageDialog(rootPane, "Désolé, le login est déja utilisé");               }
         } else {
             lb_msg_confiarmation_mdp.setVisible(true);
             bt_valider.setEnabled(false);

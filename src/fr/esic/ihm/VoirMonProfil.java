@@ -123,7 +123,7 @@ public class VoirMonProfil extends javax.swing.JFrame {
         getContentPane().add(lbPass, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 220, 84, 34));
 
         lbPoidsCont.setFont(new java.awt.Font("Comic Sans MS", 3, 18)); // NOI18N
-        getContentPane().add(lbPoidsCont, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 350, 123, 34));
+        getContentPane().add(lbPoidsCont, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 350, 150, 34));
 
         lbPrenom.setFont(new java.awt.Font("Comic Sans MS", 3, 18)); // NOI18N
         lbPrenom.setText("Prenom");
@@ -150,26 +150,26 @@ public class VoirMonProfil extends javax.swing.JFrame {
             }
         });
         getContentPane().add(btMdpCont, new org.netbeans.lib.awtextra.AbsoluteConstraints(343, 222, 168, 34));
-        getContentPane().add(lbLoginCont, new org.netbeans.lib.awtextra.AbsoluteConstraints(165, 182, 125, 34));
+        getContentPane().add(lbLoginCont, new org.netbeans.lib.awtextra.AbsoluteConstraints(165, 182, 150, 34));
 
         lbNomCont.setFont(new java.awt.Font("Comic Sans MS", 3, 18)); // NOI18N
-        getContentPane().add(lbNomCont, new org.netbeans.lib.awtextra.AbsoluteConstraints(165, 62, 125, 34));
+        getContentPane().add(lbNomCont, new org.netbeans.lib.awtextra.AbsoluteConstraints(165, 62, 170, 34));
 
         lbPrenomCont.setFont(new java.awt.Font("Comic Sans MS", 3, 18)); // NOI18N
-        getContentPane().add(lbPrenomCont, new org.netbeans.lib.awtextra.AbsoluteConstraints(165, 102, 125, 34));
+        getContentPane().add(lbPrenomCont, new org.netbeans.lib.awtextra.AbsoluteConstraints(165, 102, 160, 34));
 
         lbSexeCont.setFont(new java.awt.Font("Comic Sans MS", 3, 18)); // NOI18N
-        getContentPane().add(lbSexeCont, new org.netbeans.lib.awtextra.AbsoluteConstraints(165, 142, 125, 34));
+        getContentPane().add(lbSexeCont, new org.netbeans.lib.awtextra.AbsoluteConstraints(165, 142, 160, 34));
 
         lbAge.setFont(new java.awt.Font("Comic Sans MS", 3, 18)); // NOI18N
         lbAge.setText("Age");
         getContentPane().add(lbAge, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 300, 84, 34));
 
         lbAgeCont.setFont(new java.awt.Font("Comic Sans MS", 3, 18)); // NOI18N
-        getContentPane().add(lbAgeCont, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 300, 123, 34));
+        getContentPane().add(lbAgeCont, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 300, 140, 34));
 
         lbTailleCont.setFont(new java.awt.Font("Comic Sans MS", 3, 18)); // NOI18N
-        getContentPane().add(lbTailleCont, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 390, 123, 34));
+        getContentPane().add(lbTailleCont, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 390, 160, 34));
 
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/fr/esic/img/cnx_img.jpg"))); // NOI18N
         getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 820, 650));

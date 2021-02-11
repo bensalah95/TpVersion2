@@ -52,13 +52,14 @@ CREATE TABLE `obesite`.`sportif` (
 
 ALTER TABLE `obesite`.`sportif` 
 CHANGE COLUMN `id` `id` INT(11) NOT NULL AUTO_INCREMENT ,
-ADD PRIMARY KEY (`id`);
+ADD PRIMARY KEY (`id`),
+ADD UNIQUE KEY (`login`);
 ;
+;
+
+ 
 
 
 ALTER TABLE `obesite`.`sportif` 
 DROP COLUMN `dateInscrip`,
 DROP COLUMN `dateConx`;
-
-ALTER TABLE `obesite`.`regime_perdre_poids` 
-ADD COLUMN `tempspasse` VARCHAR(45) NULL AFTER `nbre_heure`;
