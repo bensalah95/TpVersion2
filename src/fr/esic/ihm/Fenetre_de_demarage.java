@@ -22,7 +22,6 @@ public class Fenetre_de_demarage extends javax.swing.JFrame {
 
     public Fenetre_de_demarage() {
         initComponents();
-        btn_poids_mise_ajour.setEnabled(false);
 
     }
 

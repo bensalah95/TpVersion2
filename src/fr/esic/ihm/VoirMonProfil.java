@@ -24,6 +24,8 @@ import javax.swing.JOptionPane;
  */
 public class VoirMonProfil extends javax.swing.JFrame {
 
+    static String sexe;
+
     /**
      * Creates new form Completer_Profile
      */
@@ -181,41 +183,57 @@ public class VoirMonProfil extends javax.swing.JFrame {
         // TODO add your handling code here:
         lbMsgAccueil.setText("Mise à jour du profil de " + PropriGlobal.user_Connect.getLogin());
 
-        //lbPassCont.setVisible(false);
+        lbMsgAccueil.setText("Mise à jour du profil de " + PropriGlobal.user_Connect.getLogin());
+
         /*
         lbNomCont.setText(PropriGlobal.user_Connect.getNom());
         lbPrenomCont.setText(PropriGlobal.user_Connect.getPrenom());
         
         lbSexeCont.setText(PropriGlobal.user_Connect.getSex());
+        //lbSexeCont.setText(sexe);
         lbAgeCont.setText(PropriGlobal.user_Connect.getAge() + " ans");
         lbLoginCont.setText(PropriGlobal.user_Connect.getLogin());
         lbPassCont.setText("*************");
         lbPoidsCont.setText(PropriGlobal.user_Connect.getPoids() + " Kg");
         lbTailleCont.setText(PropriGlobal.user_Connect.getTaille() + " cm");
+        
          */
-        String sql = "select * from sportif where id=" + PropriGlobal.user_Connect.getId();
-
+        //String sql = "select * from sportif where id= " + PropriGlobal.user_Connect.getId();
         try {
+
             /*
             Connection connexion = ConnexionBd.getConnection();
             PreparedStatement prepare;
-            prepare = connexion.prepareStatement(sql);
-            lbTailleCont.setText(PropriGlobal.user_Connect.getTaille() + " cm");
-            int taille = Integer.parseInt(lbTailleCont.getText());
-            prepare.setInt(1, taille);
-            prepare.execute();
-             */
+            ResultSet rst;
+            Statement st;
+            st = connexion.createStatement();
+            rst = st.executeQuery(sql);
+            if (rst.next()){
+                sexe= rst.getString("sex");
+            }
             
+             */
             Connection connexion = ConnexionBd.getConnection();
 
-            Statement requete = connexion.createStatement();
+            Statement st = connexion.createStatement();
+            ResultSet rs = st.executeQuery("select * from sportif where id= " + PropriGlobal.user_Connect.getId());
+            while (rs.next()) {
+                //System.out.print("Colonne 1 renvoy�e ");
+                //System.out.println(rs.getString(4));
+                lbSexeCont.setText(rs.getString(4));
+                lbPassCont.setText("*************");
+                lbTailleCont.setText(rs.getString(10));
+                lbPoidsCont.setText(rs.getString(8));
+                lbAgeCont.setText(rs.getString(9));
+                lbLoginCont.setText(rs.getString(5));
+                lbNomCont.setText(rs.getString(2));
+                lbPrenomCont.setText(rs.getString(3));
 
-            ResultSet rs = requete.executeQuery(sql);
-
+            }
         } catch (Exception e) {
             JOptionPane.showMessageDialog(rootPane, "exception!" + e.getMessage());
-        }
 
+        }
 
     }//GEN-LAST:event_formWindowOpened
 
@@ -236,7 +254,22 @@ public class VoirMonProfil extends javax.swing.JFrame {
     private void btMdpContActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btMdpContActionPerformed
         // TODO add your handling code here:
         //lbPassCont.setText(PropriGlobal.user_Connect.getPassword());
-        //btMdpCont.setVisible(false);
+        btMdpCont.setVisible(false);
+        try {
+
+            Connection connexion = ConnexionBd.getConnection();
+
+            Statement st = connexion.createStatement();
+            ResultSet rs = st.executeQuery("select * from sportif where id= " + PropriGlobal.user_Connect.getId());
+            while (rs.next()) {
+
+                lbPassCont.setText(rs.getString(6));
+
+            }
+
+        } catch (Exception e) {
+        }
+
     }//GEN-LAST:event_btMdpContActionPerformed
 
     /**
