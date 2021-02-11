@@ -35,7 +35,6 @@ public class Fenetre_de_demarage extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        btn_modifie_profil = new javax.swing.JButton();
         btn_ajouter_objectif = new javax.swing.JButton();
         btn_poids_mise_ajour = new javax.swing.JButton();
         jButton4 = new javax.swing.JButton();
@@ -54,17 +53,6 @@ public class Fenetre_de_demarage extends javax.swing.JFrame {
             }
         });
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        btn_modifie_profil.setBackground(new java.awt.Color(255, 255, 255));
-        btn_modifie_profil.setFont(new java.awt.Font("Comic Sans MS", 3, 14)); // NOI18N
-        btn_modifie_profil.setForeground(new java.awt.Color(176, 151, 178));
-        btn_modifie_profil.setText("Modifier le profil");
-        btn_modifie_profil.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btn_modifie_profilActionPerformed(evt);
-            }
-        });
-        getContentPane().add(btn_modifie_profil, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 120, 180, 40));
 
         btn_ajouter_objectif.setBackground(new java.awt.Color(255, 255, 255));
         btn_ajouter_objectif.setFont(new java.awt.Font("Comic Sans MS", 3, 14)); // NOI18N
@@ -136,7 +124,7 @@ public class Fenetre_de_demarage extends javax.swing.JFrame {
                 btVoirProfilActionPerformed(evt);
             }
         });
-        getContentPane().add(btVoirProfil, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 210, 230, 40));
+        getContentPane().add(btVoirProfil, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 120, 230, 40));
 
         btn_historique1.setBackground(new java.awt.Color(255, 255, 255));
         btn_historique1.setFont(new java.awt.Font("Comic Sans MS", 3, 14)); // NOI18N
@@ -216,13 +204,6 @@ public class Fenetre_de_demarage extends javax.swing.JFrame {
         this.hide();
     }//GEN-LAST:event_btn_historique1ActionPerformed
 
-    private void btn_modifie_profilActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_modifie_profilActionPerformed
-        // TODO add your handling code here:
-        Modifier_Profile profil = new Modifier_Profile();
-        profil.setVisible(true);
-        this.setVisible(false);
-    }//GEN-LAST:event_btn_modifie_profilActionPerformed
-
     private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
         lbBienvenue.setText("Bonjour " + PropriGlobal.user_Connect.getPrenom() + " "+ PropriGlobal.user_Connect.getNom().toUpperCase());    }//GEN-LAST:event_formWindowOpened
 
@@ -275,7 +256,6 @@ public class Fenetre_de_demarage extends javax.swing.JFrame {
     private javax.swing.JButton btn_ajouter_objectif;
     private javax.swing.JButton btn_help;
     private javax.swing.JButton btn_historique1;
-    private javax.swing.JButton btn_modifie_profil;
     private javax.swing.JButton btn_poids_mise_ajour;
     private javax.swing.JButton btn_quitter;
     private javax.swing.JLabel date;

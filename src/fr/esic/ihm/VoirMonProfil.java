@@ -11,6 +11,11 @@ import fr.esic.model.User;
 import fr.esic.proprities.PropriGlobal;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 
 /**
@@ -44,12 +49,12 @@ public class VoirMonProfil extends javax.swing.JFrame {
         lbPass = new javax.swing.JLabel();
         lbPoidsCont = new javax.swing.JLabel();
         lbPrenom = new javax.swing.JLabel();
-        lbLogin1 = new javax.swing.JLabel();
+        lbLogin = new javax.swing.JLabel();
         lbSexe1 = new javax.swing.JLabel();
         lbNom = new javax.swing.JLabel();
         lbPassCont = new javax.swing.JLabel();
-        lbMdp = new javax.swing.JButton();
-        lbPassCont1 = new javax.swing.JLabel();
+        btMdpCont = new javax.swing.JButton();
+        lbLoginCont = new javax.swing.JLabel();
         lbNomCont = new javax.swing.JLabel();
         lbPrenomCont = new javax.swing.JLabel();
         lbSexeCont = new javax.swing.JLabel();
@@ -105,8 +110,8 @@ public class VoirMonProfil extends javax.swing.JFrame {
         lbPrenom.setFont(new java.awt.Font("Comic Sans MS", 3, 18)); // NOI18N
         lbPrenom.setText("Prenom");
 
-        lbLogin1.setFont(new java.awt.Font("Comic Sans MS", 3, 18)); // NOI18N
-        lbLogin1.setText("Login");
+        lbLogin.setFont(new java.awt.Font("Comic Sans MS", 3, 18)); // NOI18N
+        lbLogin.setText("Login");
 
         lbSexe1.setFont(new java.awt.Font("Comic Sans MS", 3, 18)); // NOI18N
         lbSexe1.setText("Sexe");
@@ -114,8 +119,13 @@ public class VoirMonProfil extends javax.swing.JFrame {
         lbNom.setFont(new java.awt.Font("Comic Sans MS", 3, 18)); // NOI18N
         lbNom.setText("Nom");
 
-        lbMdp.setFont(new java.awt.Font("Comic Sans MS", 1, 10)); // NOI18N
-        lbMdp.setText("Afficher mon mot de passe");
+        btMdpCont.setFont(new java.awt.Font("Comic Sans MS", 1, 10)); // NOI18N
+        btMdpCont.setText("Afficher mon mot de passe");
+        btMdpCont.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btMdpContActionPerformed(evt);
+            }
+        });
 
         lbNomCont.setFont(new java.awt.Font("Comic Sans MS", 3, 18)); // NOI18N
 
@@ -145,16 +155,17 @@ public class VoirMonProfil extends javax.swing.JFrame {
                         .addContainerGap()
                         .addComponent(lbAge, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(75, 75, 75)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(lbMsgAccueil, javax.swing.GroupLayout.PREFERRED_SIZE, 346, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(lbPassCont1, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(lbNomCont, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(lbPrenomCont, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(lbSexeCont, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                .addComponent(lbPassCont, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(lbMdp, javax.swing.GroupLayout.PREFERRED_SIZE, 168, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(lbLoginCont, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(lbPassCont, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(53, 53, 53)
+                                .addComponent(btMdpCont, javax.swing.GroupLayout.PREFERRED_SIZE, 168, javax.swing.GroupLayout.PREFERRED_SIZE)))))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
@@ -165,7 +176,7 @@ public class VoirMonProfil extends javax.swing.JFrame {
                                 .addComponent(lbTaille, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(lbTailleCont, javax.swing.GroupLayout.PREFERRED_SIZE, 123, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(lbLogin1, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(lbLogin, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(lbNom, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(lbPrenom, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(lbSexe1, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -203,13 +214,13 @@ public class VoirMonProfil extends javax.swing.JFrame {
                             .addComponent(lbSexeCont, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(lbPassCont1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(lbLogin1, javax.swing.GroupLayout.DEFAULT_SIZE, 34, Short.MAX_VALUE))
+                            .addComponent(lbLoginCont, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(lbLogin, javax.swing.GroupLayout.DEFAULT_SIZE, 34, Short.MAX_VALUE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(lbPass, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(lbPassCont, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(lbMdp, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addComponent(btMdpCont, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                         .addGap(50, 50, 50)
                         .addComponent(lbAgeCont, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(lbAge, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -240,16 +251,48 @@ public class VoirMonProfil extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    ResultSet rst;
+
     private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
         // TODO add your handling code here:
         lbMsgAccueil.setText("Mise à jour du profil de " + PropriGlobal.user_Connect.getLogin());
-        lbPassCont.setVisible(false);
+
+        //lbPassCont.setVisible(false);
+        /*
         lbNomCont.setText(PropriGlobal.user_Connect.getNom());
         lbPrenomCont.setText(PropriGlobal.user_Connect.getPrenom());
+        
         lbSexeCont.setText(PropriGlobal.user_Connect.getSex());
         lbAgeCont.setText(PropriGlobal.user_Connect.getAge() + " ans");
-        
-        
+        lbLoginCont.setText(PropriGlobal.user_Connect.getLogin());
+        lbPassCont.setText("*************");
+        lbPoidsCont.setText(PropriGlobal.user_Connect.getPoids() + " Kg");
+        lbTailleCont.setText(PropriGlobal.user_Connect.getTaille() + " cm");
+         */
+        String sql = "select * from sportif where id=" + PropriGlobal.user_Connect.getId();
+
+        try {
+            /*
+            Connection connexion = ConnexionBd.getConnection();
+            PreparedStatement prepare;
+            prepare = connexion.prepareStatement(sql);
+            lbTailleCont.setText(PropriGlobal.user_Connect.getTaille() + " cm");
+            int taille = Integer.parseInt(lbTailleCont.getText());
+            prepare.setInt(1, taille);
+            prepare.execute();
+             */
+            
+            Connection connexion = ConnexionBd.getConnection();
+
+            Statement requete = connexion.createStatement();
+
+            ResultSet rs = requete.executeQuery(sql);
+
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(rootPane, "exception!" + e.getMessage());
+        }
+
+
     }//GEN-LAST:event_formWindowOpened
 
     private void btRetourActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btRetourActionPerformed
@@ -265,6 +308,12 @@ public class VoirMonProfil extends javax.swing.JFrame {
         profil.setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_btn_modifie_profilActionPerformed
+
+    private void btMdpContActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btMdpContActionPerformed
+        // TODO add your handling code here:
+        //lbPassCont.setText(PropriGlobal.user_Connect.getPassword());
+        //btMdpCont.setVisible(false);
+    }//GEN-LAST:event_btMdpContActionPerformed
 
     /**
      * @param args the command line arguments
@@ -303,18 +352,18 @@ public class VoirMonProfil extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btMdpCont;
     private javax.swing.JButton btRetour;
     private javax.swing.JButton btn_modifie_profil;
     private javax.swing.JLabel lbAge;
     private javax.swing.JLabel lbAgeCont;
-    private javax.swing.JLabel lbLogin1;
-    private javax.swing.JButton lbMdp;
+    private javax.swing.JLabel lbLogin;
+    private javax.swing.JLabel lbLoginCont;
     private javax.swing.JLabel lbMsgAccueil;
     private javax.swing.JLabel lbNom;
     private javax.swing.JLabel lbNomCont;
     private javax.swing.JLabel lbPass;
     private javax.swing.JLabel lbPassCont;
-    private javax.swing.JLabel lbPassCont1;
     private javax.swing.JLabel lbPoids;
     private javax.swing.JLabel lbPoidsCont;
     private javax.swing.JLabel lbPrenom;
