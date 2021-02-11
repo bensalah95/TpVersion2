@@ -103,34 +103,38 @@ public class Mise_a_jour_de_poids extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
+static int total;
     private void txt_poids_actuelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txt_poids_actuelActionPerformed
     }//GEN-LAST:event_txt_poids_actuelActionPerformed
 
             PreparedStatement prepare,stmt;
             Statement st;
             ResultSet rst; 
-            double poids_a_jour,poids_initial;
+              double poids_initial;
     private void btn_validerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_validerActionPerformed
-   
+
+        int pdA= Integer.parseInt(txt_poids_initial.getText());
+        int pdN = Integer.parseInt(txt_poids_actuel.getText());
+        total=pdA-pdN;
+        if (pdA > pdN ) {
+            Felicitation bravo = new Felicitation();
+        bravo.setVisible(true);
+        this.setVisible(false);  
+        }else{
+            JOptionPane.showMessageDialog(rootPane, "vous avez grossi");
+        }
+                
+                
         try {
          Connection connexion=ConnexionBd.getConnection();   
-            
-       poids_a_jour=Double.parseDouble(txt_poids_actuel.getText());
+          
        st=connexion.createStatement();
             rst=st.executeQuery("select * from  sportif");
            if (rst.next()){
             poids_initial=rst.getDouble("poids");
            }
 
-            String sql = "insert into suivi_poids(poids_initial,poids_a_jour) values(?,?)";
-           
-            prepare = connexion.prepareCall(sql);
-            prepare.setDouble(1, poids_initial);
-            prepare.setDouble(2, poids_a_jour);
-            prepare.execute(); 
-            JOptionPane.showMessageDialog(rootPane, "Poids initial : "+poids_initial+"\nPoids actuel : "+poids_a_jour+" \n Mise àjour de poids avec succés!!");
-        
+          
         
         } catch (Exception e) {
         } 
