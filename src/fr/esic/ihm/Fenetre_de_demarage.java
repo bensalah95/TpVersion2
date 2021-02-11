@@ -79,7 +79,7 @@ public class Fenetre_de_demarage extends javax.swing.JFrame {
         btn_poids_mise_ajour.setBackground(new java.awt.Color(255, 255, 255));
         btn_poids_mise_ajour.setFont(new java.awt.Font("Comic Sans MS", 3, 14)); // NOI18N
         btn_poids_mise_ajour.setForeground(new java.awt.Color(176, 151, 178));
-        btn_poids_mise_ajour.setText("Mise à jour du poids");
+        btn_poids_mise_ajour.setText("Poids du Jour");
         btn_poids_mise_ajour.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btn_poids_mise_ajourActionPerformed(evt);

@@ -1,9 +1,9 @@
-
 package fr.esic.ihm;
 
 import de.esic.dao.ConnexionBd;
 import de.esic.dao.UserDao;
 import fr.esic.model.User;
+import fr.esic.proprities.PropriGlobal;
 import static java.lang.Thread.sleep;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -14,6 +14,7 @@ import java.util.Date;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JOptionPane;
+import sun.security.util.Password;
 
 /**
  *
@@ -26,15 +27,16 @@ public class Inscription extends javax.swing.JFrame {
      */
     public Inscription() {
         initComponents();
-         
-         Date actuelle = new Date();
-        DateFormat dateFormat=new SimpleDateFormat("dd/MM/YYYY hh:mm:ss ");
-        lb_date_inscription.setText(""+dateFormat.format(actuelle));  
-        String date=dateFormat.format(actuelle);
-        String date_cnx; 
+
+        Date actuelle = new Date();
+        DateFormat dateFormat = new SimpleDateFormat("dd/MM/YYYY hh:mm:ss ");
+        lb_date_inscription.setText("" + dateFormat.format(actuelle));
+        String date = dateFormat.format(actuelle);
+        String date_cnx;
         date_cnx = date;
- 
+
     }
+
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -235,8 +237,7 @@ public class Inscription extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    
-     private boolean CheckEmptyField(String field) {
+    private boolean CheckEmptyField(String field) {
         if (!field.isEmpty()) {
             System.out.println("ok");
             return false;
@@ -246,27 +247,26 @@ public class Inscription extends javax.swing.JFrame {
             return true;
         }
     }
-     
+
     private void bt_validerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bt_validerActionPerformed
 
-        String nom=txt_nom.getText();
-        String prenom=txt_prenom.getText();
-        String login=txt_login.getText();
-        String mdp=txt_mdp.getText();
-        String mdp2=txt_mdp1.getText();
+        int id = 0;
+        String nom = txt_nom.getText();
+        String prenom = txt_prenom.getText();
+        String login = txt_login.getText();
+        String mdp = txt_mdp.getText();
+        String mdp2 = txt_mdp1.getText();
         //double poids=Double.parseDouble(txt_poids.getText());
-        int age=Integer.parseInt(txt_age.getText());
+        int age = Integer.parseInt(txt_age.getText());
         //int taille=Integer.parseInt(txt_taille.getText());
 
-      
-         if(mdp.equals(mdp2)){
-        lb_msg_confiarmation_mdp.setVisible(false);
-        
-        bt_valider.setEnabled(true);
-        
- 
-        
-            try { /* 
+        if (mdp.equals(mdp2)) {
+            lb_msg_confiarmation_mdp.setVisible(false);
+
+            bt_valider.setEnabled(true);
+
+            try {
+                /* 
                  Connection connexion=ConnexionBd.getConnection();
             PreparedStatement prepare;
         
@@ -277,7 +277,7 @@ public class Inscription extends javax.swing.JFrame {
           prepare.setInt(3,nbre_cnx);
           prepare.execute();
                 
-*//*
+                 *//*
                 if (CheckEmptyField(nom) || CheckEmptyField(prenom) || CheckEmptyField(login) || CheckEmptyField(mdp) || CheckEmptyField(mdp2)) {
                 
                 lbMsgErrI.setVisible(true);
@@ -295,43 +295,41 @@ public class Inscription extends javax.swing.JFrame {
 
 
             }
-                */
-                
-                
-            User u= new User(age, nom, prenom, sex, login, mdp, mdp2, age);
-            UserDao.insertPerson(u);
-            JOptionPane.showMessageDialog(rootPane, "inscription avec succées ");
+                 */
 
- 
-        }
-        catch (SQLException ex) {
-            Logger.getLogger(Inscription.class.getName()).log(Level.SEVERE, null, ex);
-        }}
-         else{   
+
+                User u = new User(id, nom, prenom, sex, login, mdp, mdp2, age);
+                UserDao.insertPerson(u);
+                JOptionPane.showMessageDialog(rootPane, "inscription avec succées ");
+                System.out.println(u);
+
+            } catch (SQLException ex) {
+                Logger.getLogger(Inscription.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        } else {
             lb_msg_confiarmation_mdp.setVisible(true);
             bt_valider.setEnabled(false);
-            
-            txt_mdp.setText("");
-              txt_mdp1.setText("");
-               bt_valider.setEnabled(true);
-         }
-         
 
-     
+            txt_mdp.setText("");
+            txt_mdp1.setText("");
+            bt_valider.setEnabled(true);
+        }
+
+
     }//GEN-LAST:event_bt_validerActionPerformed
 
     private void bt_annulerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bt_annulerActionPerformed
-        FitnessTime fit =new FitnessTime();
+        FitnessTime fit = new FitnessTime();
         fit.setVisible(true);
         this.hide();
 
     }//GEN-LAST:event_bt_annulerActionPerformed
 
     private void bt_connexionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bt_connexionActionPerformed
-     Page_Conexion cnx =new Page_Conexion();
+        Page_Conexion cnx = new Page_Conexion();
         cnx.setVisible(true);
         this.hide();
-        
+
     }//GEN-LAST:event_bt_connexionActionPerformed
 
     private void txt_nomActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txt_nomActionPerformed
@@ -343,23 +341,23 @@ public class Inscription extends javax.swing.JFrame {
     }//GEN-LAST:event_txt_mdpActionPerformed
 
     private void rb_fActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rb_fActionPerformed
-        sex="feminin";
+        sex = "feminin";
     }//GEN-LAST:event_rb_fActionPerformed
 
     private void rb_mActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rb_mActionPerformed
-        sex="masculin";
+        sex = "masculin";
     }//GEN-LAST:event_rb_mActionPerformed
 
     private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
-       //bt_valider.setEnabled(false);
+        //bt_valider.setEnabled(false);
         lb_msg_confiarmation_mdp.hide();
         lbMsgErrI.hide();
-        
+
     }//GEN-LAST:event_formWindowOpened
 
     private void bt_helpActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bt_helpActionPerformed
-       HelpInscription help = new HelpInscription();
-       help.setVisible(true);
+        HelpInscription help = new HelpInscription();
+        help.setVisible(true);
         this.hide();
     }//GEN-LAST:event_bt_helpActionPerformed
 
@@ -427,6 +425,6 @@ public class Inscription extends javax.swing.JFrame {
     private javax.swing.JTextField txt_prenom;
     // End of variables declaration//GEN-END:variables
 
-private String sex;
+    private String sex;
 
 }

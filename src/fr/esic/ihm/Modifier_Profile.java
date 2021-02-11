@@ -38,13 +38,15 @@ public class Modifier_Profile extends javax.swing.JFrame {
         lbMsgBonjour = new javax.swing.JLabel();
         lbNewLog = new javax.swing.JLabel();
         lbNewMdp = new javax.swing.JLabel();
-        lbNewPoids = new javax.swing.JLabel();
         txtNewLog = new javax.swing.JTextField();
-        txtNewPoids = new javax.swing.JTextField();
         btValider = new javax.swing.JButton();
         btRetour = new javax.swing.JButton();
         lb_msg = new javax.swing.JLabel();
         txtNewMdp = new javax.swing.JPasswordField();
+        txtTaille = new javax.swing.JTextField();
+        lbPoids = new javax.swing.JLabel();
+        lbTaille = new javax.swing.JLabel();
+        txtPoids = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         addWindowListener(new java.awt.event.WindowAdapter() {
@@ -61,21 +63,14 @@ public class Modifier_Profile extends javax.swing.JFrame {
 
         lbNewLog.setFont(new java.awt.Font("Comic Sans MS", 3, 18)); // NOI18N
         lbNewLog.setText("Nouveau login");
-        getContentPane().add(lbNewLog, new org.netbeans.lib.awtextra.AbsoluteConstraints(12, 102, 151, -1));
+        getContentPane().add(lbNewLog, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 90, 151, -1));
 
         lbNewMdp.setFont(new java.awt.Font("Comic Sans MS", 3, 18)); // NOI18N
         lbNewMdp.setText("Nouveau mdp");
-        getContentPane().add(lbNewMdp, new org.netbeans.lib.awtextra.AbsoluteConstraints(12, 142, 151, -1));
-
-        lbNewPoids.setFont(new java.awt.Font("Comic Sans MS", 3, 18)); // NOI18N
-        lbNewPoids.setText("Nouveau poids");
-        getContentPane().add(lbNewPoids, new org.netbeans.lib.awtextra.AbsoluteConstraints(12, 204, 151, -1));
+        getContentPane().add(lbNewMdp, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 130, 151, -1));
 
         txtNewLog.setFont(new java.awt.Font("Comic Sans MS", 3, 18)); // NOI18N
-        getContentPane().add(txtNewLog, new org.netbeans.lib.awtextra.AbsoluteConstraints(306, 99, 196, -1));
-
-        txtNewPoids.setFont(new java.awt.Font("Comic Sans MS", 3, 18)); // NOI18N
-        getContentPane().add(txtNewPoids, new org.netbeans.lib.awtextra.AbsoluteConstraints(306, 201, 196, -1));
+        getContentPane().add(txtNewLog, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 90, 196, -1));
 
         btValider.setBackground(new java.awt.Color(0, 153, 0));
         btValider.setFont(new java.awt.Font("Comic Sans MS", 3, 14)); // NOI18N
@@ -86,7 +81,7 @@ public class Modifier_Profile extends javax.swing.JFrame {
                 btValiderActionPerformed(evt);
             }
         });
-        getContentPane().add(btValider, new org.netbeans.lib.awtextra.AbsoluteConstraints(164, 334, -1, -1));
+        getContentPane().add(btValider, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 350, -1, -1));
 
         btRetour.setBackground(new java.awt.Color(255, 255, 0));
         btRetour.setFont(new java.awt.Font("Comic Sans MS", 3, 14)); // NOI18N
@@ -97,11 +92,25 @@ public class Modifier_Profile extends javax.swing.JFrame {
                 btRetourActionPerformed(evt);
             }
         });
-        getContentPane().add(btRetour, new org.netbeans.lib.awtextra.AbsoluteConstraints(517, 334, -1, -1));
-        getContentPane().add(lb_msg, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 274, 602, 42));
+        getContentPane().add(btRetour, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 350, -1, -1));
+        getContentPane().add(lb_msg, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 280, 602, 42));
 
         txtNewMdp.setFont(new java.awt.Font("Comic Sans MS", 3, 18)); // NOI18N
-        getContentPane().add(txtNewMdp, new org.netbeans.lib.awtextra.AbsoluteConstraints(306, 139, 196, -1));
+        getContentPane().add(txtNewMdp, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 130, 196, -1));
+
+        txtTaille.setFont(new java.awt.Font("Comic Sans MS", 3, 18)); // NOI18N
+        getContentPane().add(txtTaille, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 230, 200, -1));
+
+        lbPoids.setFont(new java.awt.Font("Comic Sans MS", 3, 18)); // NOI18N
+        lbPoids.setText("Poids (Kg)");
+        getContentPane().add(lbPoids, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 190, 120, -1));
+
+        lbTaille.setFont(new java.awt.Font("Comic Sans MS", 3, 18)); // NOI18N
+        lbTaille.setText("Taille (cm)");
+        getContentPane().add(lbTaille, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 230, 110, -1));
+
+        txtPoids.setFont(new java.awt.Font("Comic Sans MS", 3, 18)); // NOI18N
+        getContentPane().add(txtPoids, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 190, 200, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -124,13 +133,12 @@ public class Modifier_Profile extends javax.swing.JFrame {
         System.out.println(lastLogin);
         String login = txtNewLog.getText();
         String password = txtNewMdp.getText();
-        int poids = Integer.parseInt(txtNewPoids.getText());
+        Double poids = Double.parseDouble(txtPoids.getText());
+        int taille = Integer.parseInt(txtTaille.getText());
 
-        
-        String sql = "UPDATE sportif SET login = ? , mdp= ?, mdp2= ?, poids= ? WHERE id = ?";
+        String sql = "UPDATE sportif SET login = ? , mdp= ?, mdp2= ? , poids= ? , taille = ? WHERE id = ?";
 
         //System.out.println(sql);
-        
         try {
 
             Connection connexion = ConnexionBd.getConnection();
@@ -139,8 +147,10 @@ public class Modifier_Profile extends javax.swing.JFrame {
             prepare.setString(1, login);
             prepare.setString(2, password);
             prepare.setString(3, password);
-            prepare.setInt(4, poids);
-            prepare.setInt(5, PropriGlobal.user_Connect.getId());
+            prepare.setDouble(4, poids);
+            prepare.setInt(5, taille);
+
+            prepare.setInt(6, PropriGlobal.user_Connect.getId());
 
             prepare.execute();
 
@@ -207,10 +217,12 @@ public class Modifier_Profile extends javax.swing.JFrame {
     private javax.swing.JLabel lbMsgBonjour;
     private javax.swing.JLabel lbNewLog;
     private javax.swing.JLabel lbNewMdp;
-    private javax.swing.JLabel lbNewPoids;
+    private javax.swing.JLabel lbPoids;
+    private javax.swing.JLabel lbTaille;
     private javax.swing.JLabel lb_msg;
     private javax.swing.JTextField txtNewLog;
     private javax.swing.JPasswordField txtNewMdp;
-    private javax.swing.JTextField txtNewPoids;
+    private javax.swing.JTextField txtPoids;
+    private javax.swing.JTextField txtTaille;
     // End of variables declaration//GEN-END:variables
 }
