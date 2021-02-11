@@ -42,6 +42,7 @@ public class RegimePerdrePoids extends javax.swing.JFrame {
         btn_quitter = new javax.swing.JButton();
         com_box_type = new javax.swing.JComboBox();
         btn_commencer_regime1 = new javax.swing.JButton();
+        jLabel8 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         addWindowListener(new java.awt.event.WindowAdapter() {
@@ -182,6 +183,9 @@ public class RegimePerdrePoids extends javax.swing.JFrame {
             }
         });
         jPanel1.add(btn_commencer_regime1, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 430, 220, 40));
+
+        jLabel8.setIcon(new javax.swing.ImageIcon("/Users/polnareff/Documents/Cours info/Joel/TpVersion2/src/fr/esic/img/perdre poids.jpg")); // NOI18N
+        jPanel1.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 930, 550));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -324,6 +328,7 @@ public class RegimePerdrePoids extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JLabel lb_date_decnx;
     private javax.swing.JTextField txt_nbre_heure;

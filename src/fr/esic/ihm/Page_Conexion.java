@@ -179,6 +179,11 @@ String log;
 
                         this.setVisible(false);
                     }
+                    else if(u.getPoids() < 1 || u.getTaille() < 1){
+                        RappelMessageCo rapl = new RappelMessageCo();
+                        rapl.setVisible(true);
+                        this.setVisible(false);
+                    }
                     else{
                         Fenetre_de_demarage demarage= new Fenetre_de_demarage();
                         demarage.setVisible(true);
