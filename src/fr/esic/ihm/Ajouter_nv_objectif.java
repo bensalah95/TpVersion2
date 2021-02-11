@@ -41,6 +41,7 @@ public class Ajouter_nv_objectif extends javax.swing.JFrame {
         btn_commencer_regime = new javax.swing.JButton();
         jLabel6 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         addWindowListener(new java.awt.event.WindowAdapter() {
@@ -90,11 +91,11 @@ public class Ajouter_nv_objectif extends javax.swing.JFrame {
                 com_box_typeActionPerformed(evt);
             }
         });
-        jPanel1.add(com_box_type, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 140, 140, 40));
+        jPanel1.add(com_box_type, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 200, 140, 40));
 
         txt_nbre_heure.setFont(new java.awt.Font("Comic Sans MS", 3, 14)); // NOI18N
         txt_nbre_heure.setForeground(new java.awt.Color(0, 58, 111));
-        jPanel1.add(txt_nbre_heure, new org.netbeans.lib.awtextra.AbsoluteConstraints(750, 150, 140, 40));
+        jPanel1.add(txt_nbre_heure, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 190, 140, 40));
 
         btn_valider_regime.setBackground(new java.awt.Color(0, 58, 111));
         btn_valider_regime.setFont(new java.awt.Font("Comic Sans MS", 3, 14)); // NOI18N
@@ -131,12 +132,15 @@ public class Ajouter_nv_objectif extends javax.swing.JFrame {
         jLabel6.setFont(new java.awt.Font("Comic Sans MS", 3, 14)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(0, 58, 111));
         jLabel6.setText("Type d'activité : ");
-        jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 140, 140, 40));
+        jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 200, 140, 40));
 
         jLabel7.setFont(new java.awt.Font("Comic Sans MS", 3, 14)); // NOI18N
         jLabel7.setForeground(new java.awt.Color(0, 58, 111));
         jLabel7.setText("Nombre des Heures :");
-        jPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 150, 150, 40));
+        jPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 190, 150, 40));
+
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/fr/esic/img/perdre poids.jpg"))); // NOI18N
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 910, 610));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -278,6 +282,7 @@ btn_commencer_regime1.setEnabled(false);
     private javax.swing.JButton btn_quitter;
     private javax.swing.JButton btn_valider_regime;
     private javax.swing.JComboBox com_box_type;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JPanel jPanel1;

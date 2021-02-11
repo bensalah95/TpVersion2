@@ -47,6 +47,8 @@ public class Modifier_Profile extends javax.swing.JFrame {
         lbPoids = new javax.swing.JLabel();
         lbTaille = new javax.swing.JLabel();
         txtPoids = new javax.swing.JTextField();
+        jLabel5 = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         addWindowListener(new java.awt.event.WindowAdapter() {
@@ -81,7 +83,7 @@ public class Modifier_Profile extends javax.swing.JFrame {
                 btValiderActionPerformed(evt);
             }
         });
-        getContentPane().add(btValider, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 350, -1, -1));
+        getContentPane().add(btValider, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 320, -1, -1));
 
         btRetour.setBackground(new java.awt.Color(255, 255, 0));
         btRetour.setFont(new java.awt.Font("Comic Sans MS", 3, 14)); // NOI18N
@@ -92,7 +94,7 @@ public class Modifier_Profile extends javax.swing.JFrame {
                 btRetourActionPerformed(evt);
             }
         });
-        getContentPane().add(btRetour, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 350, -1, -1));
+        getContentPane().add(btRetour, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 320, -1, -1));
         getContentPane().add(lb_msg, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 280, 602, 42));
 
         txtNewMdp.setFont(new java.awt.Font("Comic Sans MS", 3, 18)); // NOI18N
@@ -111,6 +113,14 @@ public class Modifier_Profile extends javax.swing.JFrame {
 
         txtPoids.setFont(new java.awt.Font("Comic Sans MS", 3, 18)); // NOI18N
         getContentPane().add(txtPoids, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 190, 200, -1));
+
+        jLabel5.setFont(new java.awt.Font("Segoe Print", 3, 24)); // NOI18N
+        jLabel5.setForeground(new java.awt.Color(201, 22, 78));
+        jLabel5.setText("Modifier profil");
+        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 20, 200, 40));
+
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/fr/esic/img/cnx_img.jpg"))); // NOI18N
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 790, 440));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -214,6 +224,8 @@ public class Modifier_Profile extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btRetour;
     private javax.swing.JButton btValider;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel lbMsgBonjour;
     private javax.swing.JLabel lbNewLog;
     private javax.swing.JLabel lbNewMdp;

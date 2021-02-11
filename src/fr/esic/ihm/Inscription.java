@@ -67,6 +67,7 @@ public class Inscription extends javax.swing.JFrame {
         jLabel11 = new javax.swing.JLabel();
         lbMsgErrI = new javax.swing.JLabel();
         lb_msg_confiarmation_mdp = new javax.swing.JLabel();
+        jLabel7 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         addWindowListener(new java.awt.event.WindowAdapter() {
@@ -83,25 +84,25 @@ public class Inscription extends javax.swing.JFrame {
 
         jLabel2.setBackground(new java.awt.Color(255, 255, 255));
         jLabel2.setFont(new java.awt.Font("Comic Sans MS", 1, 18)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(102, 0, 51));
+        jLabel2.setForeground(new java.awt.Color(0, 153, 51));
         jLabel2.setText("Nom* :");
         getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 100, 90, 30));
 
         jLabel3.setBackground(new java.awt.Color(255, 255, 255));
         jLabel3.setFont(new java.awt.Font("Comic Sans MS", 1, 18)); // NOI18N
-        jLabel3.setForeground(new java.awt.Color(102, 0, 51));
+        jLabel3.setForeground(new java.awt.Color(0, 153, 51));
         jLabel3.setText("Prenom* :");
         getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 160, 110, 30));
 
         jLabel4.setBackground(new java.awt.Color(255, 255, 255));
         jLabel4.setFont(new java.awt.Font("Comic Sans MS", 1, 18)); // NOI18N
-        jLabel4.setForeground(new java.awt.Color(102, 0, 51));
+        jLabel4.setForeground(new java.awt.Color(0, 153, 51));
         jLabel4.setText("Login* :");
         getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 350, 160, 30));
 
         jLabel5.setBackground(new java.awt.Color(255, 255, 255));
         jLabel5.setFont(new java.awt.Font("Comic Sans MS", 1, 18)); // NOI18N
-        jLabel5.setForeground(new java.awt.Color(102, 0, 51));
+        jLabel5.setForeground(new java.awt.Color(0, 153, 51));
         jLabel5.setText("Confirmation Mot de passe* :");
         getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 470, 260, 30));
 
@@ -114,7 +115,7 @@ public class Inscription extends javax.swing.JFrame {
                 bt_validerActionPerformed(evt);
             }
         });
-        getContentPane().add(bt_valider, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 550, 120, -1));
+        getContentPane().add(bt_valider, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 580, 120, -1));
 
         bt_annuler.setBackground(new java.awt.Color(255, 0, 0));
         bt_annuler.setFont(new java.awt.Font("Comic Sans MS", 3, 14)); // NOI18N
@@ -125,7 +126,7 @@ public class Inscription extends javax.swing.JFrame {
                 bt_annulerActionPerformed(evt);
             }
         });
-        getContentPane().add(bt_annuler, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 620, 120, -1));
+        getContentPane().add(bt_annuler, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 580, 120, -1));
 
         bt_connexion.setBackground(new java.awt.Color(102, 102, 255));
         bt_connexion.setFont(new java.awt.Font("Comic Sans MS", 3, 14)); // NOI18N
@@ -136,7 +137,7 @@ public class Inscription extends javax.swing.JFrame {
                 bt_connexionActionPerformed(evt);
             }
         });
-        getContentPane().add(bt_connexion, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 620, -1, -1));
+        getContentPane().add(bt_connexion, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 580, -1, -1));
         getContentPane().add(txt_login, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 350, 158, 30));
         getContentPane().add(txt_prenom, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 160, 158, 30));
 
@@ -160,15 +161,15 @@ public class Inscription extends javax.swing.JFrame {
 
         jLabel6.setBackground(new java.awt.Color(255, 255, 255));
         jLabel6.setFont(new java.awt.Font("Comic Sans MS", 1, 18)); // NOI18N
-        jLabel6.setForeground(new java.awt.Color(102, 0, 51));
-        jLabel6.setText("Age :");
+        jLabel6.setForeground(new java.awt.Color(0, 153, 51));
+        jLabel6.setText("Age* :");
         getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 220, 100, 30));
         getContentPane().add(txt_age, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 220, 158, 30));
 
         jLabel9.setBackground(new java.awt.Color(255, 255, 255));
         jLabel9.setFont(new java.awt.Font("Comic Sans MS", 1, 18)); // NOI18N
-        jLabel9.setForeground(new java.awt.Color(102, 0, 51));
-        jLabel9.setText("Sexe :");
+        jLabel9.setForeground(new java.awt.Color(0, 153, 51));
+        jLabel9.setText("Sexe* :");
         getContentPane().add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 300, 80, 30));
 
         rb_f.setBackground(new java.awt.Color(204, 255, 255));
@@ -198,7 +199,7 @@ public class Inscription extends javax.swing.JFrame {
 
         jLabel8.setBackground(new java.awt.Color(255, 255, 255));
         jLabel8.setFont(new java.awt.Font("Comic Sans MS", 1, 18)); // NOI18N
-        jLabel8.setForeground(new java.awt.Color(102, 0, 51));
+        jLabel8.setForeground(new java.awt.Color(0, 153, 51));
         jLabel8.setText("Mot de passe* :");
         getContentPane().add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 410, 160, 30));
 
@@ -211,7 +212,7 @@ public class Inscription extends javax.swing.JFrame {
 
         lb_date_inscription.setBackground(new java.awt.Color(255, 255, 255));
         lb_date_inscription.setFont(new java.awt.Font("Comic Sans MS", 1, 14)); // NOI18N
-        getContentPane().add(lb_date_inscription, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 70, 180, 30));
+        getContentPane().add(lb_date_inscription, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 60, 180, 30));
 
         jLabel10.setFont(new java.awt.Font("Comic Sans MS", 3, 18)); // NOI18N
         jLabel10.setForeground(new java.awt.Color(153, 133, 205));
@@ -227,12 +228,15 @@ public class Inscription extends javax.swing.JFrame {
         lbMsgErrI.setFont(new java.awt.Font("Comic Sans MS", 3, 14)); // NOI18N
         lbMsgErrI.setForeground(new java.awt.Color(255, 0, 0));
         lbMsgErrI.setText(" * Champs Obligatoire");
-        getContentPane().add(lbMsgErrI, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 210, 260, 20));
+        getContentPane().add(lbMsgErrI, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 160, 260, 20));
 
         lb_msg_confiarmation_mdp.setFont(new java.awt.Font("Comic Sans MS", 3, 14)); // NOI18N
         lb_msg_confiarmation_mdp.setForeground(new java.awt.Color(255, 0, 0));
         lb_msg_confiarmation_mdp.setText("Mot de Passe non identique !");
-        getContentPane().add(lb_msg_confiarmation_mdp, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 430, 230, 30));
+        getContentPane().add(lb_msg_confiarmation_mdp, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 190, 220, 30));
+
+        jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/fr/esic/img/cnx2.jpg"))); // NOI18N
+        getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 620, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -410,6 +414,7 @@ public class Inscription extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JLabel lbMsgErrI;

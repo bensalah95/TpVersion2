@@ -187,6 +187,9 @@ public class Completer_Profile extends javax.swing.JFrame {
                 Fenetre_de_demarage demarage = new Fenetre_de_demarage();
                 demarage.setVisible(true);
                 this.setVisible(false);
+                       // btn_poids_mise_ajour.setEnabled(false);
+
+                
             } else {
                 lb_msg.setVisible(true);
                 lb_msg.setText("un ou plusieurs champs sont incorrectes!! ");

@@ -42,9 +42,9 @@ public class Fenetre_de_demarage extends javax.swing.JFrame {
         lbBienvenue = new javax.swing.JLabel();
         btn_help = new javax.swing.JButton();
         btn_quitter = new javax.swing.JButton();
-        jButton5 = new javax.swing.JButton();
         btVoirProfil = new javax.swing.JButton();
         btn_historique1 = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         addWindowListener(new java.awt.event.WindowAdapter() {
@@ -63,7 +63,7 @@ public class Fenetre_de_demarage extends javax.swing.JFrame {
                 btn_ajouter_objectifActionPerformed(evt);
             }
         });
-        getContentPane().add(btn_ajouter_objectif, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 120, 180, 40));
+        getContentPane().add(btn_ajouter_objectif, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 140, 170, 40));
 
         btn_poids_mise_ajour.setBackground(new java.awt.Color(255, 255, 255));
         btn_poids_mise_ajour.setFont(new java.awt.Font("Comic Sans MS", 3, 14)); // NOI18N
@@ -74,13 +74,13 @@ public class Fenetre_de_demarage extends javax.swing.JFrame {
                 btn_poids_mise_ajourActionPerformed(evt);
             }
         });
-        getContentPane().add(btn_poids_mise_ajour, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 280, 250, 40));
+        getContentPane().add(btn_poids_mise_ajour, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 470, 170, 40));
 
         jButton4.setBackground(new java.awt.Color(255, 255, 255));
         jButton4.setFont(new java.awt.Font("Comic Sans MS", 3, 14)); // NOI18N
         jButton4.setForeground(new java.awt.Color(176, 151, 178));
-        jButton4.setText("Récap journalié");
-        getContentPane().add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 410, 230, 40));
+        jButton4.setText("Récapitulatif Global");
+        getContentPane().add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 350, 170, 40));
         getContentPane().add(date, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 20, 90, 24));
 
         lbBienvenue.setFont(new java.awt.Font("Comic Sans MS", 3, 20)); // NOI18N
@@ -107,35 +107,32 @@ public class Fenetre_de_demarage extends javax.swing.JFrame {
                 btn_quitterActionPerformed(evt);
             }
         });
-        getContentPane().add(btn_quitter, new org.netbeans.lib.awtextra.AbsoluteConstraints(890, 550, 150, 40));
-
-        jButton5.setBackground(new java.awt.Color(255, 255, 255));
-        jButton5.setFont(new java.awt.Font("Comic Sans MS", 3, 14)); // NOI18N
-        jButton5.setForeground(new java.awt.Color(176, 151, 178));
-        jButton5.setText("Récap hebdomadaire");
-        getContentPane().add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 410, 230, 40));
+        getContentPane().add(btn_quitter, new org.netbeans.lib.awtextra.AbsoluteConstraints(900, 560, 150, 40));
 
         btVoirProfil.setBackground(new java.awt.Color(255, 255, 255));
         btVoirProfil.setFont(new java.awt.Font("Comic Sans MS", 3, 14)); // NOI18N
         btVoirProfil.setForeground(new java.awt.Color(176, 151, 178));
-        btVoirProfil.setText("Voir mon profil");
+        btVoirProfil.setText("Mon profil");
         btVoirProfil.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btVoirProfilActionPerformed(evt);
             }
         });
-        getContentPane().add(btVoirProfil, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 120, 230, 40));
+        getContentPane().add(btVoirProfil, new org.netbeans.lib.awtextra.AbsoluteConstraints(860, 300, 170, 40));
 
         btn_historique1.setBackground(new java.awt.Color(255, 255, 255));
         btn_historique1.setFont(new java.awt.Font("Comic Sans MS", 3, 14)); // NOI18N
         btn_historique1.setForeground(new java.awt.Color(176, 151, 178));
-        btn_historique1.setText("Mon historique de connexion");
+        btn_historique1.setText("Historique objectif");
         btn_historique1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btn_historique1ActionPerformed(evt);
             }
         });
-        getContentPane().add(btn_historique1, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 280, 250, 40));
+        getContentPane().add(btn_historique1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 280, 170, 40));
+
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/fr/esic/img/inscription.jpg"))); // NOI18N
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(-20, -120, 1210, 950));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -260,7 +257,7 @@ public class Fenetre_de_demarage extends javax.swing.JFrame {
     private javax.swing.JButton btn_quitter;
     private javax.swing.JLabel date;
     private javax.swing.JButton jButton4;
-    private javax.swing.JButton jButton5;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel lbBienvenue;
     // End of variables declaration//GEN-END:variables
 }

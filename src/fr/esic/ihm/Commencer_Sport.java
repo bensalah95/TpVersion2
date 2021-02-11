@@ -59,6 +59,7 @@ public class Commencer_Sport extends javax.swing.JFrame {
         btn_stop = new javax.swing.JButton();
         btn_valider_temps = new javax.swing.JButton();
         lb_msg = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         addWindowListener(new java.awt.event.WindowAdapter() {
@@ -77,28 +78,28 @@ public class Commencer_Sport extends javax.swing.JFrame {
                 btn_startActionPerformed(evt);
             }
         });
-        getContentPane().add(btn_start, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 510, 110, 40));
+        getContentPane().add(btn_start, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 360, 110, 40));
         getContentPane().add(Time_sport, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 170, -1, -1));
 
         txt_hour.setFont(new java.awt.Font("Comic Sans MS", 3, 24)); // NOI18N
-        txt_hour.setForeground(new java.awt.Color(255, 153, 0));
-        txt_hour.setText("00:");
-        getContentPane().add(txt_hour, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 140, 60, 60));
+        txt_hour.setForeground(new java.awt.Color(0, 153, 0));
+        txt_hour.setText("00 :");
+        getContentPane().add(txt_hour, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 250, 60, 60));
 
         txt_minute.setFont(new java.awt.Font("Comic Sans MS", 3, 24)); // NOI18N
-        txt_minute.setForeground(new java.awt.Color(255, 153, 0));
-        txt_minute.setText("00:");
-        getContentPane().add(txt_minute, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 140, 60, 60));
+        txt_minute.setForeground(new java.awt.Color(0, 153, 0));
+        txt_minute.setText("00 :");
+        getContentPane().add(txt_minute, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 250, 60, 60));
 
         txt_seconde.setFont(new java.awt.Font("Comic Sans MS", 3, 24)); // NOI18N
-        txt_seconde.setForeground(new java.awt.Color(255, 153, 0));
-        txt_seconde.setText("00:");
-        getContentPane().add(txt_seconde, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 140, 60, 60));
+        txt_seconde.setForeground(new java.awt.Color(0, 153, 0));
+        txt_seconde.setText("00 :");
+        getContentPane().add(txt_seconde, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 250, 60, 60));
 
         txt_milliseconde.setFont(new java.awt.Font("Comic Sans MS", 3, 24)); // NOI18N
-        txt_milliseconde.setForeground(new java.awt.Color(255, 153, 0));
+        txt_milliseconde.setForeground(new java.awt.Color(0, 153, 0));
         txt_milliseconde.setText("00");
-        getContentPane().add(txt_milliseconde, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 140, 80, 60));
+        getContentPane().add(txt_milliseconde, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 250, 80, 60));
 
         btn_stop.setBackground(new java.awt.Color(204, 204, 255));
         btn_stop.setFont(new java.awt.Font("Comic Sans MS", 3, 24)); // NOI18N
@@ -109,7 +110,7 @@ public class Commencer_Sport extends javax.swing.JFrame {
                 btn_stopActionPerformed(evt);
             }
         });
-        getContentPane().add(btn_stop, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 410, 110, 40));
+        getContentPane().add(btn_stop, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 410, 110, 40));
 
         btn_valider_temps.setBackground(new java.awt.Color(204, 204, 255));
         btn_valider_temps.setFont(new java.awt.Font("Comic Sans MS", 3, 24)); // NOI18N
@@ -120,10 +121,13 @@ public class Commencer_Sport extends javax.swing.JFrame {
                 btn_valider_tempsActionPerformed(evt);
             }
         });
-        getContentPane().add(btn_valider_temps, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 490, 210, 40));
+        getContentPane().add(btn_valider_temps, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 490, 210, 40));
 
         lb_msg.setFont(new java.awt.Font("Comic Sans MS", 3, 24)); // NOI18N
-        getContentPane().add(lb_msg, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 250, 390, 120));
+        getContentPane().add(lb_msg, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 240, 390, 120));
+
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/fr/esic/img/img_comncer_sport.jpg"))); // NOI18N
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(-60, 0, 750, 620));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -386,6 +390,7 @@ lb_msg.setText("Essayez de nouveau !!!");
     private javax.swing.JButton btn_start;
     private javax.swing.JButton btn_stop;
     private javax.swing.JButton btn_valider_temps;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel lb_msg;
     private javax.swing.JLabel txt_hour;
     private javax.swing.JLabel txt_milliseconde;

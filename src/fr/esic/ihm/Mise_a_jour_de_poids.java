@@ -31,6 +31,7 @@ public class Mise_a_jour_de_poids extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         date_de_balnce = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
+        jLabel4 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         addWindowListener(new java.awt.event.WindowAdapter() {
@@ -43,7 +44,7 @@ public class Mise_a_jour_de_poids extends javax.swing.JFrame {
 
         jLabel2.setFont(new java.awt.Font("Comic Sans MS", 3, 24)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(0, 102, 102));
-        jLabel2.setText("Poids Initial");
+        jLabel2.setText("Poids initial");
         jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 260, 160, 30));
 
         txt_poids_actuel.setFont(new java.awt.Font("Comic Sans MS", 3, 24)); // NOI18N
@@ -71,24 +72,26 @@ public class Mise_a_jour_de_poids extends javax.swing.JFrame {
                 btn_validerActionPerformed(evt);
             }
         });
-        jPanel1.add(btn_valider, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 470, 370, -1));
+        jPanel1.add(btn_valider, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 440, 210, -1));
 
         jLabel1.setFont(new java.awt.Font("Comic Sans MS", 3, 36)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(0, 204, 204));
-        jLabel1.setText("Scale's   Time");
-        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 20, 310, 40));
-        jPanel1.add(date_de_balnce, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 30, 190, 30));
+        jLabel1.setText("Mise a jour poids");
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 40, 310, 40));
+        jPanel1.add(date_de_balnce, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 70, 190, 30));
 
         jButton1.setBackground(new java.awt.Color(255, 51, 51));
         jButton1.setFont(new java.awt.Font("Segoe UI", 3, 18)); // NOI18N
-        jButton1.setForeground(new java.awt.Color(0, 0, 0));
-        jButton1.setText("retour");
+        jButton1.setText("Retour");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
             }
         });
         jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 30, 110, 40));
+
+        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/fr/esic/img/maintien poids.jpg"))); // NOI18N
+        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 860, 510));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -194,6 +197,7 @@ static int total;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JTextField txt_poids_actuel;
     private javax.swing.JTextField txt_poids_initial;

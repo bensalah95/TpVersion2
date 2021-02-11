@@ -38,81 +38,79 @@ public class FitnessTime extends javax.swing.JFrame {
         jLabel6 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
-        jLabel9 = new javax.swing.JLabel();
+        jLabel10 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jButton1.setBackground(new java.awt.Color(255, 255, 255));
+        jButton1.setBackground(new java.awt.Color(255, 94, 19));
         jButton1.setFont(new java.awt.Font("Comic Sans MS", 3, 24)); // NOI18N
-        jButton1.setForeground(new java.awt.Color(255, 81, 139));
-        jButton1.setText("Se Connecter ? ");
-        jButton1.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
+        jButton1.setText("Se Connecter ");
+        jButton1.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
             }
         });
-        jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 340, -1, 40));
+        jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 220, -1, 40));
 
         jButton2.setBackground(new java.awt.Color(255, 94, 19));
         jButton2.setFont(new java.awt.Font("Comic Sans MS", 3, 24)); // NOI18N
-        jButton2.setText("Inscription ?");
+        jButton2.setText("Inscription");
+        jButton2.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton2ActionPerformed(evt);
             }
         });
-        jPanel1.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 480, -1, -1));
+        jPanel1.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 410, 170, -1));
 
         jLabel1.setFont(new java.awt.Font("Sitka Text", 3, 12)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(102, 102, 102));
         jLabel1.setText("Déjà Membre ?");
-        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 320, -1, -1));
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 200, -1, -1));
 
         jLabel2.setFont(new java.awt.Font("Sitka Text", 3, 12)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(102, 102, 102));
         jLabel2.setText("Nouveau Membre ?");
-        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(750, 460, -1, -1));
+        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 390, -1, -1));
 
         jLabel3.setFont(new java.awt.Font("Segoe Print", 3, 24)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(255, 150, 149));
         jLabel3.setText("BIEN");
-        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 40, 70, 40));
+        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 30, 70, 40));
 
         jLabel4.setFont(new java.awt.Font("Segoe Print", 3, 24)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(204, 96, 188));
         jLabel4.setText("VENUE");
-        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 40, 90, 40));
+        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 30, 90, 40));
 
         jLabel5.setFont(new java.awt.Font("Segoe Print", 3, 24)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(201, 22, 78));
         jLabel5.setText("DANS");
-        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 50, 100, 40));
+        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 60, 100, 40));
 
         jLabel6.setFont(new java.awt.Font("Segoe Print", 3, 24)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(255, 157, 77));
-        jLabel6.setText("FIT");
-        jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 70, 70, 40));
+        jLabel6.setText("KOR");
+        jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 80, 60, 40));
 
         jLabel7.setFont(new java.awt.Font("Segoe Print", 3, 24)); // NOI18N
         jLabel7.setForeground(new java.awt.Color(255, 127, 149));
-        jLabel7.setText("NESS");
-        jPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 70, 70, 40));
+        jLabel7.setText("PAR");
+        jPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 80, 70, 40));
 
         jLabel8.setFont(new java.awt.Font("Segoe Print", 3, 24)); // NOI18N
         jLabel8.setForeground(new java.awt.Color(153, 140, 242));
-        jLabel8.setText("CL");
-        jPanel1.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 70, 70, 40));
+        jLabel8.setText("FAIT");
+        jPanel1.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 80, 70, 40));
 
-        jLabel9.setFont(new java.awt.Font("Segoe Print", 3, 24)); // NOI18N
-        jLabel9.setForeground(new java.awt.Color(255, 165, 217));
-        jLabel9.setText("UB");
-        jPanel1.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 70, 70, 40));
+        jLabel10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/fr/esic/img/page_app.jpg"))); // NOI18N
+        jPanel1.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 780, 600));
 
-        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 1, -1, 550));
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 1, -1, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -168,6 +166,7 @@ public class FitnessTime extends javax.swing.JFrame {
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
@@ -175,7 +174,6 @@ public class FitnessTime extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
-    private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     // End of variables declaration//GEN-END:variables
 }

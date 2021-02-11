@@ -47,10 +47,10 @@ String log;
         bt_retour = new javax.swing.JButton();
         lb_msg = new javax.swing.JLabel();
         lb_date = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
         jLabel11 = new javax.swing.JLabel();
         txt_pwd = new javax.swing.JPasswordField();
+        jLabel4 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -59,15 +59,15 @@ String log;
         jLabel1.setFont(new java.awt.Font("Comic Sans MS", 0, 18)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(0, 58, 111));
         jLabel1.setText("LOGIN");
-        page_cnx.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 140, 140, -1));
+        page_cnx.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 180, 140, -1));
 
         jLabel2.setFont(new java.awt.Font("Comic Sans MS", 0, 18)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(0, 58, 111));
         jLabel2.setText("PASSWORD");
-        page_cnx.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 190, 140, -1));
+        page_cnx.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 240, 140, -1));
 
         txt_login.setFont(new java.awt.Font("Comic Sans MS", 1, 18)); // NOI18N
-        page_cnx.add(txt_login, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 140, 320, -1));
+        page_cnx.add(txt_login, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 180, 280, -1));
 
         bt_connexion.setBackground(new java.awt.Color(255, 255, 255));
         bt_connexion.setFont(new java.awt.Font("Comic Sans MS", 1, 18)); // NOI18N
@@ -78,7 +78,7 @@ String log;
                 bt_connexionActionPerformed(evt);
             }
         });
-        page_cnx.add(bt_connexion, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 260, 240, -1));
+        page_cnx.add(bt_connexion, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 310, 240, -1));
 
         bt_retour.setBackground(new java.awt.Color(255, 255, 255));
         bt_retour.setFont(new java.awt.Font("Comic Sans MS", 1, 18)); // NOI18N
@@ -89,7 +89,7 @@ String log;
                 bt_retourActionPerformed(evt);
             }
         });
-        page_cnx.add(bt_retour, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 570, 120, -1));
+        page_cnx.add(bt_retour, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 490, 120, -1));
 
         lb_msg.setFont(new java.awt.Font("Comic Sans MS", 1, 24)); // NOI18N
         lb_msg.setForeground(new java.awt.Color(255, 0, 0));
@@ -99,38 +99,36 @@ String log;
         lb_date.setForeground(new java.awt.Color(153, 0, 255));
         page_cnx.add(lb_date, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 30, 200, 30));
 
-        jLabel3.setFont(new java.awt.Font("Comic Sans MS", 3, 24)); // NOI18N
-        jLabel3.setForeground(new java.awt.Color(153, 168, 237));
-        jLabel3.setText("Se");
-        page_cnx.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 20, 40, 30));
-
-        jLabel10.setFont(new java.awt.Font("Comic Sans MS", 3, 24)); // NOI18N
+        jLabel10.setFont(new java.awt.Font("Comic Sans MS", 3, 30)); // NOI18N
         jLabel10.setForeground(new java.awt.Color(153, 133, 205));
         jLabel10.setText("Conn");
-        page_cnx.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 30, 60, 30));
+        page_cnx.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 40, 110, 30));
 
         jLabel11.setBackground(new java.awt.Color(255, 255, 255));
-        jLabel11.setFont(new java.awt.Font("Comic Sans MS", 3, 24)); // NOI18N
+        jLabel11.setFont(new java.awt.Font("Comic Sans MS", 3, 30)); // NOI18N
         jLabel11.setForeground(new java.awt.Color(172, 113, 193));
-        jLabel11.setText("ecter");
-        page_cnx.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 30, 70, 30));
+        jLabel11.setText("exion");
+        page_cnx.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 40, 100, 30));
 
         txt_pwd.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txt_pwdActionPerformed(evt);
             }
         });
-        page_cnx.add(txt_pwd, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 190, 320, 30));
+        page_cnx.add(txt_pwd, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 240, 280, 30));
+
+        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/fr/esic/img/cnx_img.jpg"))); // NOI18N
+        page_cnx.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(-150, -150, 740, 1080));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(page_cnx, javax.swing.GroupLayout.PREFERRED_SIZE, 611, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(page_cnx, javax.swing.GroupLayout.PREFERRED_SIZE, 589, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(page_cnx, javax.swing.GroupLayout.PREFERRED_SIZE, 626, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(page_cnx, javax.swing.GroupLayout.PREFERRED_SIZE, 558, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
 
         pack();
@@ -271,7 +269,7 @@ String log;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel lb_date;
     private javax.swing.JLabel lb_msg;
     private javax.swing.JPanel page_cnx;

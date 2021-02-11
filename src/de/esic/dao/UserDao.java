@@ -145,6 +145,46 @@ public class UserDao {
         return users;
     }
 
+      public static void getInfo(String info) throws SQLException{
+        
+        String sql = "SELECT * FROM sportif";
+        Connection connexion = ConnexionBd.getConnection();
+
+ 
+
+        Statement requete=connexion.createStatement();
+      
+        ResultSet rs=requete.executeQuery(sql);
+        while (rs.next()) {
+            User u = new User();
+           
+            if(info.equals("age")){
+                u.setAge(rs.getInt("age"));
+            }
+            if(info.equals("taille")){
+                u.setAge(rs.getInt("taille"));
+            }
+            
+            if(info.equals("poids")){
+                u.setPoids(rs.getDouble("poids"));
+            }
+            
+            /*
+            
+            
+            u.setCadence(rs.getString("cadence"));
+            u.setNbre_heure(rs.getInt("nbre_heure"));
+            u.setNombre_kilo(rs.getInt("nombre_kilo"));
+            u.setPoids_final(rs.getInt("poids_final"));
+            u.setPeriode_regime(rs.getInt("periode_regime"));
+            u.setPoids_actuel(rs.getInt("poids_actuel"));
+            u.setType_activité(rs.getString("type_activité"));
+            users.add(u);
+*/
+ 
+
+        }
+    }
 
 
     

@@ -50,8 +50,11 @@ int nb_cnx;
 
         jScrollPane2 = new javax.swing.JScrollPane();
         t_historique = new javax.swing.JTable();
+        jLabel3 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
         lb_bnj = new javax.swing.JLabel();
         bt_annuler = new javax.swing.JButton();
+        lbTest = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         addWindowListener(new java.awt.event.WindowAdapter() {
@@ -74,7 +77,17 @@ int nb_cnx;
         ));
         jScrollPane2.setViewportView(t_historique);
 
-        getContentPane().add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 160, 830, 230));
+        getContentPane().add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 190, 830, 230));
+
+        jLabel3.setFont(new java.awt.Font("Segoe Print", 3, 24)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(255, 150, 149));
+        jLabel3.setText("Historique");
+        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 30, 190, 40));
+
+        jLabel4.setFont(new java.awt.Font("Segoe Print", 3, 24)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(204, 96, 188));
+        jLabel4.setText("objectif");
+        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 30, 150, 40));
         getContentPane().add(lb_bnj, new org.netbeans.lib.awtextra.AbsoluteConstraints(239, 79, 141, 34));
 
         bt_annuler.setBackground(new java.awt.Color(255, 0, 0));
@@ -87,6 +100,9 @@ int nb_cnx;
             }
         });
         getContentPane().add(bt_annuler, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 550, 120, -1));
+
+        lbTest.setIcon(new javax.swing.ImageIcon(getClass().getResource("/fr/esic/img/historique de cnx.jpg"))); // NOI18N
+        getContentPane().add(lbTest, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 930, 620));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -121,6 +137,8 @@ int nb_cnx;
                     membre.getType_activité(),
                     membre.getNbre_heure(),});
             }
+            
+                            
         } catch (Exception e) {
         }
 
@@ -229,7 +247,10 @@ int nb_cnx;
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton bt_annuler;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
     private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JLabel lbTest;
     private javax.swing.JLabel lb_bnj;
     private javax.swing.JTable t_historique;
     // End of variables declaration//GEN-END:variables
