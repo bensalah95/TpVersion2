@@ -301,7 +301,7 @@ public class Inscription extends javax.swing.JFrame {
                 User u = new User(id, nom, prenom, sex, login, mdp, mdp2, age);
                 UserDao.insertPerson(u);
                 JOptionPane.showMessageDialog(rootPane, "inscription avec succées ");
-                System.out.println(u);
+                //System.out.println(u);
 
             } catch (SQLException ex) {
                 Logger.getLogger(Inscription.class.getName()).log(Level.SEVERE, null, ex);
