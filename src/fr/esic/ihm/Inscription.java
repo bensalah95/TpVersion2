@@ -298,7 +298,7 @@ public class Inscription extends javax.swing.JFrame {
                 */
                 
                 
-            User u= new User(age, nom, prenom, sex, login, nom, prenom, age);
+            User u= new User(age, nom, prenom, sex, login, mdp, mdp2, age);
             UserDao.insertPerson(u);
             JOptionPane.showMessageDialog(rootPane, "inscription avec succées ");
 
