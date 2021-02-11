@@ -30,6 +30,7 @@ public class Mise_a_jour_de_poids extends javax.swing.JFrame {
         btn_valider = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         date_de_balnce = new javax.swing.JLabel();
+        jButton1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         addWindowListener(new java.awt.event.WindowAdapter() {
@@ -77,6 +78,17 @@ public class Mise_a_jour_de_poids extends javax.swing.JFrame {
         jLabel1.setText("Scale's   Time");
         jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 20, 310, 40));
         jPanel1.add(date_de_balnce, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 30, 190, 30));
+
+        jButton1.setBackground(new java.awt.Color(255, 51, 51));
+        jButton1.setFont(new java.awt.Font("Segoe UI", 3, 18)); // NOI18N
+        jButton1.setForeground(new java.awt.Color(0, 0, 0));
+        jButton1.setText("retour");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+        jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 30, 110, 40));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -141,6 +153,12 @@ public class Mise_a_jour_de_poids extends javax.swing.JFrame {
         txt_poids_initial.setText(""+poids_initial);
     }//GEN-LAST:event_formWindowOpened
 
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    Fenetre_de_demarage profil = new Fenetre_de_demarage();
+        profil.setVisible(true);
+        this.setVisible(false);        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton1ActionPerformed
+
     
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
@@ -177,6 +195,7 @@ public class Mise_a_jour_de_poids extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btn_valider;
     private javax.swing.JLabel date_de_balnce;
+    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
