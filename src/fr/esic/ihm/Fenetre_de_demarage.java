@@ -43,7 +43,7 @@ public class Fenetre_de_demarage extends javax.swing.JFrame {
         btn_help = new javax.swing.JButton();
         btn_quitter = new javax.swing.JButton();
         jButton5 = new javax.swing.JButton();
-        jButton6 = new javax.swing.JButton();
+        btVoirProfil = new javax.swing.JButton();
         btn_historique1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -126,16 +126,16 @@ public class Fenetre_de_demarage extends javax.swing.JFrame {
         jButton5.setText("Récap hebdomadaire");
         getContentPane().add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 410, 230, 40));
 
-        jButton6.setBackground(new java.awt.Color(255, 255, 255));
-        jButton6.setFont(new java.awt.Font("Comic Sans MS", 3, 14)); // NOI18N
-        jButton6.setForeground(new java.awt.Color(176, 151, 178));
-        jButton6.setText("Completer le profil");
-        jButton6.addActionListener(new java.awt.event.ActionListener() {
+        btVoirProfil.setBackground(new java.awt.Color(255, 255, 255));
+        btVoirProfil.setFont(new java.awt.Font("Comic Sans MS", 3, 14)); // NOI18N
+        btVoirProfil.setForeground(new java.awt.Color(176, 151, 178));
+        btVoirProfil.setText("Voir mon profil");
+        btVoirProfil.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton6ActionPerformed(evt);
+                btVoirProfilActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton6, new org.netbeans.lib.awtextra.AbsoluteConstraints(810, 270, 230, 40));
+        getContentPane().add(btVoirProfil, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 210, 230, 40));
 
         btn_historique1.setBackground(new java.awt.Color(255, 255, 255));
         btn_historique1.setFont(new java.awt.Font("Comic Sans MS", 3, 14)); // NOI18N
@@ -225,14 +225,14 @@ public class Fenetre_de_demarage extends javax.swing.JFrame {
     private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
         lbBienvenue.setText("Bonjour " + PropriGlobal.user_Connect.getPrenom() + " "+ PropriGlobal.user_Connect.getNom().toUpperCase());    }//GEN-LAST:event_formWindowOpened
 
-    private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
+    private void btVoirProfilActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btVoirProfilActionPerformed
         // TODO add your handling code here:
-        Completer_Profile maj = new Completer_Profile();
+        VoirMonProfil maj = new VoirMonProfil();
         maj.setVisible(true);
         this.setVisible(false);
         
         
-    }//GEN-LAST:event_jButton6ActionPerformed
+    }//GEN-LAST:event_btVoirProfilActionPerformed
 
     /**
      * @param args the command line arguments
@@ -270,6 +270,7 @@ public class Fenetre_de_demarage extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btVoirProfil;
     private javax.swing.JButton btn_ajouter_objectif;
     private javax.swing.JButton btn_help;
     private javax.swing.JButton btn_historique1;
@@ -279,7 +280,6 @@ public class Fenetre_de_demarage extends javax.swing.JFrame {
     private javax.swing.JLabel date;
     private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton5;
-    private javax.swing.JButton jButton6;
     private javax.swing.JLabel lbBienvenue;
     // End of variables declaration//GEN-END:variables
 }

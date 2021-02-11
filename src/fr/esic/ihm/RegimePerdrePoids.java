@@ -1,7 +1,7 @@
-
 package fr.esic.ihm;
 
 import de.esic.dao.ConnexionBd;
+import fr.esic.proprities.PropriGlobal;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
@@ -11,7 +11,6 @@ import javax.swing.JOptionPane;
 
 public class RegimePerdrePoids extends javax.swing.JFrame {
 
-   
     public RegimePerdrePoids() {
         initComponents();
     }
@@ -204,37 +203,34 @@ public class RegimePerdrePoids extends javax.swing.JFrame {
     private void combox_cadenceActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_combox_cadenceActionPerformed
     }//GEN-LAST:event_combox_cadenceActionPerformed
     private void btn_valider_regimeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_valider_regimeActionPerformed
-  
-        int nbre_kilo=Integer.parseInt(txt_nbre_kg.getText());
-        int periode=Integer.parseInt(txt_periode_regime.getText());
-        double poids_initial=Double.parseDouble(txt_poids_actuel.getText());
-        double poids_souhaite=Double.parseDouble(txt_poids_souhaité.getText());
-        String cadence=combox_cadence.  getSelectedItem().toString();  
-        int nbre_heure=Integer.parseInt(txt_nbre_heure.getText());
-        String type_activité=com_box_type.  getSelectedItem().toString();  
-            
-        
-    
-  btn_commencer_regime.setEnabled(true);
-          btn_commencer_regime1.setEnabled(true);
-        String sql ="insert into regime_perdre_poids (Nombre_kilo,periode_regime,poids_actuel,poids_final,cadence,nbre_heure,type_activité) values(?,?,?,?,?,?,?)";
-   
-   
+
+        int nbre_kilo = Integer.parseInt(txt_nbre_kg.getText());
+        int periode = Integer.parseInt(txt_periode_regime.getText());
+        double poids_initial = Double.parseDouble(txt_poids_actuel.getText());
+        double poids_souhaite = Double.parseDouble(txt_poids_souhaité.getText());
+        String cadence = combox_cadence.getSelectedItem().toString();
+        int nbre_heure = Integer.parseInt(txt_nbre_heure.getText());
+        String type_activité = com_box_type.getSelectedItem().toString();
+
+        btn_commencer_regime.setEnabled(true);
+        btn_commencer_regime1.setEnabled(true);
+        String sql = "insert into regime_perdre_poids (id_Sportif, Nombre_kilo,periode_regime,poids_actuel,poids_final,cadence,nbre_heure,type_activité) values(?, ?,?,?,?,?,?,?)";
+
         try {
             Connection connexion = ConnexionBd.getConnection();
             PreparedStatement prepare;
             prepare = connexion.prepareStatement(sql);
-            prepare.setInt(1, nbre_kilo);
-            prepare.setInt(2, periode);
-            prepare.setDouble(3, poids_initial);
-            prepare.setDouble(4, poids_souhaite);
-            prepare.setString(5, cadence);
-            prepare.setInt(6, nbre_heure);
-            prepare.setString(7, type_activité);
+            prepare.setInt(1, PropriGlobal.user_Connect.getId());
+            prepare.setInt(2, nbre_kilo);
+            prepare.setInt(3, periode);
+            prepare.setDouble(4, poids_initial);
+            prepare.setDouble(5, poids_souhaite);
+            prepare.setString(6, cadence);
+            prepare.setInt(7, nbre_heure);
+            prepare.setString(8, type_activité);
             prepare.execute();
             JOptionPane.showMessageDialog(rootPane, "Régime Ajouté avec succés!!");
 
-             
         } catch (SQLException ex) {
             Logger.getLogger(Fenetre_IMC.class.getName()).log(Level.SEVERE, null, ex);
         }
@@ -254,9 +250,9 @@ public class RegimePerdrePoids extends javax.swing.JFrame {
     }//GEN-LAST:event_formWindowOpened
 
     private void btn_quitterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_quitterActionPerformed
-       Page_Conexion cnx= new Page_Conexion();
-      cnx.setVisible(true);
-      this.hide();
+        Page_Conexion cnx = new Page_Conexion();
+        cnx.setVisible(true);
+        this.hide();
     }//GEN-LAST:event_btn_quitterActionPerformed
 
     private void btn_acceeuilActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_acceeuilActionPerformed
@@ -267,7 +263,7 @@ public class RegimePerdrePoids extends javax.swing.JFrame {
     }//GEN-LAST:event_btn_acceeuilActionPerformed
 
     private void btn_commencer_regimeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_commencer_regimeActionPerformed
- Commencer_Sport sport= new Commencer_Sport();
+        Commencer_Sport sport = new Commencer_Sport();
         sport.setVisible(true);
         this.hide();
 
@@ -275,12 +271,11 @@ public class RegimePerdrePoids extends javax.swing.JFrame {
     }//GEN-LAST:event_btn_commencer_regimeActionPerformed
 
     private void btn_commencer_regime1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_commencer_regime1ActionPerformed
-      Ajouter_nv_objectif nv=new Ajouter_nv_objectif();
-      nv.setVisible(true);
-      this.hide();
+        Ajouter_nv_objectif nv = new Ajouter_nv_objectif();
+        nv.setVisible(true);
+        this.hide();
     }//GEN-LAST:event_btn_commencer_regime1ActionPerformed
 
-    
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
@@ -338,6 +333,5 @@ public class RegimePerdrePoids extends javax.swing.JFrame {
     private javax.swing.JTextField txt_poids_souhaité;
     private javax.swing.ButtonGroup type_activite;
     // End of variables declaration//GEN-END:variables
-
 
 }
