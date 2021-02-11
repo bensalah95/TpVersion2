@@ -117,7 +117,34 @@ public class UserDao {
         }
         return users;
     }
+      public static List<User> getHistSport() throws SQLException{
+        List<User> users = new ArrayList<>();
+        
+        String sql = "SELECT * FROM regime_perdre_poids";
+        Connection connexion = ConnexionBd.getConnection();
+
+ 
+
+        Statement requete=connexion.createStatement();
       
+        ResultSet rs=requete.executeQuery(sql);
+        while (rs.next()) {
+            User u = new User();
+            u.setCadence(rs.getString("cadence"));
+            u.setNbre_heure(rs.getInt("nbre_heure"));
+            u.setNombre_kilo(rs.getInt("nombre_kilo"));
+            u.setPoids_final(rs.getInt("poids_final"));
+            u.setPeriode_regime(rs.getInt("periode_regime"));
+            u.setPoids_actuel(rs.getInt("poids_actuel"));
+            u.setType_activité(rs.getString("type_activité"));
+            users.add(u);
+
+ 
+
+        }
+        return users;
+    }
+
 
 
     

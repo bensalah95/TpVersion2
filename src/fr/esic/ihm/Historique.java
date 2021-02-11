@@ -74,7 +74,7 @@ int nb_cnx;
         ));
         jScrollPane2.setViewportView(t_historique);
 
-        getContentPane().add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 270, -1, 100));
+        getContentPane().add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 160, 830, 230));
         getContentPane().add(lb_bnj, new org.netbeans.lib.awtextra.AbsoluteConstraints(239, 79, 141, 34));
 
         bt_annuler.setBackground(new java.awt.Color(255, 0, 0));
@@ -93,6 +93,43 @@ int nb_cnx;
 
     private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
 
+        DefaultTableModel model = new DefaultTableModel();
+
+        model.addColumn("Poids Actuel");
+        model.addColumn("Poids final");
+
+        model.addColumn("Nombre kilo");
+
+        model.addColumn("Periode de regime");
+
+        model.addColumn("Cadence");
+
+        model.addColumn("Activité");
+
+        model.addColumn("Temps (en H)");
+
+        try {
+            List<User> membres = UserDao.getHistSport();
+
+            for (User membre : membres) {
+                model.addRow(new Object[]{
+                    membre.getPoids_actuel(),
+                    membre.getPoids_final(),
+                    membre.getNombre_kilo(),
+                    membre.getPeriode_regime(),
+                    membre.getCadence(),
+                    membre.getType_activité(),
+                    membre.getNbre_heure(),});
+            }
+        } catch (Exception e) {
+        }
+
+        t_historique.setModel(model);
+
+        
+       /*
+        TABLEAU DERNIERE CONNEXION : 
+        
         DefaultTableModel model = new DefaultTableModel();
 
         model.addColumn("Date dernier connexion");
