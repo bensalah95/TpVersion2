@@ -5,6 +5,7 @@
  */
 package fr.esic.ihm;
 
+import static fr.esic.ihm.Mise_a_jour_de_poids.total;
 import fr.esic.proprities.PropriGlobal;
 
 /**
@@ -93,6 +94,7 @@ public class Felicitation extends javax.swing.JFrame {
 
     private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
         lbPrenom.setText("Felicitation : " + PropriGlobal.user_Connect.getPrenom());
+        txtPoidsFinal.setText(""+total);
     }//GEN-LAST:event_formWindowOpened
 
     /**
